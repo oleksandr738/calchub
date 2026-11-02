@@ -1,0 +1,19 @@
+---
+import type { Lang } from '../i18n';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<header class="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+    <a href={`/${lang}/`} class="flex items-center gap-2 text-xl font-bold text-brand-700">
+      <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-sm text-white" aria-hidden="true">÷</span>
+      CalcHub
+    </a>
+    <LanguageSwitcher />
+  </div>
+</header>

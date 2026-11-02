@@ -1,0 +1,17 @@
+---
+import { useTranslations, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-16 border-t border-slate-200 bg-slate-50">
+  <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-600">
+    <p>{t('footer.disclaimer')}</p>
+    <p class="mt-3">© {year} CalcHub. {t('footer.rights')}</p>
+  </div>
+</footer>

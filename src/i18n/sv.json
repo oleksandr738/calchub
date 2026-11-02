@@ -1,0 +1,23 @@
+{
+  "site": {
+    "description": "Gratis onlinekalkylatorer: ekonomi, bygg, bil och vardagsberäkningar."
+  },
+  "home": {
+    "title": "CalcHub — gratis onlinekalkylatorer",
+    "heroTitle": "Gratis onlinekalkylatorer för vardagen",
+    "heroText": "Ekonomi, bygg, bil och vardagsberäkningar: direkt i webbläsaren, utan registrering.",
+    "categoriesTitle": "Kalkylatorkategorier"
+  },
+  "categories": {
+    "finance": { "name": "Ekonomi", "description": "Procent, moms, lån, sparande" },
+    "construction": { "name": "Bygg", "description": "Yta, volym, betong, kakel, färg" },
+    "automotive": { "name": "Bil", "description": "Bränsleförbrukning och resekostnad" },
+    "everyday": { "name": "Vardag", "description": "Ålder, dagar mellan datum, dagar till en händelse" },
+    "conversion": { "name": "Enhetsomvandling", "description": "Vikt, längd, volym, temperatur, hastighet" },
+    "math": { "name": "Matematik", "description": "Procent och andra matematiska beräkningar" }
+  },
+  "footer": {
+    "disclaimer": "Resultaten är vägledande uppskattningar. Kontrollera dem innan du fattar viktiga beslut.",
+    "rights": "Alla rättigheter förbehållna."
+  }
+}

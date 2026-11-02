@@ -1,0 +1,23 @@
+{
+  "site": {
+    "description": "Free online calculators: finance, construction, automotive and everyday calculations."
+  },
+  "home": {
+    "title": "CalcHub — free online calculators",
+    "heroTitle": "Free online calculators for everyday life",
+    "heroText": "Finance, construction, cars and everyday math: right in your browser, no sign-up needed.",
+    "categoriesTitle": "Calculator categories"
+  },
+  "categories": {
+    "finance": { "name": "Finance", "description": "Percentages, VAT, loans, savings" },
+    "construction": { "name": "Construction", "description": "Area, volume, concrete, tiles, paint" },
+    "automotive": { "name": "Automotive", "description": "Fuel consumption and trip cost" },
+    "everyday": { "name": "Everyday", "description": "Age, days between dates, days until an event" },
+    "conversion": { "name": "Unit conversion", "description": "Weight, length, volume, temperature, speed" },
+    "math": { "name": "Math", "description": "Percentages and other math calculations" }
+  },
+  "footer": {
+    "disclaimer": "Calculator results are estimates only. Verify them before making important decisions.",
+    "rights": "All rights reserved."
+  }
+}
