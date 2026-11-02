@@ -9,6 +9,7 @@ export const languages = {
 } as const;
 
 export type Lang = keyof typeof languages;
+export const langCodes = Object.keys(languages) as Lang[];
 export const defaultLang: Lang = 'uk';
 
 const dictionaries = { uk, en, sv };

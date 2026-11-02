@@ -9,15 +9,114 @@
     "categoriesTitle": "Kalkylatorkategorier"
   },
   "categories": {
-    "finance": { "name": "Ekonomi", "description": "Procent, moms, lån, sparande" },
-    "construction": { "name": "Bygg", "description": "Yta, volym, betong, kakel, färg" },
-    "automotive": { "name": "Bil", "description": "Bränsleförbrukning och resekostnad" },
-    "everyday": { "name": "Vardag", "description": "Ålder, dagar mellan datum, dagar till en händelse" },
-    "conversion": { "name": "Enhetsomvandling", "description": "Vikt, längd, volym, temperatur, hastighet" },
-    "math": { "name": "Matematik", "description": "Procent och andra matematiska beräkningar" }
+    "finance": {
+      "name": "Ekonomi",
+      "description": "Procent, moms, lån, sparande"
+    },
+    "construction": {
+      "name": "Bygg",
+      "description": "Yta, volym, betong, kakel, färg"
+    },
+    "automotive": {
+      "name": "Bil",
+      "description": "Bränsleförbrukning och resekostnad"
+    },
+    "everyday": {
+      "name": "Vardag",
+      "description": "Ålder, dagar mellan datum, dagar till en händelse"
+    },
+    "conversion": {
+      "name": "Enhetsomvandling",
+      "description": "Vikt, längd, volym, temperatur, hastighet"
+    },
+    "math": {
+      "name": "Matematik",
+      "description": "Procent och andra matematiska beräkningar"
+    }
   },
   "footer": {
     "disclaimer": "Resultaten är vägledande uppskattningar. Kontrollera dem innan du fattar viktiga beslut.",
     "rights": "Alla rättigheter förbehållna."
+  },
+  "ui": {
+    "home": "Startsida",
+    "popular": "Populära kalkylatorer",
+    "howItWorks": "Så fungerar det",
+    "example": "Exempel",
+    "faq": "Vanliga frågor",
+    "related": "Liknande kalkylatorer",
+    "noCalculators": "Kalkylatorer i den här kategorin kommer snart."
+  },
+  "calc": {
+    "mode": "Typ av beräkning",
+    "result": "Resultat",
+    "reset": "Återställ",
+    "copy": "Kopiera resultatet",
+    "copied": "Kopierat",
+    "hint": "Ange båda talen för att se resultatet.",
+    "invalid": "Ange ett tal med siffror. Använd punkt eller komma som decimaltecken.",
+    "divisionByZero": "Division med noll är inte möjlig. Ändra värdena.",
+    "overflow": "Talet är för stort för att beräknas."
+  },
+  "calculators": {
+    "percentage-calculator": {
+      "title": "Procenträknare online — CalcHub",
+      "name": "Procenträknare",
+      "description": "Gratis procenträknare: beräkna procent av ett tal, hur många procent ett tal är av ett annat, procentuell förändring samt höj eller sänk ett tal med ett antal procent.",
+      "intro": "Välj typ av beräkning och ange två tal – resultatet visas direkt. Dina uppgifter skickas inte till någon server.",
+      "modes": {
+        "percentOf": {
+          "name": "Procent av ett tal",
+          "labelA": "Procent (%)",
+          "labelB": "Tal",
+          "placeholderA": "15",
+          "placeholderB": "200",
+          "explain": "Multiplicera talet med procenttalet och dela med 100.",
+          "example": "15 % av 200 = 30"
+        },
+        "whatPercent": {
+          "name": "Hur många procent ett tal är av ett annat",
+          "labelA": "Del",
+          "labelB": "Helhet",
+          "placeholderA": "30",
+          "placeholderB": "200",
+          "explain": "Dela delen med helheten och multiplicera med 100.",
+          "example": "30 av 200 är 15 %"
+        },
+        "change": {
+          "name": "Procentuell förändring mellan två tal",
+          "labelA": "Startvärde",
+          "labelB": "Nytt värde",
+          "placeholderA": "200",
+          "placeholderB": "250",
+          "explain": "Subtrahera startvärdet från det nya värdet, dela med startvärdets absolutbelopp och multiplicera med 100. Ett positivt resultat är en ökning, ett negativt en minskning.",
+          "example": "Från 200 till 250 är +25 %"
+        },
+        "increase": {
+          "name": "Öka ett tal med ett antal procent",
+          "labelA": "Tal",
+          "labelB": "Procent (%)",
+          "placeholderA": "200",
+          "placeholderB": "10",
+          "explain": "Multiplicera talet med (1 + procent ÷ 100).",
+          "example": "200 + 10 % = 220"
+        },
+        "decrease": {
+          "name": "Minska ett tal med ett antal procent",
+          "labelA": "Tal",
+          "labelB": "Procent (%)",
+          "placeholderA": "200",
+          "placeholderB": "10",
+          "explain": "Multiplicera talet med (1 − procent ÷ 100).",
+          "example": "200 − 10 % = 180"
+        }
+      },
+      "faq1q": "Hur räknar man ut procent av ett tal?",
+      "faq1a": "Multiplicera talet med procenttalet och dela med 100. Till exempel 15 % av 200: 200 × 15 ÷ 100 = 30.",
+      "faq2q": "Vad är skillnaden mellan en ökning med 10 % och 10 procentenheter?",
+      "faq2a": "En ökning med 10 % ändrar ett värde i förhållande till sig självt: 50 blir 55. Procentenheter är skillnaden mellan två procentsatser: från 5 % till 15 % är 10 procentenheter, men i förhållande till startvärdet är ökningen 200 %.",
+      "faq3q": "Varför blir talet inte detsamma efter en minskning och en ökning med lika många procent?",
+      "faq3a": "För att den andra procentsatsen räknas på det nya talet. Minskar du 100 med 20 % får du 80, och ökar du 80 med 20 % får du 96, inte 100."
+    }
   }
 }

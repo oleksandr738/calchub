@@ -9,15 +9,114 @@
     "categoriesTitle": "Calculator categories"
   },
   "categories": {
-    "finance": { "name": "Finance", "description": "Percentages, VAT, loans, savings" },
-    "construction": { "name": "Construction", "description": "Area, volume, concrete, tiles, paint" },
-    "automotive": { "name": "Automotive", "description": "Fuel consumption and trip cost" },
-    "everyday": { "name": "Everyday", "description": "Age, days between dates, days until an event" },
-    "conversion": { "name": "Unit conversion", "description": "Weight, length, volume, temperature, speed" },
-    "math": { "name": "Math", "description": "Percentages and other math calculations" }
+    "finance": {
+      "name": "Finance",
+      "description": "Percentages, VAT, loans, savings"
+    },
+    "construction": {
+      "name": "Construction",
+      "description": "Area, volume, concrete, tiles, paint"
+    },
+    "automotive": {
+      "name": "Automotive",
+      "description": "Fuel consumption and trip cost"
+    },
+    "everyday": {
+      "name": "Everyday",
+      "description": "Age, days between dates, days until an event"
+    },
+    "conversion": {
+      "name": "Unit conversion",
+      "description": "Weight, length, volume, temperature, speed"
+    },
+    "math": {
+      "name": "Math",
+      "description": "Percentages and other math calculations"
+    }
   },
   "footer": {
     "disclaimer": "Calculator results are estimates only. Verify them before making important decisions.",
     "rights": "All rights reserved."
+  },
+  "ui": {
+    "home": "Home",
+    "popular": "Popular calculators",
+    "howItWorks": "How it works",
+    "example": "Example",
+    "faq": "Frequently asked questions",
+    "related": "Related calculators",
+    "noCalculators": "Calculators in this category are coming soon."
+  },
+  "calc": {
+    "mode": "Calculation type",
+    "result": "Result",
+    "reset": "Reset",
+    "copy": "Copy result",
+    "copied": "Copied",
+    "hint": "Enter both numbers to see the result.",
+    "invalid": "Enter a number using digits. Use a dot or a comma as the decimal separator.",
+    "divisionByZero": "Division by zero is not possible. Change the values.",
+    "overflow": "The number is too large to calculate."
+  },
+  "calculators": {
+    "percentage-calculator": {
+      "title": "Online percentage calculator — CalcHub",
+      "name": "Percentage calculator",
+      "description": "Free percentage calculator: find a percentage of a number, what percent one number is of another, percentage change, and increase or decrease a number by a percentage.",
+      "intro": "Choose a calculation type and enter two numbers: the result appears instantly. Your data is not sent to any server.",
+      "modes": {
+        "percentOf": {
+          "name": "Percentage of a number",
+          "labelA": "Percentage (%)",
+          "labelB": "Number",
+          "placeholderA": "15",
+          "placeholderB": "200",
+          "explain": "To find a percentage of a number, multiply the number by the percentage and divide by 100.",
+          "example": "15% of 200 = 30"
+        },
+        "whatPercent": {
+          "name": "What percent one number is of another",
+          "labelA": "Part",
+          "labelB": "Whole",
+          "placeholderA": "30",
+          "placeholderB": "200",
+          "explain": "Divide the part by the whole and multiply by 100.",
+          "example": "30 out of 200 is 15%"
+        },
+        "change": {
+          "name": "Percentage change between two numbers",
+          "labelA": "Starting value",
+          "labelB": "New value",
+          "placeholderA": "200",
+          "placeholderB": "250",
+          "explain": "Subtract the starting value from the new value, divide by the absolute value of the starting value and multiply by 100. A positive result is an increase, a negative one is a decrease.",
+          "example": "From 200 to 250 is +25%"
+        },
+        "increase": {
+          "name": "Increase a number by a percentage",
+          "labelA": "Number",
+          "labelB": "Percentage (%)",
+          "placeholderA": "200",
+          "placeholderB": "10",
+          "explain": "Multiply the number by (1 + percentage ÷ 100).",
+          "example": "200 + 10% = 220"
+        },
+        "decrease": {
+          "name": "Decrease a number by a percentage",
+          "labelA": "Number",
+          "labelB": "Percentage (%)",
+          "placeholderA": "200",
+          "placeholderB": "10",
+          "explain": "Multiply the number by (1 − percentage ÷ 100).",
+          "example": "200 − 10% = 180"
+        }
+      },
+      "faq1q": "How do I calculate a percentage of a number?",
+      "faq1a": "Multiply the number by the percentage and divide by 100. For example, 15% of 200: 200 × 15 ÷ 100 = 30.",
+      "faq2q": "What is the difference between a 10% increase and a 10 percentage point increase?",
+      "faq2a": "A 10% increase changes a value relative to itself: 50 becomes 55. Percentage points are the difference between two percentages: going from 5% to 15% is 10 percentage points, but relative to the starting value it is a 200% increase.",
+      "faq3q": "Why doesn’t a number return to the original after decreasing and then increasing by the same percentage?",
+      "faq3a": "Because the second percentage is calculated from the new number. Decrease 100 by 20% and you get 80; increase 80 by 20% and you get 96, not 100."
+    }
   }
 }

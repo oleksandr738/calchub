@@ -5,4 +5,6 @@ export const categories = [
   { slug: 'everyday', icon: '📅' },
   { slug: 'conversion', icon: '🔄' },
   { slug: 'math', icon: '➗' },
-];
+] as const;
+
+export type CategorySlug = (typeof categories)[number]['slug'];

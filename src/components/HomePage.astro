@@ -1,14 +1,17 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import CategoryCard from './CategoryCard.astro';
+import CalculatorCard from './CalculatorCard.astro';
 import { useTranslations, type Lang } from '../i18n';
 import { categories } from '../utils/categories';
+import { calculators, calculatorUrl } from '../calculators/registry';
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const popular = calculators.filter((c) => c.popular);
 ---
 
 <MainLayout title={t('home.title')} description={t('site.description')} lang={lang}>
@@ -20,6 +23,22 @@ const t = useTranslations(lang);
       <p class="mx-auto mt-5 max-w-2xl text-lg text-slate-600">{t('home.heroText')}</p>
     </div>
   </section>
+
+  {popular.length > 0 && (
+    <section class="mx-auto max-w-6xl px-4 pt-12">
+      <h2 class="text-2xl font-semibold">{t('ui.popular')}</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {popular.map((c) => (
+          <CalculatorCard
+            href={calculatorUrl(lang, c)}
+            icon={c.icon}
+            name={t(`calculators.${c.slug}.name`)}
+            description={t(`calculators.${c.slug}.description`)}
+          />
+        ))}
+      </div>
+    </section>
+  )}
 
   <section class="mx-auto max-w-6xl px-4 py-12">
     <h2 class="text-2xl font-semibold">{t('home.categoriesTitle')}</h2>
