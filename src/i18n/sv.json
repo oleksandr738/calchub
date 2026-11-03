@@ -706,5 +706,10 @@
     "L100": "l/100 km",
     "L10": "l/mil",
     "kmL": "km/l"
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "text": "Adressen kan vara felskriven eller sidan kan ha flyttats. Gå till startsidan eller använd sökningen.",
+    "home": "Till startsidan"
   }
 }

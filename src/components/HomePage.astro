@@ -5,6 +5,7 @@ import CalculatorCard from './CalculatorCard.astro';
 import { useTranslations, type Lang } from '../i18n';
 import { categories } from '../utils/categories';
 import { calculators, calculatorUrl } from '../calculators/registry';
+import { webSiteLd, absoluteUrl } from '../utils/seo';
 
 interface Props {
   lang: Lang;
@@ -12,9 +13,17 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const popular = calculators.filter((c) => c.popular);
+const jsonLd = [
+  webSiteLd({
+    name: 'CalcHub',
+    url: absoluteUrl(`/${lang}/`, Astro.site!),
+    lang,
+    description: t('site.description'),
+  }),
+];
 ---
 
-<MainLayout title={t('home.title')} description={t('site.description')} lang={lang}>
+<MainLayout title={t('home.title')} description={t('site.description')} lang={lang} jsonLd={jsonLd}>
   <section class="bg-gradient-to-b from-brand-50 to-white">
     <div class="mx-auto max-w-6xl px-4 py-16 text-center sm:py-24">
       <h1 class="mx-auto max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">

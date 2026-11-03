@@ -706,5 +706,10 @@
     "L100": "L/100 km",
     "L10": "L/10 km",
     "kmL": "km/L"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The address may be mistyped or the page may have moved. Go to the home page or use the search.",
+    "home": "Go to the home page"
   }
 }

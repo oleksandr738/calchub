@@ -5,6 +5,7 @@ import CalculatorCard from '../../../components/CalculatorCard.astro';
 import { langCodes, useTranslations, type Lang } from '../../../i18n';
 import { categories } from '../../../utils/categories';
 import { calculators, calculatorUrl } from '../../../calculators/registry';
+import { breadcrumbLd } from '../../../utils/seo';
 
 export function getStaticPaths() {
   return langCodes.map((lang) => ({ params: { lang } }));
@@ -12,6 +13,16 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Lang;
 const t = useTranslations(lang);
+
+const jsonLd = [
+  breadcrumbLd(
+    [
+      { name: t('ui.home'), path: `/${lang}/` },
+      { name: t('ui.catalogTitle'), path: `/${lang}/calculators/` },
+    ],
+    Astro.site!,
+  ),
+];
 
 // Кожен калькулятор показуємо один раз — у своїй основній категорії
 const groups = categories
@@ -23,6 +34,7 @@ const groups = categories
   title={`${t('ui.catalogTitle')} — CalcHub`}
   description={t('ui.catalogDescription')}
   lang={lang}
+  jsonLd={jsonLd}
 >
   <div class="mx-auto max-w-6xl px-4 py-8">
     <Breadcrumbs items={[{ label: t('ui.home'), href: `/${lang}/` }, { label: t('ui.catalogTitle') }]} />

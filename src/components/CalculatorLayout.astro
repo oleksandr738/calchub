@@ -4,6 +4,7 @@ import Breadcrumbs from './Breadcrumbs.astro';
 import CalculatorCard from './CalculatorCard.astro';
 import { useTranslations, type Lang } from '../i18n';
 import { calculatorsInCategory, calculatorUrl, type CalculatorMeta } from '../calculators/registry';
+import { breadcrumbLd, faqLd, webAppLd, absoluteUrl } from '../utils/seo';
 
 interface Props {
   lang: Lang;
@@ -18,9 +19,29 @@ const faq = Array.from({ length: calc.faqCount }, (_, i) => ({
   a: t(`${base}.faq${i + 1}a`),
 }));
 const related = calculatorsInCategory(calc.category).filter((c) => c.slug !== calc.slug);
+
+const pagePath = calculatorUrl(lang, calc);
+const name = t(`${base}.name`);
+const jsonLd = [
+  breadcrumbLd(
+    [
+      { name: t('ui.home'), path: `/${lang}/` },
+      { name: t(`categories.${calc.category}.name`), path: `/${lang}/${calc.category}/` },
+      { name, path: pagePath },
+    ],
+    Astro.site!,
+  ),
+  webAppLd({
+    name,
+    description: t(`${base}.description`),
+    url: absoluteUrl(pagePath, Astro.site!),
+    lang,
+  }),
+  ...(faq.length > 0 ? [faqLd(faq)] : []),
+];
 ---
 
-<MainLayout title={t(`${base}.title`)} description={t(`${base}.description`)} lang={lang}>
+<MainLayout title={t(`${base}.title`)} description={t(`${base}.description`)} lang={lang} jsonLd={jsonLd}>
   <div class="mx-auto max-w-3xl px-4 py-8">
     <Breadcrumbs
       items={[

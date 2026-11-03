@@ -3,20 +3,26 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { languages, switchLangPath, type Lang } from '../i18n';
+import { jsonLdString, ogLocales } from '../utils/seo';
 
 interface Props {
   title: string;
   description?: string;
   lang: Lang;
+  /** Структуровані дані (schema.org), кожен об’єкт — окремий <script> */
+  jsonLd?: object[];
+  /** Службові сторінки (404): не індексувати, без canonical і hreflang */
+  noindex?: boolean;
 }
 
-const { title, description = '', lang } = Astro.props;
+const { title, description = '', lang, jsonLd = [], noindex = false } = Astro.props;
 const path = Astro.url.pathname;
 const canonical = new URL(path, Astro.site).href;
 const alternates = (Object.keys(languages) as Lang[]).map((code) => ({
   code,
   href: new URL(switchLangPath(path, code), Astro.site).href,
 }));
+const ogImage = new URL('/og-image.png', Astro.site).href;
 ---
 
 <!doctype html>
@@ -26,10 +32,34 @@ const alternates = (Object.keys(languages) as Lang[]).map((code) => ({
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#1d63d8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonical} />
-    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
-    <link rel="alternate" hreflang="x-default" href={alternates[0]!.href} />
+
+    {noindex ? (
+      <meta name="robots" content="noindex, follow" />
+    ) : (
+      <>
+        <link rel="canonical" href={canonical} />
+        {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+        <link rel="alternate" hreflang="x-default" href={alternates[0]!.href} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="CalcHub" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content={ogLocales[lang]} />
+        {(Object.keys(languages) as Lang[])
+          .filter((code) => code !== lang)
+          .map((code) => <meta property="og:locale:alternate" content={ogLocales[code]} />)}
+        <meta name="twitter:card" content="summary_large_image" />
+      </>
+    )}
+
+    {jsonLd.map((data) => <script type="application/ld+json" set:html={jsonLdString(data)} />)}
   </head>
   <body class="bg-white font-sans text-slate-900 antialiased">
     <div class="flex min-h-screen flex-col">
