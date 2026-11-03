@@ -65,6 +65,6 @@ test('кожен калькулятор має всі потрібні пере�
 });
 
 test('усі одиниці, що використовуються, мають переклад', () => {
-  const used = ['m','cm','mm','km','mi','yd','ft','in','kg','g','mg','t','lb','oz','m2','cm2','mm2','ft2','m3','cm3','mm3','ft3','L'];
+  const used = ['m','cm','mm','km','mi','yd','ft','in','kg','g','mg','t','lb','oz','m2','cm2','mm2','ft2','m3','cm3','mm3','ft3','L','L100','L10','kmL'];
   for (const l of langs) for (const u of used) assert.ok(get(l, `units.${u}`), `${l}: units.${u}`);
 });

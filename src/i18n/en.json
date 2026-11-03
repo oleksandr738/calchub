@@ -376,6 +376,216 @@
       "faq1a": "One pound is 453.59237 g (about 454 g).",
       "faq2q": "How many ounces are in a kilogram?",
       "faq2a": "A kilogram is about 35.274 ounces."
+    },
+    "fuel-consumption-calculator": {
+      "title": "Online fuel consumption calculator — CalcHub",
+      "name": "Fuel consumption calculator",
+      "description": "Free fuel consumption calculator: find your consumption in litres per 100 km from the distance driven and the fuel used.",
+      "intro": "Enter the distance driven and the fuel used to see the consumption per 100 km.",
+      "keywords": "fuel consumption petrol gasoline diesel l/100km mpg litres витрата пального bränsleförbrukning",
+      "howItWorks": "Consumption per 100 km equals the fuel used divided by the distance driven and multiplied by 100. The inverse is how many kilometres the car covers on one litre.",
+      "example": "Drove 450 km, used 31.5 L: 31.5 ÷ 450 × 100 = 7 L/100 km.",
+      "fields": {
+        "distance": {
+          "label": "Distance driven (km)"
+        },
+        "fuel": {
+          "label": "Fuel used (L)"
+        }
+      },
+      "outputs": {
+        "consumption": "Consumption per 100 km",
+        "consumptionMil": "Consumption per 10 km",
+        "kmPerLiter": "Distance per litre"
+      },
+      "faq1q": "How do I calculate fuel consumption per 100 km?",
+      "faq1a": "Divide the fuel used by the distance driven and multiply by 100. For example, 31.5 L over 450 km: 31.5 ÷ 450 × 100 = 7 L/100 km.",
+      "faq2q": "How can I measure fuel consumption accurately?",
+      "faq2a": "Fill the tank completely, reset the trip meter, drive as usual, then fill the tank completely again. Use the amount of fuel added and the distance on the trip meter for the calculation."
+    },
+    "trip-cost-calculator": {
+      "title": "Online trip cost calculator — CalcHub",
+      "name": "Trip cost calculator",
+      "description": "Free car trip cost calculator: work out the fuel needed and the cost from distance, consumption and fuel price.",
+      "intro": "Enter the distance, your car’s consumption and the fuel price to see how many litres you need and what it will cost.",
+      "keywords": "trip cost fuel cost petrol gasoline price car journey resekostnad вартість поїздки",
+      "howItWorks": "Fuel needed = distance × consumption per 100 km ÷ 100. Trip cost = fuel needed × price per litre. For a round trip the distance is doubled.",
+      "example": "Distance 300 km, consumption 7 L/100 km, price 55 per litre: 300 × 7 ÷ 100 = 21 L, cost 21 × 55 = 1155.",
+      "fields": {
+        "trip": {
+          "label": "Trip type",
+          "options": {
+            "oneWay": "One way",
+            "roundTrip": "Round trip"
+          }
+        },
+        "distance": {
+          "label": "Distance (km, one way)"
+        },
+        "consumption": {
+          "label": "Car consumption (L/100 km)"
+        },
+        "price": {
+          "label": "Fuel price per litre"
+        }
+      },
+      "outputs": {
+        "cost": "Trip cost",
+        "fuel": "Fuel needed",
+        "totalDistance": "Total distance"
+      },
+      "faq1q": "How do I calculate the cost of a car trip?",
+      "faq1a": "Multiply the distance by the consumption per 100 km and divide by 100 to get litres of fuel. Then multiply the litres by the price per litre.",
+      "faq2q": "Does the calculator include other costs?",
+      "faq2a": "No, only fuel. Tolls, parking and wear on the car need to be added separately."
+    },
+    "loan-calculator": {
+      "title": "Online loan calculator — CalcHub",
+      "name": "Loan calculator",
+      "description": "Free loan calculator: work out the monthly payment, total repayment and interest cost with annuity or equal-principal payments.",
+      "intro": "Enter the loan amount, annual interest rate and term to see the monthly payment, the total repaid and the interest cost.",
+      "keywords": "loan mortgage monthly payment annuity interest repayment lån кредит",
+      "howItWorks": "With an annuity loan the payment is the same every month: P × r ÷ (1 − (1 + r)^−n), where r is the monthly rate (annual rate ÷ 12 ÷ 100) and n is the number of months. With equal principal payments you repay the same part of the debt each month (P ÷ n) plus interest on the remaining balance, so payments fall over time. The result is an estimate: a lender’s real terms (fees, insurance) may differ.",
+      "example": "Loan of 100,000 over 12 months at 12% a year (annuity): payment ≈ 8,884.88, total ≈ 106,618.55, interest ≈ 6,618.55.",
+      "fields": {
+        "type": {
+          "label": "Repayment type",
+          "options": {
+            "annuity": "Annuity (equal payments)",
+            "differentiated": "Equal principal (falling payments)"
+          }
+        },
+        "amount": {
+          "label": "Loan amount"
+        },
+        "rate": {
+          "label": "Annual interest rate (%)"
+        },
+        "term": {
+          "label": "Term"
+        },
+        "termUnit": {
+          "label": "Term unit",
+          "options": {
+            "years": "Years",
+            "months": "Months"
+          }
+        }
+      },
+      "outputs": {
+        "payment": "Monthly payment",
+        "firstPayment": "First payment",
+        "lastPayment": "Last payment",
+        "total": "Total repaid",
+        "overpayment": "Interest cost"
+      },
+      "faq1q": "What is the difference between annuity and equal-principal payments?",
+      "faq1a": "Annuity payments are the same throughout the term, so interest makes up most of the early payments. Equal-principal payments start higher and fall each month, and the total interest is usually lower.",
+      "faq2q": "Why can the bank’s actual payment differ?",
+      "faq2a": "A lender may add fees or insurance, accrue interest differently and round payments. The calculator shows a simplified formula-based estimate."
+    },
+    "concrete-calculator": {
+      "title": "Online concrete calculator — CalcHub",
+      "name": "Concrete calculator",
+      "description": "Free concrete calculator: work out the volume of concrete for a slab, foundation or screed from length, width and thickness, with a reserve.",
+      "intro": "Enter the slab dimensions and a reserve to see the concrete volume you need in cubic metres.",
+      "keywords": "concrete slab foundation screed cubic meters betong бетон",
+      "howItWorks": "The concrete volume is length × width × thickness (thickness converted from centimetres to metres). An allowance for waste and uneven ground is usually added, typically 5–10%.",
+      "example": "A 6 × 4 m slab 15 cm thick with a 5% reserve: 6 × 4 × 0.15 = 3.6 m³; with the reserve, 3.78 m³.",
+      "fields": {
+        "length": {
+          "label": "Length (m)"
+        },
+        "width": {
+          "label": "Width (m)"
+        },
+        "thickness": {
+          "label": "Thickness (cm)"
+        },
+        "reserve": {
+          "label": "Reserve (%)"
+        }
+      },
+      "outputs": {
+        "withReserve": "Concrete needed (with reserve)",
+        "volume": "Volume without reserve"
+      },
+      "faq1q": "How much concrete do I need for a slab or foundation?",
+      "faq1a": "Multiply the length by the width and by the thickness, all in metres. For a 6 × 4 m slab 15 cm thick: 6 × 4 × 0.15 = 3.6 m³.",
+      "faq2q": "Why add a reserve?",
+      "faq2a": "Some concrete is lost while pouring and the base is rarely perfectly level. A reserve of a few per cent is therefore added to the calculated volume."
+    },
+    "tile-calculator": {
+      "title": "Online tile calculator — CalcHub",
+      "name": "Tile calculator",
+      "description": "Free tile calculator: work out how many tiles you need for a floor or wall from the surface size, tile size and a cutting reserve.",
+      "intro": "Enter the surface dimensions, the size of one tile and a reserve to see how many tiles to buy.",
+      "keywords": "tile calculator tiles floor wall number of tiles kakel плитка",
+      "howItWorks": "Number of tiles = surface area ÷ area of one tile, rounded up. The reserve (usually 5–15%) covers cutting, breakage and pattern matching. Grout joints are not taken into account.",
+      "example": "Surface 4 × 3 m (12 m²), 30 × 30 cm tiles, 10% reserve: 12 ÷ 0.09 = 133.3 → 134 tiles without reserve; with reserve, 147 tiles.",
+      "fields": {
+        "length": {
+          "label": "Surface length (m)"
+        },
+        "width": {
+          "label": "Surface width (m)"
+        },
+        "tileLength": {
+          "label": "Tile length (cm)"
+        },
+        "tileWidth": {
+          "label": "Tile width (cm)"
+        },
+        "reserve": {
+          "label": "Reserve (%)"
+        }
+      },
+      "outputs": {
+        "tiles": "Tiles with reserve",
+        "tilesExact": "Tiles without reserve",
+        "area": "Surface area"
+      },
+      "faq1q": "How many tiles do I need for a floor?",
+      "faq1a": "Divide the floor area by the area of one tile and round up. For example, 12 m² and 30 × 30 cm tiles (0.09 m²): 12 ÷ 0.09 ≈ 133.3, so 134 tiles without a reserve.",
+      "faq2q": "How large a reserve should I take?",
+      "faq2a": "Typically 5–10% for a simple layout and up to 15% for a diagonal or complex pattern. This is a rule of thumb: the exact figure depends on the room shape."
+    },
+    "paint-calculator": {
+      "title": "Online paint calculator — CalcHub",
+      "name": "Paint calculator",
+      "description": "Free paint calculator: work out how many litres of paint you need for walls or a ceiling from the area, number of coats and coverage per square metre.",
+      "intro": "Enter the area, the number of coats and the paint coverage to see the volume you need and how many cans to buy.",
+      "keywords": "paint calculator walls ceiling litres cans färg фарба",
+      "howItWorks": "Paint volume = area × number of coats ÷ coverage (how many m² one litre covers, stated on the can). The number of cans is the volume divided by the can size, rounded up.",
+      "example": "Area 40 m², 2 coats, coverage 10 m²/L: 40 × 2 ÷ 10 = 8 L; that is 2 cans of 5 L.",
+      "fields": {
+        "area": {
+          "label": "Surface area (m²)"
+        },
+        "coats": {
+          "label": "Number of coats"
+        },
+        "coverage": {
+          "label": "Coverage (m² per 1 L)"
+        },
+        "can": {
+          "label": "Can size",
+          "options": {
+            "l1": "1 L",
+            "l2_5": "2.5 L",
+            "l5": "5 L",
+            "l10": "10 L"
+          }
+        }
+      },
+      "outputs": {
+        "liters": "Paint needed",
+        "cans": "Cans"
+      },
+      "faq1q": "Where can I find the paint coverage?",
+      "faq1a": "It is usually printed on the can as square metres per litre for one coat. Rough surfaces take more paint.",
+      "faq2q": "Does the calculator account for windows and doors?",
+      "faq2a": "No. Enter the area you actually need to paint: subtract windows and doors from the wall area."
     }
   },
   "units": {
@@ -401,6 +611,9 @@
     "cm3": "cm³",
     "mm3": "mm³",
     "ft3": "ft³",
-    "L": "L"
+    "L": "L",
+    "L100": "L/100 km",
+    "L10": "L/10 km",
+    "kmL": "km/L"
   }
 }

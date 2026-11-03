@@ -70,6 +70,50 @@ export const calculators: CalculatorMeta[] = [
     faqCount: 2,
     load: () => import('./conversion/mass.ts'),
   },
+  {
+    slug: 'fuel-consumption-calculator',
+    category: 'automotive',
+    icon: '⛽',
+    popular: true,
+    faqCount: 2,
+    load: () => import('./automotive/fuel-consumption.ts'),
+  },
+  {
+    slug: 'trip-cost-calculator',
+    category: 'automotive',
+    icon: '🧭',
+    faqCount: 2,
+    load: () => import('./automotive/trip-cost.ts'),
+  },
+  {
+    slug: 'loan-calculator',
+    category: 'finance',
+    icon: '🏦',
+    popular: true,
+    faqCount: 2,
+    load: () => import('./finance/loan.ts'),
+  },
+  {
+    slug: 'concrete-calculator',
+    category: 'construction',
+    icon: '🧱',
+    faqCount: 2,
+    load: () => import('./construction/concrete.ts'),
+  },
+  {
+    slug: 'tile-calculator',
+    category: 'construction',
+    icon: '🔲',
+    faqCount: 2,
+    load: () => import('./construction/tile.ts'),
+  },
+  {
+    slug: 'paint-calculator',
+    category: 'construction',
+    icon: '🎨',
+    faqCount: 2,
+    load: () => import('./construction/paint.ts'),
+  },
 ];
 
 export function calculatorUrl(lang: string, c: CalculatorMeta): string {

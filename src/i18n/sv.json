@@ -376,6 +376,216 @@
       "faq1a": "Ett pund är 453,59237 g (cirka 454 g).",
       "faq2q": "Hur många uns går det på ett kilogram?",
       "faq2a": "Ett kilogram är cirka 35,274 uns."
+    },
+    "fuel-consumption-calculator": {
+      "title": "Bränsleförbrukningskalkylator online — CalcHub",
+      "name": "Bränsleförbrukningskalkylator",
+      "description": "Gratis kalkylator för bränsleförbrukning: räkna ut förbrukningen i liter per 100 km och per mil utifrån körd sträcka och använt bränsle.",
+      "intro": "Ange körd sträcka och använt bränsle så ser du förbrukningen per 100 km och per mil.",
+      "keywords": "bränsleförbrukning bensin diesel liter per mil l/100 km fuel consumption витрата пального",
+      "howItWorks": "Förbrukningen per 100 km är använt bränsle delat med körd sträcka och multiplicerat med 100. En svensk mil är 10 km, så förbrukningen per mil är en tiondel av värdet per 100 km.",
+      "example": "Körde 450 km och använde 31,5 l: 31,5 ÷ 450 × 100 = 7 l/100 km, alltså 0,7 l/mil.",
+      "fields": {
+        "distance": {
+          "label": "Körd sträcka (km)"
+        },
+        "fuel": {
+          "label": "Använt bränsle (l)"
+        }
+      },
+      "outputs": {
+        "consumption": "Förbrukning per 100 km",
+        "consumptionMil": "Förbrukning per mil (10 km)",
+        "kmPerLiter": "Sträcka per liter"
+      },
+      "faq1q": "Hur räknar man ut bränsleförbrukningen per 100 km?",
+      "faq1a": "Dela använt bränsle med körd sträcka och multiplicera med 100. Till exempel 31,5 l på 450 km: 31,5 ÷ 450 × 100 = 7 l/100 km.",
+      "faq2q": "Hur mäter man bränsleförbrukningen så exakt som möjligt?",
+      "faq2a": "Fyll tanken helt, nollställ trippmätaren, kör som vanligt och fyll sedan tanken helt igen. Använd mängden tankat bränsle och sträckan på trippmätaren i beräkningen."
+    },
+    "trip-cost-calculator": {
+      "title": "Resekostnad för bil online — CalcHub",
+      "name": "Resekostnad för bil",
+      "description": "Gratis kalkylator för resekostnad med bil: räkna ut bränslebehov och kostnad utifrån sträcka, förbrukning och bränslepris.",
+      "intro": "Ange sträcka, bilens förbrukning och bränslepriset så ser du hur många liter du behöver och vad det kostar.",
+      "keywords": "resekostnad bränslekostnad bil pris per liter trip cost вартість поїздки",
+      "howItWorks": "Bränslebehov = sträcka × förbrukning per 100 km ÷ 100. Resekostnad = bränslebehov × literpris. Vid tur och retur dubbleras sträckan.",
+      "example": "Sträcka 300 km, förbrukning 7 l/100 km, pris 55 per liter: 300 × 7 ÷ 100 = 21 l, kostnad 21 × 55 = 1155.",
+      "fields": {
+        "trip": {
+          "label": "Typ av resa",
+          "options": {
+            "oneWay": "Enkel resa",
+            "roundTrip": "Tur och retur"
+          }
+        },
+        "distance": {
+          "label": "Sträcka (km, enkel resa)"
+        },
+        "consumption": {
+          "label": "Bilens förbrukning (l/100 km)"
+        },
+        "price": {
+          "label": "Bränslepris per liter"
+        }
+      },
+      "outputs": {
+        "cost": "Resekostnad",
+        "fuel": "Bränsle som behövs",
+        "totalDistance": "Total sträcka"
+      },
+      "faq1q": "Hur räknar man ut kostnaden för en bilresa?",
+      "faq1a": "Multiplicera sträckan med förbrukningen per 100 km och dela med 100 – det är antalet liter. Multiplicera sedan litrarna med literpriset.",
+      "faq2q": "Ingår andra kostnader i beräkningen?",
+      "faq2a": "Nej, bara bränslet. Vägtullar, parkering och slitage på bilen får du lägga till själv."
+    },
+    "loan-calculator": {
+      "title": "Lånekalkylator online — CalcHub",
+      "name": "Lånekalkylator",
+      "description": "Gratis lånekalkylator: räkna ut månadsbetalning, total återbetalning och räntekostnad med annuitet eller rak amortering.",
+      "intro": "Ange lånebelopp, årsränta och löptid så ser du månadsbetalningen, totalt återbetalt belopp och räntekostnaden.",
+      "keywords": "lån bolån månadsbetalning annuitet ränta amortering loan кредит",
+      "howItWorks": "Vid annuitetslån är betalningen lika stor varje månad: P × r ÷ (1 − (1 + r)^−n), där r är månadsräntan (årsränta ÷ 12 ÷ 100) och n antalet månader. Vid rak amortering betalar du av lika mycket på skulden varje månad (P ÷ n) plus ränta på den återstående skulden, så betalningarna minskar över tid. Resultatet är en uppskattning: långivarens faktiska villkor (avgifter, försäkring) kan skilja sig.",
+      "example": "Lån på 100 000 över 12 månader med 12 % årsränta (annuitet): betalning ≈ 8 884,88, totalt ≈ 106 618,55, ränta ≈ 6 618,55.",
+      "fields": {
+        "type": {
+          "label": "Typ av återbetalning",
+          "options": {
+            "annuity": "Annuitet (lika betalningar)",
+            "differentiated": "Rak amortering (minskande betalningar)"
+          }
+        },
+        "amount": {
+          "label": "Lånebelopp"
+        },
+        "rate": {
+          "label": "Årsränta (%)"
+        },
+        "term": {
+          "label": "Löptid"
+        },
+        "termUnit": {
+          "label": "Enhet för löptid",
+          "options": {
+            "years": "År",
+            "months": "Månader"
+          }
+        }
+      },
+      "outputs": {
+        "payment": "Månadsbetalning",
+        "firstPayment": "Första betalningen",
+        "lastPayment": "Sista betalningen",
+        "total": "Totalt återbetalt",
+        "overpayment": "Räntekostnad"
+      },
+      "faq1q": "Vad är skillnaden mellan annuitet och rak amortering?",
+      "faq1a": "Vid annuitet är betalningarna lika stora under hela löptiden, så räntan utgör större delen av de första betalningarna. Vid rak amortering börjar betalningarna högre och minskar varje månad, och den totala räntekostnaden blir oftast lägre.",
+      "faq2q": "Varför kan bankens faktiska betalning skilja sig?",
+      "faq2a": "Långivaren kan lägga till avgifter eller försäkring, beräkna ränta på ett annat sätt och avrunda betalningarna. Kalkylatorn visar en förenklad uppskattning enligt formeln."
+    },
+    "concrete-calculator": {
+      "title": "Betongkalkylator online — CalcHub",
+      "name": "Betongkalkylator",
+      "description": "Gratis betongkalkylator: räkna ut betongvolymen för en platta, ett grund eller en avjämning utifrån längd, bredd och tjocklek, med reserv.",
+      "intro": "Ange plattans mått och en reserv så ser du hur mycket betong du behöver i kubikmeter.",
+      "keywords": "betong platta grund gjutning kubikmeter concrete бетон",
+      "howItWorks": "Betongvolymen är längd × bredd × tjocklek (tjockleken omvandlas från centimeter till meter). Ett tillägg för spill och ojämnt underlag brukar läggas på, vanligen 5–10 %.",
+      "example": "En platta på 6 × 4 m och 15 cm tjocklek med 5 % reserv: 6 × 4 × 0,15 = 3,6 m³; med reserv 3,78 m³.",
+      "fields": {
+        "length": {
+          "label": "Längd (m)"
+        },
+        "width": {
+          "label": "Bredd (m)"
+        },
+        "thickness": {
+          "label": "Tjocklek (cm)"
+        },
+        "reserve": {
+          "label": "Reserv (%)"
+        }
+      },
+      "outputs": {
+        "withReserve": "Betong som behövs (med reserv)",
+        "volume": "Volym utan reserv"
+      },
+      "faq1q": "Hur mycket betong behöver jag till en platta eller ett grund?",
+      "faq1a": "Multiplicera längd, bredd och tjocklek, alla i meter. För en platta på 6 × 4 m och 15 cm tjocklek: 6 × 4 × 0,15 = 3,6 m³.",
+      "faq2q": "Varför lägga på en reserv?",
+      "faq2a": "En del betong går åt som spill vid gjutningen och underlaget är sällan helt plant. Därför läggs en reserv på några procent på den beräknade volymen."
+    },
+    "tile-calculator": {
+      "title": "Kakelkalkylator online — CalcHub",
+      "name": "Kakelkalkylator",
+      "description": "Gratis kakelkalkylator: räkna ut hur många plattor du behöver till golv eller vägg utifrån ytans mått, plattans storlek och reserv för kapning.",
+      "intro": "Ange ytans mått, storleken på en platta och en reserv så ser du hur många plattor du ska köpa.",
+      "keywords": "kakel klinker golv vägg antal plattor tile плитка",
+      "howItWorks": "Antal plattor = ytans area ÷ en plattas area, avrundat uppåt. Reserven (vanligen 5–15 %) täcker kapning, svinn och mönsterpassning. Fogar räknas inte med.",
+      "example": "Yta 4 × 3 m (12 m²), plattor 30 × 30 cm, 10 % reserv: 12 ÷ 0,09 = 133,3 → 134 plattor utan reserv; med reserv 147 plattor.",
+      "fields": {
+        "length": {
+          "label": "Ytans längd (m)"
+        },
+        "width": {
+          "label": "Ytans bredd (m)"
+        },
+        "tileLength": {
+          "label": "Plattans längd (cm)"
+        },
+        "tileWidth": {
+          "label": "Plattans bredd (cm)"
+        },
+        "reserve": {
+          "label": "Reserv (%)"
+        }
+      },
+      "outputs": {
+        "tiles": "Plattor med reserv",
+        "tilesExact": "Plattor utan reserv",
+        "area": "Ytans area"
+      },
+      "faq1q": "Hur många plattor behöver jag till ett golv?",
+      "faq1a": "Dela golvets area med en plattas area och avrunda uppåt. Till exempel 12 m² och plattor på 30 × 30 cm (0,09 m²): 12 ÷ 0,09 ≈ 133,3, alltså 134 plattor utan reserv.",
+      "faq2q": "Hur stor reserv bör jag räkna med?",
+      "faq2a": "Vanligen 5–10 % för enkel läggning och upp till 15 % för diagonal eller komplicerad läggning. Det är en tumregel: exakt värde beror på rummets form."
+    },
+    "paint-calculator": {
+      "title": "Färgkalkylator online — CalcHub",
+      "name": "Färgkalkylator",
+      "description": "Gratis färgkalkylator: räkna ut hur många liter färg du behöver till väggar eller tak utifrån area, antal strykningar och täckning per kvadratmeter.",
+      "intro": "Ange area, antal strykningar och färgens täckning så ser du hur mycket du behöver och hur många burkar du ska köpa.",
+      "keywords": "färg måla väggar tak liter burkar paint фарба",
+      "howItWorks": "Färgmängd = area × antal strykningar ÷ täckning (hur många m² en liter räcker till, anges på burken). Antal burkar är mängden delad med burkstorleken, avrundat uppåt.",
+      "example": "Area 40 m², 2 strykningar, täckning 10 m²/l: 40 × 2 ÷ 10 = 8 l; det blir 2 burkar på 5 l.",
+      "fields": {
+        "area": {
+          "label": "Ytans area (m²)"
+        },
+        "coats": {
+          "label": "Antal strykningar"
+        },
+        "coverage": {
+          "label": "Täckning (m² per 1 l)"
+        },
+        "can": {
+          "label": "Burkstorlek",
+          "options": {
+            "l1": "1 l",
+            "l2_5": "2,5 l",
+            "l5": "5 l",
+            "l10": "10 l"
+          }
+        }
+      },
+      "outputs": {
+        "liters": "Färg som behövs",
+        "cans": "Burkar"
+      },
+      "faq1q": "Var hittar jag färgens täckning?",
+      "faq1a": "Den står oftast på burken som kvadratmeter per liter för en strykning. Grova ytor kräver mer färg.",
+      "faq2q": "Räknar kalkylatorn bort fönster och dörrar?",
+      "faq2a": "Nej. Ange den area du faktiskt ska måla: dra av fönster och dörrar från väggarean."
     }
   },
   "units": {
@@ -401,6 +611,9 @@
     "cm3": "cm³",
     "mm3": "mm³",
     "ft3": "ft³",
-    "L": "l"
+    "L": "l",
+    "L100": "l/100 km",
+    "L10": "l/mil",
+    "kmL": "km/l"
   }
 }
