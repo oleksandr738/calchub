@@ -114,6 +114,28 @@ export const calculators: CalculatorMeta[] = [
     faqCount: 2,
     load: () => import('./construction/paint.ts'),
   },
+  {
+    slug: 'age-calculator',
+    category: 'everyday',
+    icon: '🎂',
+    popular: true,
+    faqCount: 2,
+    load: () => import('./everyday/age.ts'),
+  },
+  {
+    slug: 'days-between-dates-calculator',
+    category: 'everyday',
+    icon: '📆',
+    faqCount: 2,
+    load: () => import('./everyday/days-between.ts'),
+  },
+  {
+    slug: 'days-until-calculator',
+    category: 'everyday',
+    icon: '⏳',
+    faqCount: 2,
+    load: () => import('./everyday/days-until.ts'),
+  },
 ];
 
 export function calculatorUrl(lang: string, c: CalculatorMeta): string {

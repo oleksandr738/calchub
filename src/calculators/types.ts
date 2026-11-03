@@ -9,7 +9,9 @@ export interface ShowWhen {
 
 export type FieldDef =
   | { id: string; type: 'number'; placeholder?: string; min?: number; showWhen?: ShowWhen }
-  | { id: string; type: 'select'; options: string[]; default?: string; showWhen?: ShowWhen };
+  | { id: string; type: 'select'; options: string[]; default?: string; showWhen?: ShowWhen }
+  /** Дата у форматі YYYY-MM-DD; default: 'today' підставляє сьогоднішню дату в браузері */
+  | { id: string; type: 'date'; default?: 'today'; showWhen?: ShowWhen };
 
 export interface OutputDef {
   id: string;
@@ -28,7 +30,7 @@ export interface StepsContext {
   unit: (key: string) => string;
 }
 
-export type ComputeError = 'divisionByZero' | 'overflow' | 'outOfRange' | 'negative';
+export type ComputeError = 'divisionByZero' | 'overflow' | 'outOfRange' | 'negative' | 'dateOrder';
 
 export type ComputeResult =
   | { ok: true; outputs: OutputDef[]; steps?: (ctx: StepsContext) => string }

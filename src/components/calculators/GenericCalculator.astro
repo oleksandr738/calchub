@@ -28,7 +28,7 @@ const unitKeys = [
   'm', 'cm', 'mm', 'km', 'mi', 'yd', 'ft', 'in', 'kg', 'g', 'mg', 't', 'lb', 'oz',
   'm2', 'cm2', 'mm2', 'ft2', 'm3', 'cm3', 'mm3', 'ft3', 'L', 'L100', 'L10', 'kmL',
 ];
-const errorKeys = ['invalid', 'negative', 'divisionByZero', 'overflow', 'outOfRange'];
+const errorKeys = ['invalid', 'invalidDate', 'negative', 'divisionByZero', 'overflow', 'outOfRange', 'dateOrder'];
 
 // Тексти для скрипта в браузері
 const messages = {
@@ -66,6 +66,15 @@ const inputClass =
               </option>
             ))}
           </select>
+        ) : f.type === 'date' ? (
+          <input
+            id={`gc-${f.id}`}
+            data-input={f.id}
+            data-default={f.default}
+            type="date"
+            aria-describedby="gc-error"
+            class={inputClass}
+          />
         ) : (
           <input
             id={`gc-${f.id}`}
@@ -127,7 +136,7 @@ const inputClass =
 <script>
   import { calculators } from '../../calculators/registry';
   import type { Values } from '../../calculators/types';
-  import { parseNumber } from '../../utils/validation';
+  import { parseNumber, parseISODate } from '../../utils/validation';
   import { formatNumber } from '../../utils/formatNumber';
 
   const root = document.querySelector<HTMLElement>('[data-generic-calculator]');
@@ -152,6 +161,16 @@ const inputClass =
     const stepsBox = role('steps');
     const resetBtn = role('reset') as HTMLButtonElement;
     const copyBtn = role('copy') as HTMLButtonElement;
+
+    // Сьогоднішня дата за локальним часом користувача (YYYY-MM-DD)
+    const todayISO = () => {
+      const now = new Date();
+      const pad = (n: number) => String(n).padStart(2, '0');
+      return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+    };
+    for (const f of def.fields) {
+      if (f.type === 'date' && f.default === 'today') inputOf(f.id).value = todayISO();
+    }
 
     let copyText = '';
     let copyTimer: number | undefined;
@@ -201,6 +220,7 @@ const inputClass =
       // 2. Збираємо значення видимих полів
       const values: Values = {};
       const invalid: string[] = [];
+      const invalidDates: string[] = [];
       const negative: string[] = [];
       let empty = false;
 
@@ -208,6 +228,13 @@ const inputClass =
         const el = inputOf(f.id);
         if (f.type === 'select') {
           values[f.id] = el.value;
+          continue;
+        }
+        if (f.type === 'date') {
+          const parsed = parseISODate(el.value);
+          if (parsed.status === 'invalid') invalidDates.push(f.id);
+          else if (parsed.status === 'empty') empty = true;
+          else values[f.id] = parsed.value;
           continue;
         }
         const parsed = parseNumber(el.value);
@@ -219,6 +246,10 @@ const inputClass =
         }
       }
 
+      if (invalidDates.length > 0) {
+        showError(msg.errors.invalidDate, invalidDates);
+        return clearResult('');
+      }
       if (invalid.length > 0) {
         showError(msg.errors.invalid, invalid);
         return clearResult('');
@@ -276,8 +307,8 @@ const inputClass =
     resetBtn.addEventListener('click', () => {
       let first: HTMLElement | null = null;
       for (const f of def.fields) {
-        if (f.type === 'number') {
-          inputOf(f.id).value = '';
+        if (f.type === 'number' || f.type === 'date') {
+          inputOf(f.id).value = f.type === 'date' && f.default === 'today' ? todayISO() : '';
           if (!first && !wrapperOf(f.id).hidden) first = inputOf(f.id);
         }
       }

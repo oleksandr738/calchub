@@ -62,12 +62,14 @@
     "reset": "Reset",
     "copy": "Copy result",
     "copied": "Copied",
-    "hint": "Enter both numbers to see the result.",
+    "hint": "Fill in all fields to see the result.",
     "invalid": "Enter a number using digits. Use a dot or a comma as the decimal separator.",
     "divisionByZero": "Division by zero is not possible. Change the values.",
     "overflow": "The number is too large to calculate.",
     "negative": "The value cannot be negative.",
-    "outOfRange": "The value is outside the allowed range."
+    "outOfRange": "The value is outside the allowed range.",
+    "invalidDate": "Enter a valid date.",
+    "dateOrder": "The first date cannot be later than the second."
   },
   "calculators": {
     "percentage-calculator": {
@@ -586,6 +588,95 @@
       "faq1a": "It is usually printed on the can as square metres per litre for one coat. Rough surfaces take more paint.",
       "faq2q": "Does the calculator account for windows and doors?",
       "faq2a": "No. Enter the area you actually need to paint: subtract windows and doors from the wall area."
+    },
+    "age-calculator": {
+      "title": "Online age calculator — CalcHub",
+      "name": "Age calculator",
+      "description": "Free age calculator: find your exact age in years, months and days, the number of days lived and the days until your next birthday.",
+      "intro": "Enter a date of birth to see the age in years, months and days. The calculation is as of today by default, but you can change the date.",
+      "keywords": "age date of birth how old birthday days lived ålder födelsedag вік",
+      "howItWorks": "The birth year is subtracted from the year of the calculation date, then months and days are adjusted if the birthday has not yet come this year. For people born on 29 February, the birthday is counted as 1 March in non-leap years.",
+      "example": "Born 15 May 1990, calculated on 10 March 2024: 33 years, 9 months and 24 days.",
+      "fields": {
+        "birth": {
+          "label": "Date of birth"
+        },
+        "asOf": {
+          "label": "Calculate as of"
+        }
+      },
+      "outputs": {
+        "years": "Full years",
+        "months": "Months",
+        "days": "Days",
+        "totalDays": "Total days lived",
+        "daysToBirthday": "Days until next birthday"
+      },
+      "faq1q": "How do I calculate an exact age?",
+      "faq1a": "Subtract the date of birth from the current date by years, months and days. If the day or month of the current date is smaller, borrow one from the next larger unit, just like in column subtraction.",
+      "faq2q": "How is age counted for a 29 February birthday?",
+      "faq2a": "In leap years the birthday falls on 29 February, and in other years this calculator treats 1 March as the birthday. Rules differ between countries."
+    },
+    "days-between-dates-calculator": {
+      "title": "Online days between dates calculator — CalcHub",
+      "name": "Days between dates calculator",
+      "description": "Free calculator for the number of days, weeks and working days between two dates.",
+      "intro": "Choose a start and an end date to see the number of days, full weeks and working days.",
+      "keywords": "days between dates date difference number of days working days weeks dagar mellan datum arbetsdagar",
+      "howItWorks": "The calculator finds the difference between two dates in days. By default the end date is not included, but you can include it if needed. Working days are Monday to Friday; public holidays are not taken into account. If the start date is later than the end date, the dates are swapped.",
+      "example": "From 1 January to 1 February 2024: 31 days, which is 4 full weeks and 3 days, 23 of them working days.",
+      "fields": {
+        "start": {
+          "label": "Start date"
+        },
+        "end": {
+          "label": "End date"
+        },
+        "includeEnd": {
+          "label": "End date in the count",
+          "options": {
+            "no": "Do not include",
+            "yes": "Include"
+          }
+        }
+      },
+      "outputs": {
+        "days": "Days between the dates",
+        "weeks": "Full weeks",
+        "rest": "Remaining days",
+        "workdays": "Working days"
+      },
+      "faq1q": "Is the end date counted?",
+      "faq1a": "Not by default: from the 1st to the 2nd is one day. If you need to include both ends (for example, the number of days of a holiday), choose “Include”.",
+      "faq2q": "Does the calculator account for public holidays?",
+      "faq2a": "No. All days from Monday to Friday count as working days. Public and religious holidays have to be subtracted manually."
+    },
+    "days-until-calculator": {
+      "title": "Days until an event calculator — CalcHub",
+      "name": "Days until an event",
+      "description": "Free calculator: find out how many days, weeks and working days are left until a chosen date, or have passed since it.",
+      "intro": "Enter the date of the event to see how many days are left. The countdown starts from today by default.",
+      "keywords": "days until countdown event date holiday new year dagar kvar nedräkning скільки днів до",
+      "howItWorks": "The calculator subtracts the start date (today by default) from the event date. If the event has already passed, it shows how many days ago it was. Working days are Monday to Friday, without public holidays; the later of the two dates is not included in the count.",
+      "example": "From 1 to 25 December 2026: 24 days, 3 full weeks, 18 working days.",
+      "fields": {
+        "event": {
+          "label": "Event date"
+        },
+        "from": {
+          "label": "Count from"
+        }
+      },
+      "outputs": {
+        "days": "Days until the event",
+        "daysAgo": "Days since the event",
+        "weeks": "Full weeks",
+        "workdays": "Working days"
+      },
+      "faq1q": "What if the event has already passed?",
+      "faq1a": "The calculator shows how many days have passed from the event to the chosen start date.",
+      "faq2q": "Will the result change tomorrow?",
+      "faq2a": "Yes, if the countdown starts from today: the start date is filled in automatically when you open the page."
     }
   },
   "units": {

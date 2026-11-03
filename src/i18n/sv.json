@@ -62,12 +62,14 @@
     "reset": "Återställ",
     "copy": "Kopiera resultatet",
     "copied": "Kopierat",
-    "hint": "Ange båda talen för att se resultatet.",
+    "hint": "Fyll i alla fält för att se resultatet.",
     "invalid": "Ange ett tal med siffror. Använd punkt eller komma som decimaltecken.",
     "divisionByZero": "Division med noll är inte möjlig. Ändra värdena.",
     "overflow": "Talet är för stort för att beräknas.",
     "negative": "Värdet kan inte vara negativt.",
-    "outOfRange": "Värdet ligger utanför det tillåtna intervallet."
+    "outOfRange": "Värdet ligger utanför det tillåtna intervallet.",
+    "invalidDate": "Ange ett giltigt datum.",
+    "dateOrder": "Det första datumet kan inte ligga efter det andra."
   },
   "calculators": {
     "percentage-calculator": {
@@ -586,6 +588,95 @@
       "faq1a": "Den står oftast på burken som kvadratmeter per liter för en strykning. Grova ytor kräver mer färg.",
       "faq2q": "Räknar kalkylatorn bort fönster och dörrar?",
       "faq2a": "Nej. Ange den area du faktiskt ska måla: dra av fönster och dörrar från väggarean."
+    },
+    "age-calculator": {
+      "title": "Åldersräknare online — CalcHub",
+      "name": "Åldersräknare",
+      "description": "Gratis åldersräknare: räkna ut din exakta ålder i år, månader och dagar, antal levda dagar och dagar till nästa födelsedag.",
+      "intro": "Ange ett födelsedatum så ser du åldern i år, månader och dagar. Beräkningen görs som standard för idag, men du kan ändra datumet.",
+      "keywords": "ålder födelsedatum hur gammal födelsedag levda dagar age вік",
+      "howItWorks": "Födelseåret dras av från beräkningsdatumets år, därefter justeras månader och dagar om födelsedagen inte har inträffat i år. För den som är född den 29 februari räknas födelsedagen som 1 mars under år som inte är skottår.",
+      "example": "Född 15 maj 1990, beräknat den 10 mars 2024: 33 år, 9 månader och 24 dagar.",
+      "fields": {
+        "birth": {
+          "label": "Födelsedatum"
+        },
+        "asOf": {
+          "label": "Beräkna per datum"
+        }
+      },
+      "outputs": {
+        "years": "Hela år",
+        "months": "Månader",
+        "days": "Dagar",
+        "totalDays": "Totalt antal levda dagar",
+        "daysToBirthday": "Dagar till nästa födelsedag"
+      },
+      "faq1q": "Hur räknar man ut en exakt ålder?",
+      "faq1a": "Dra av födelsedatumet från dagens datum per år, månad och dag. Är dagen eller månaden i dagens datum mindre ”lånar” du en enhet från nästa större enhet, precis som vid subtraktion under varandra.",
+      "faq2q": "Hur räknas åldern för någon född den 29 februari?",
+      "faq2a": "Under skottår infaller födelsedagen den 29 februari, och övriga år räknar den här kalkylatorn 1 mars som födelsedag. Reglerna skiljer sig mellan länder."
+    },
+    "days-between-dates-calculator": {
+      "title": "Dagar mellan datum – kalkylator online — CalcHub",
+      "name": "Dagar mellan datum",
+      "description": "Gratis kalkylator för antal dagar, veckor och arbetsdagar mellan två datum.",
+      "intro": "Välj ett startdatum och ett slutdatum så ser du antal dagar, hela veckor och arbetsdagar.",
+      "keywords": "dagar mellan datum datumskillnad antal dagar arbetsdagar veckor days between dates дні між датами",
+      "howItWorks": "Kalkylatorn räknar skillnaden mellan två datum i dagar. Som standard räknas inte slutdatumet med, men du kan välja att inkludera det. Arbetsdagar är måndag till fredag; helgdagar tas inte med. Om startdatumet ligger efter slutdatumet byter datumen plats.",
+      "example": "Från 1 januari till 1 februari 2024: 31 dagar, alltså 4 hela veckor och 3 dagar, varav 23 arbetsdagar.",
+      "fields": {
+        "start": {
+          "label": "Startdatum"
+        },
+        "end": {
+          "label": "Slutdatum"
+        },
+        "includeEnd": {
+          "label": "Slutdatum i beräkningen",
+          "options": {
+            "no": "Räkna inte med",
+            "yes": "Räkna med"
+          }
+        }
+      },
+      "outputs": {
+        "days": "Dagar mellan datumen",
+        "weeks": "Hela veckor",
+        "rest": "Återstående dagar",
+        "workdays": "Arbetsdagar"
+      },
+      "faq1q": "Räknas slutdatumet med?",
+      "faq1a": "Inte som standard: från den 1:a till den 2:a är en dag. Behöver du ta med båda ändarna (till exempel antal semesterdagar) väljer du ”Räkna med”.",
+      "faq2q": "Tar kalkylatorn hänsyn till helgdagar?",
+      "faq2a": "Nej. Alla dagar från måndag till fredag räknas som arbetsdagar. Allmänna helgdagar och röda dagar får du dra av själv."
+    },
+    "days-until-calculator": {
+      "title": "Dagar kvar till en händelse — CalcHub",
+      "name": "Dagar kvar till en händelse",
+      "description": "Gratis kalkylator: ta reda på hur många dagar, veckor och arbetsdagar det är kvar till ett valt datum, eller har gått sedan det.",
+      "intro": "Ange händelsens datum så ser du hur många dagar det är kvar. Nedräkningen utgår som standard från idag.",
+      "keywords": "dagar kvar nedräkning händelse datum semester nyår days until скільки днів до",
+      "howItWorks": "Kalkylatorn drar av startdatumet (som standard idag) från händelsens datum. Har händelsen redan inträffat visas hur många dagar sedan det var. Arbetsdagar är måndag till fredag utan helgdagar; det senare av de två datumen räknas inte med.",
+      "example": "Från 1 till 25 december 2026: 24 dagar, 3 hela veckor, 18 arbetsdagar.",
+      "fields": {
+        "event": {
+          "label": "Händelsens datum"
+        },
+        "from": {
+          "label": "Räkna från"
+        }
+      },
+      "outputs": {
+        "days": "Dagar kvar till händelsen",
+        "daysAgo": "Dagar sedan händelsen",
+        "weeks": "Hela veckor",
+        "workdays": "Arbetsdagar"
+      },
+      "faq1q": "Vad händer om händelsen redan har inträffat?",
+      "faq1a": "Kalkylatorn visar hur många dagar som gått från händelsen till det valda startdatumet.",
+      "faq2q": "Ändras resultatet i morgon?",
+      "faq2a": "Ja, om nedräkningen utgår från idag: startdatumet fylls i automatiskt när du öppnar sidan."
     }
   },
   "units": {
