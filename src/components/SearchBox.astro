@@ -1,0 +1,195 @@
+---
+import { useTranslations, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div
+  class="relative w-full"
+  data-search
+  data-index-url={`/${lang}/search-index.json`}
+  data-no-results={t('ui.search.noResults')}
+>
+  <label for="site-search" class="sr-only">{t('ui.search.label')}</label>
+  <input
+    id="site-search"
+    type="search"
+    role="combobox"
+    aria-expanded="false"
+    aria-controls="site-search-list"
+    aria-autocomplete="list"
+    autocomplete="off"
+    placeholder={t('ui.search.placeholder')}
+    class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400"
+  />
+  <div
+    id="site-search-list"
+    role="listbox"
+    hidden
+    class="absolute left-0 right-0 z-20 mt-1 max-h-96 overflow-auto rounded-xl border border-slate-200 bg-white py-1 shadow-lg"
+  >
+  </div>
+</div>
+
+<script>
+  interface Item {
+    name: string;
+    description: string;
+    url: string;
+    category: string;
+    keywords: string;
+    icon: string;
+  }
+
+  const root = document.querySelector<HTMLElement>('[data-search]');
+
+  if (root) {
+    const input = root.querySelector<HTMLInputElement>('input')!;
+    const list = root.querySelector<HTMLElement>('[role="listbox"]')!;
+    const indexUrl = root.dataset.indexUrl!;
+    const noResultsText = root.dataset.noResults ?? '';
+
+    let index: Item[] | null = null;
+    let loading: Promise<void> | null = null;
+    let results: Item[] = [];
+    let active = -1;
+
+    // Нормалізація: без регістру й діакритики (å→a, й→и), щоб пошук прощав дрібні відмінності
+    const norm = (s: string) =>
+      s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+
+    // Локальний сервер віддає файл зі слешем в кінці, хостинг — без нього: пробуємо обидва
+    async function fetchIndex(): Promise<Item[]> {
+      for (const url of [indexUrl, `${indexUrl}/`]) {
+        try {
+          const r = await fetch(url);
+          if (r.ok) return (await r.json()) as Item[];
+        } catch {
+          // пробуємо наступну адресу
+        }
+      }
+      return [];
+    }
+
+    function loadIndex(): Promise<void> {
+      if (index) return Promise.resolve();
+      loading ??= fetchIndex().then((data) => {
+        index = data;
+      });
+      return loading;
+    }
+
+    function search(query: string): Item[] {
+      const tokens = norm(query).split(/\s+/).filter(Boolean);
+      if (tokens.length === 0 || !index) return [];
+      return index
+        .map((item) => {
+          const name = norm(item.name);
+          const rest = norm(`${item.keywords} ${item.description} ${item.category}`);
+          let score = 0;
+          for (const tok of tokens) {
+            if (name.startsWith(tok)) score += 4;
+            else if (name.includes(tok)) score += 3;
+            else if (rest.includes(tok)) score += 1;
+            else return { item, score: 0 };
+          }
+          return { item, score };
+        })
+        .filter((x) => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 6)
+        .map((x) => x.item);
+    }
+
+    function close() {
+      list.hidden = true;
+      list.replaceChildren();
+      input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
+      results = [];
+      active = -1;
+    }
+
+    function setActive(i: number) {
+      active = i;
+      list.querySelectorAll<HTMLElement>('[role="option"]').forEach((el, idx) => {
+        const on = idx === i;
+        el.setAttribute('aria-selected', String(on));
+        el.classList.toggle('bg-brand-50', on);
+      });
+      if (i >= 0) input.setAttribute('aria-activedescendant', `site-search-opt-${i}`);
+      else input.removeAttribute('aria-activedescendant');
+    }
+
+    function render() {
+      const q = input.value.trim();
+      if (q === '') return close();
+      results = search(q);
+      list.replaceChildren();
+
+      if (results.length === 0) {
+        const none = document.createElement('div');
+        none.className = 'px-4 py-3 text-sm text-slate-500';
+        none.textContent = noResultsText;
+        list.append(none);
+      } else {
+        results.forEach((item, i) => {
+          const a = document.createElement('a');
+          a.id = `site-search-opt-${i}`;
+          a.href = item.url;
+          a.setAttribute('role', 'option');
+          a.setAttribute('aria-selected', 'false');
+          a.className = 'flex items-start gap-3 px-4 py-2.5 hover:bg-brand-50';
+          const icon = document.createElement('span');
+          icon.setAttribute('aria-hidden', 'true');
+          icon.textContent = item.icon;
+          const text = document.createElement('span');
+          const name = document.createElement('span');
+          name.className = 'block text-sm font-medium text-slate-900';
+          name.textContent = item.name;
+          const cat = document.createElement('span');
+          cat.className = 'block text-xs text-slate-500';
+          cat.textContent = item.category;
+          text.append(name, cat);
+          a.append(icon, text);
+          list.append(a);
+        });
+      }
+      list.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      setActive(-1);
+    }
+
+    input.addEventListener('focus', () => void loadIndex());
+    input.addEventListener('input', async () => {
+      await loadIndex();
+      render();
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' && results.length > 0) {
+        e.preventDefault();
+        setActive((active + 1) % results.length);
+      } else if (e.key === 'ArrowUp' && results.length > 0) {
+        e.preventDefault();
+        setActive(active <= 0 ? results.length - 1 : active - 1);
+      } else if (e.key === 'Enter') {
+        const target = results[active >= 0 ? active : 0];
+        if (target) {
+          e.preventDefault();
+          window.location.href = target.url;
+        }
+      } else if (e.key === 'Escape') {
+        close();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!root.contains(e.target as Node)) close();
+    });
+  }
+</script>

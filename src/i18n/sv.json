@@ -45,7 +45,16 @@
     "example": "Exempel",
     "faq": "Vanliga frågor",
     "related": "Liknande kalkylatorer",
-    "noCalculators": "Kalkylatorer i den här kategorin kommer snart."
+    "noCalculators": "Kalkylatorer i den här kategorin kommer snart.",
+    "catalog": "Katalog",
+    "catalogTitle": "Alla kalkylatorer",
+    "catalogDescription": "Hela katalogen med gratis onlinekalkylatorer från CalcHub, per kategori.",
+    "browseAll": "Visa alla kalkylatorer",
+    "search": {
+      "label": "Sök kalkylatorer",
+      "placeholder": "Hitta en kalkylator…",
+      "noResults": "Inget hittades"
+    }
   },
   "calc": {
     "mode": "Typ av beräkning",
@@ -56,7 +65,9 @@
     "hint": "Ange båda talen för att se resultatet.",
     "invalid": "Ange ett tal med siffror. Använd punkt eller komma som decimaltecken.",
     "divisionByZero": "Division med noll är inte möjlig. Ändra värdena.",
-    "overflow": "Talet är för stort för att beräknas."
+    "overflow": "Talet är för stort för att beräknas.",
+    "negative": "Värdet kan inte vara negativt.",
+    "outOfRange": "Värdet ligger utanför det tillåtna intervallet."
   },
   "calculators": {
     "percentage-calculator": {
@@ -116,7 +127,280 @@
       "faq2q": "Vad är skillnaden mellan en ökning med 10 % och 10 procentenheter?",
       "faq2a": "En ökning med 10 % ändrar ett värde i förhållande till sig självt: 50 blir 55. Procentenheter är skillnaden mellan två procentsatser: från 5 % till 15 % är 10 procentenheter, men i förhållande till startvärdet är ökningen 200 %.",
       "faq3q": "Varför blir talet inte detsamma efter en minskning och en ökning med lika många procent?",
-      "faq3a": "För att den andra procentsatsen räknas på det nya talet. Minskar du 100 med 20 % får du 80, och ökar du 80 med 20 % får du 96, inte 100."
+      "faq3a": "För att den andra procentsatsen räknas på det nya talet. Minskar du 100 med 20 % får du 80, och ökar du 80 med 20 % får du 96, inte 100.",
+      "keywords": "procent procentuell förändring öka minska відсоток percent"
+    },
+    "discount-calculator": {
+      "title": "Rabattkalkylator online — CalcHub",
+      "name": "Rabattkalkylator",
+      "description": "Gratis rabattkalkylator: räkna ut priset efter rabatt och hur mycket du sparar utifrån ursprungspris och rabatt i procent.",
+      "intro": "Ange ursprungspriset och rabatten i procent så ser du slutpriset och hur mycket du sparar.",
+      "keywords": "rabatt rea erbjudande pris efter rabatt discount знижка",
+      "howItWorks": "Rabattbeloppet är en procentandel av ursprungspriset. Drar du av det från priset får du slutpriset. Du kan också räkna i ett steg: pris × (1 − rabatt ÷ 100).",
+      "example": "Pris 1200, rabatt 25 %: 1200 × (1 − 25 ÷ 100) = 900. Du sparar 300.",
+      "fields": {
+        "price": {
+          "label": "Ursprungligt pris"
+        },
+        "discount": {
+          "label": "Rabatt (%)"
+        }
+      },
+      "outputs": {
+        "finalPrice": "Pris efter rabatt",
+        "saved": "Du sparar"
+      },
+      "faq1q": "Hur räknar man ut priset efter rabatt?",
+      "faq1a": "Multiplicera priset med (1 − rabatt ÷ 100). Till exempel 1200 med 25 % rabatt: 1200 × 0,75 = 900.",
+      "faq2q": "Hur tar man reda på rabatten i procent från ett gammalt och ett nytt pris?",
+      "faq2a": "Dra det nya priset från det gamla, dela med det gamla priset och multiplicera med 100. Läget ”Procentuell förändring” i procenträknaren gör det åt dig."
+    },
+    "vat-calculator": {
+      "title": "Momsräknare online — CalcHub",
+      "name": "Momsräknare",
+      "description": "Gratis momsräknare: lägg till moms på ett belopp utan moms eller räkna ut momsen i ett belopp som redan inkluderar den.",
+      "intro": "Välj vad som ska beräknas, ange beloppet och momssatsen så ser du momsen, beloppet utan moms och beloppet med moms.",
+      "keywords": "moms mervärdesskatt momssats vat пдв",
+      "howItWorks": "För att lägga till moms multiplicerar du beloppet utan moms med momssatsen och delar med 100 – det är momsen. För att få fram momsen ur ett belopp inklusive moms delar du det med (1 + momssats ÷ 100) och får beloppet utan moms. Skillnaden är momsen.",
+      "example": "Belopp utan moms 1000 med 20 %: moms = 200, totalt 1200. Åt andra hållet: av 1200 inklusive moms är 1000 belopp utan moms.",
+      "fields": {
+        "mode": {
+          "label": "Vad ska beräknas",
+          "options": {
+            "add": "Lägg till moms på ett belopp",
+            "extract": "Räkna ut moms ur ett belopp"
+          }
+        },
+        "amount": {
+          "label": "Belopp"
+        },
+        "rate": {
+          "label": "Momssats (%)"
+        }
+      },
+      "outputs": {
+        "vat": "Momsbelopp",
+        "net": "Belopp utan moms",
+        "gross": "Belopp med moms"
+      },
+      "faq1q": "Hur lägger man till moms på ett pris?",
+      "faq1a": "Multiplicera priset utan moms med (1 + momssats ÷ 100). Med 20 % moms blir 1000 till 1200.",
+      "faq2q": "Hur räknar man ut momsen i ett belopp som redan inkluderar moms?",
+      "faq2a": "Räkna inte momssatsen på beloppet inklusive moms – det ger en för hög moms. Dela beloppet med (1 + momssats ÷ 100) för att få priset utan moms och dra sedan av det från beloppet. Till exempel 1200 ÷ 1,2 = 1000, så momsen är 200."
+    },
+    "area-calculator": {
+      "title": "Areakalkylator online — CalcHub",
+      "name": "Areakalkylator",
+      "description": "Gratis areakalkylator: beräkna arean av en rektangel, triangel eller cirkel i meter, centimeter, millimeter eller fot.",
+      "intro": "Välj form och enhet, ange måtten så beräknas arean direkt.",
+      "keywords": "area yta kvadratmeter rektangel triangel cirkel площа",
+      "howItWorks": "Arean beror på formen: för en rektangel är den längd × bredd, för en triangel bas × höjd ÷ 2 och för en cirkel π × radie². Resultatet anges i kvadratenheter av den längdenhet du valt.",
+      "example": "Ett rum på 4 × 3 m: 4 × 3 = 12 m².",
+      "fields": {
+        "shape": {
+          "label": "Form",
+          "options": {
+            "rectangle": "Rektangel",
+            "triangle": "Triangel",
+            "circle": "Cirkel"
+          }
+        },
+        "unit": {
+          "label": "Längdenhet",
+          "options": {
+            "m": "Meter (m)",
+            "cm": "Centimeter (cm)",
+            "mm": "Millimeter (mm)",
+            "ft": "Fot (ft)"
+          }
+        },
+        "length": {
+          "label": "Längd"
+        },
+        "width": {
+          "label": "Bredd"
+        },
+        "base": {
+          "label": "Bas"
+        },
+        "height": {
+          "label": "Höjd"
+        },
+        "radius": {
+          "label": "Radie"
+        }
+      },
+      "outputs": {
+        "area": "Area",
+        "areaM2": "Area i m²"
+      },
+      "faq1q": "Hur räknar man ut arean av ett rum?",
+      "faq1a": "Om rummet är rektangulärt multiplicerar du längden med bredden. För ett rum med oregelbunden form delar du upp det i enkla former, räknar ut arean för varje del och adderar dem.",
+      "faq2q": "Hur många kvadratcentimeter går det på en kvadratmeter?",
+      "faq2a": "10 000. Eftersom 1 m = 100 cm och area är produkten av två längder: 100 × 100 = 10 000."
+    },
+    "volume-calculator": {
+      "title": "Volymkalkylator online — CalcHub",
+      "name": "Volymkalkylator",
+      "description": "Gratis volymkalkylator: beräkna volymen av ett rätblock, en cylinder eller en sfär och se resultatet i liter direkt.",
+      "intro": "Välj form och enhet, ange måtten så ser du volymen i kubikenheter och i liter.",
+      "keywords": "volym kubikmeter liter rätblock cylinder sfär об’єм",
+      "howItWorks": "Volymen av ett rätblock är längd × bredd × höjd, av en cylinder π × radie² × höjd och av en sfär 4/3 × π × radie³. En kubikmeter motsvarar 1 000 liter.",
+      "example": "En pool på 5 × 3 × 1,5 m: 5 × 3 × 1,5 = 22,5 m³ = 22 500 l.",
+      "fields": {
+        "shape": {
+          "label": "Form",
+          "options": {
+            "box": "Rätblock",
+            "cylinder": "Cylinder",
+            "sphere": "Sfär"
+          }
+        },
+        "unit": {
+          "label": "Längdenhet",
+          "options": {
+            "m": "Meter (m)",
+            "cm": "Centimeter (cm)",
+            "mm": "Millimeter (mm)",
+            "ft": "Fot (ft)"
+          }
+        },
+        "length": {
+          "label": "Längd"
+        },
+        "width": {
+          "label": "Bredd"
+        },
+        "height": {
+          "label": "Höjd"
+        },
+        "radius": {
+          "label": "Radie"
+        }
+      },
+      "outputs": {
+        "volume": "Volym",
+        "liters": "Volym i liter"
+      },
+      "faq1q": "Hur många liter går det på en kubikmeter?",
+      "faq1a": "1 000 liter. En kubikmeter är en kub med sidan 1 m, alltså 100 × 100 × 100 cm = 1 000 000 cm³, och en liter är 1 000 cm³.",
+      "faq2q": "Hur räknar man ut volymen av en cylinder?",
+      "faq2a": "Multiplicera basytan (π × radie²) med höjden. Till exempel radie 0,5 m och höjd 2 m: 3,1416 × 0,25 × 2 ≈ 1,571 m³."
+    },
+    "length-converter": {
+      "title": "Längdomvandlare online — CalcHub",
+      "name": "Längdomvandlare",
+      "description": "Gratis längdomvandlare: omvandla kilometer, meter, centimeter, millimeter, engelska mil, yard, fot och tum.",
+      "intro": "Ange ett värde och välj enheter – resultatet visas direkt.",
+      "keywords": "längd omvandlare kilometer mil meter fot tum довжина length",
+      "howItWorks": "Värdet omvandlas först till meter och sedan till önskad enhet med exakta faktorer: 1 engelsk mil = 1 609,344 m, 1 yard = 0,9144 m, 1 fot = 0,3048 m, 1 tum = 0,0254 m.",
+      "example": "5 km = 3,106856 mi.",
+      "fields": {
+        "value": {
+          "label": "Värde"
+        },
+        "from": {
+          "label": "Från enhet",
+          "options": {
+            "km": "Kilometer (km)",
+            "m": "Meter (m)",
+            "cm": "Centimeter (cm)",
+            "mm": "Millimeter (mm)",
+            "mi": "Engelska mil (mi)",
+            "yd": "Yard (yd)",
+            "ft": "Fot (ft)",
+            "in": "Tum (tum)"
+          }
+        },
+        "to": {
+          "label": "Till enhet",
+          "options": {
+            "km": "Kilometer (km)",
+            "m": "Meter (m)",
+            "cm": "Centimeter (cm)",
+            "mm": "Millimeter (mm)",
+            "mi": "Engelska mil (mi)",
+            "yd": "Yard (yd)",
+            "ft": "Fot (ft)",
+            "in": "Tum (tum)"
+          }
+        }
+      },
+      "outputs": {
+        "result": "Resultat"
+      },
+      "faq1q": "Hur många kilometer är en engelsk mil?",
+      "faq1a": "En internationell engelsk mil är 1,609344 km.",
+      "faq2q": "Hur många centimeter är en tum?",
+      "faq2a": "En tum är exakt 2,54 cm."
+    },
+    "mass-converter": {
+      "title": "Viktomvandlare online — CalcHub",
+      "name": "Viktomvandlare",
+      "description": "Gratis viktomvandlare: omvandla ton, kilogram, gram, milligram, pund och uns.",
+      "intro": "Ange ett värde och välj enheter – resultatet visas direkt.",
+      "keywords": "vikt massa omvandlare kilogram pund uns gram вага маса mass",
+      "howItWorks": "Värdet omvandlas först till kilogram och sedan till önskad enhet med exakta faktorer: 1 pund = 0,45359237 kg, 1 uns = 0,028349523125 kg.",
+      "example": "10 kg = 22,046226 lb.",
+      "fields": {
+        "value": {
+          "label": "Värde"
+        },
+        "from": {
+          "label": "Från enhet",
+          "options": {
+            "t": "Ton (t)",
+            "kg": "Kilogram (kg)",
+            "g": "Gram (g)",
+            "mg": "Milligram (mg)",
+            "lb": "Pund (lb)",
+            "oz": "Uns (oz)"
+          }
+        },
+        "to": {
+          "label": "Till enhet",
+          "options": {
+            "t": "Ton (t)",
+            "kg": "Kilogram (kg)",
+            "g": "Gram (g)",
+            "mg": "Milligram (mg)",
+            "lb": "Pund (lb)",
+            "oz": "Uns (oz)"
+          }
+        }
+      },
+      "outputs": {
+        "result": "Resultat"
+      },
+      "faq1q": "Hur många gram går det på ett pund?",
+      "faq1a": "Ett pund är 453,59237 g (cirka 454 g).",
+      "faq2q": "Hur många uns går det på ett kilogram?",
+      "faq2a": "Ett kilogram är cirka 35,274 uns."
     }
+  },
+  "units": {
+    "m": "m",
+    "cm": "cm",
+    "mm": "mm",
+    "km": "km",
+    "mi": "mi",
+    "yd": "yd",
+    "ft": "ft",
+    "in": "tum",
+    "kg": "kg",
+    "g": "g",
+    "mg": "mg",
+    "t": "t",
+    "lb": "lb",
+    "oz": "oz",
+    "m2": "m²",
+    "cm2": "cm²",
+    "mm2": "mm²",
+    "ft2": "ft²",
+    "m3": "m³",
+    "cm3": "cm³",
+    "mm3": "mm³",
+    "ft3": "ft³",
+    "L": "l"
   }
 }

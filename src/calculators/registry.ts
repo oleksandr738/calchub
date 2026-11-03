@@ -1,4 +1,5 @@
 import type { CategorySlug } from '../utils/categories';
+import type { CalculatorDef } from './types';
 
 export interface CalculatorMeta {
   /** Адреса калькулятора, однакова для всіх мов */
@@ -11,6 +12,8 @@ export interface CalculatorMeta {
   popular?: boolean;
   /** Кількість питань у FAQ (ключі faq1q/faq1a ... у файлах перекладу) */
   faqCount: number;
+  /** Підвантаження логіки для універсального двигуна (без load — окремий компонент) */
+  load?: () => Promise<{ calculator: CalculatorDef }>;
 }
 
 export const calculators: CalculatorMeta[] = [
@@ -21,6 +24,51 @@ export const calculators: CalculatorMeta[] = [
     icon: '％',
     popular: true,
     faqCount: 3,
+  },
+  {
+    slug: 'discount-calculator',
+    category: 'finance',
+    icon: '🏷️',
+    popular: true,
+    faqCount: 2,
+    load: () => import('./finance/discount.ts'),
+  },
+  {
+    slug: 'vat-calculator',
+    category: 'finance',
+    icon: '🧾',
+    faqCount: 2,
+    load: () => import('./finance/vat.ts'),
+  },
+  {
+    slug: 'area-calculator',
+    category: 'construction',
+    icon: '📐',
+    popular: true,
+    faqCount: 2,
+    load: () => import('./construction/area.ts'),
+  },
+  {
+    slug: 'volume-calculator',
+    category: 'construction',
+    icon: '📦',
+    faqCount: 2,
+    load: () => import('./construction/volume.ts'),
+  },
+  {
+    slug: 'length-converter',
+    category: 'conversion',
+    icon: '📏',
+    popular: true,
+    faqCount: 2,
+    load: () => import('./conversion/length.ts'),
+  },
+  {
+    slug: 'mass-converter',
+    category: 'conversion',
+    icon: '⚖️',
+    faqCount: 2,
+    load: () => import('./conversion/mass.ts'),
   },
 ];
 

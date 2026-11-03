@@ -45,7 +45,16 @@
     "example": "Example",
     "faq": "Frequently asked questions",
     "related": "Related calculators",
-    "noCalculators": "Calculators in this category are coming soon."
+    "noCalculators": "Calculators in this category are coming soon.",
+    "catalog": "Catalog",
+    "catalogTitle": "All calculators",
+    "catalogDescription": "The full catalog of free CalcHub online calculators, by category.",
+    "browseAll": "Browse all calculators",
+    "search": {
+      "label": "Search calculators",
+      "placeholder": "Find a calculator…",
+      "noResults": "Nothing found"
+    }
   },
   "calc": {
     "mode": "Calculation type",
@@ -56,7 +65,9 @@
     "hint": "Enter both numbers to see the result.",
     "invalid": "Enter a number using digits. Use a dot or a comma as the decimal separator.",
     "divisionByZero": "Division by zero is not possible. Change the values.",
-    "overflow": "The number is too large to calculate."
+    "overflow": "The number is too large to calculate.",
+    "negative": "The value cannot be negative.",
+    "outOfRange": "The value is outside the allowed range."
   },
   "calculators": {
     "percentage-calculator": {
@@ -116,7 +127,280 @@
       "faq2q": "What is the difference between a 10% increase and a 10 percentage point increase?",
       "faq2a": "A 10% increase changes a value relative to itself: 50 becomes 55. Percentage points are the difference between two percentages: going from 5% to 15% is 10 percentage points, but relative to the starting value it is a 200% increase.",
       "faq3q": "Why doesn’t a number return to the original after decreasing and then increasing by the same percentage?",
-      "faq3a": "Because the second percentage is calculated from the new number. Decrease 100 by 20% and you get 80; increase 80 by 20% and you get 96, not 100."
+      "faq3a": "Because the second percentage is calculated from the new number. Decrease 100 by 20% and you get 80; increase 80 by 20% and you get 96, not 100.",
+      "keywords": "percentage percent change increase decrease відсоток procent"
+    },
+    "discount-calculator": {
+      "title": "Online discount calculator — CalcHub",
+      "name": "Discount calculator",
+      "description": "Free discount calculator: find the price after discount and the amount you save from the original price and discount percentage.",
+      "intro": "Enter the original price and the discount percentage to see the final price and how much you save.",
+      "keywords": "discount sale offer price after discount знижка rabatt",
+      "howItWorks": "The discount amount is a percentage of the original price. Subtracting it from the price gives the final cost. You can also do it in one step: price × (1 − discount ÷ 100).",
+      "example": "Price 1200, discount 25%: 1200 × (1 − 25 ÷ 100) = 900. You save 300.",
+      "fields": {
+        "price": {
+          "label": "Original price"
+        },
+        "discount": {
+          "label": "Discount (%)"
+        }
+      },
+      "outputs": {
+        "finalPrice": "Price after discount",
+        "saved": "You save"
+      },
+      "faq1q": "How do I calculate a price after a discount?",
+      "faq1a": "Multiply the price by (1 − discount ÷ 100). For example, 1200 with a 25% discount: 1200 × 0.75 = 900.",
+      "faq2q": "How do I find the discount percentage from an old and a new price?",
+      "faq2a": "Subtract the new price from the old one, divide by the old price and multiply by 100. The “Percentage change” mode in the percentage calculator does this for you."
+    },
+    "vat-calculator": {
+      "title": "Online VAT calculator — CalcHub",
+      "name": "VAT calculator",
+      "description": "Free VAT calculator: add VAT to a net amount or extract the VAT from an amount that already includes it.",
+      "intro": "Choose what to calculate, enter the amount and the VAT rate to see the VAT, the net amount and the gross amount.",
+      "keywords": "vat tax value added tax moms пдв sales tax",
+      "howItWorks": "To add VAT, multiply the net amount by the rate and divide by 100: that is the VAT. To extract VAT from a gross amount, divide it by (1 + rate ÷ 100) to get the net amount; the difference is the VAT.",
+      "example": "Net 1000 at 20%: VAT = 200, total 1200. In reverse: from 1200 including VAT, 1000 is the net amount.",
+      "fields": {
+        "mode": {
+          "label": "What to calculate",
+          "options": {
+            "add": "Add VAT to an amount",
+            "extract": "Extract VAT from an amount"
+          }
+        },
+        "amount": {
+          "label": "Amount"
+        },
+        "rate": {
+          "label": "VAT rate (%)"
+        }
+      },
+      "outputs": {
+        "vat": "VAT amount",
+        "net": "Net amount (excl. VAT)",
+        "gross": "Gross amount (incl. VAT)"
+      },
+      "faq1q": "How do I add VAT to a price?",
+      "faq1a": "Multiply the net price by (1 + rate ÷ 100). At a 20% rate, 1000 becomes 1200.",
+      "faq2q": "How do I extract VAT from an amount that already includes it?",
+      "faq2a": "Do not take the rate of the gross amount: that overstates the VAT. Divide the amount by (1 + rate ÷ 100) to get the net price, then subtract it from the amount. For example, 1200 ÷ 1.2 = 1000, so the VAT is 200."
+    },
+    "area-calculator": {
+      "title": "Online area calculator — CalcHub",
+      "name": "Area calculator",
+      "description": "Free area calculator: work out the area of a rectangle, triangle or circle in metres, centimetres, millimetres or feet.",
+      "intro": "Choose a shape and a unit, enter the dimensions and the area is calculated instantly.",
+      "keywords": "area square meters square feet rectangle triangle circle площа",
+      "howItWorks": "The area depends on the shape: for a rectangle it is length × width, for a triangle base × height ÷ 2, and for a circle π × radius². The result is given in square units of the length unit you chose.",
+      "example": "A room of 4 × 3 m: 4 × 3 = 12 m².",
+      "fields": {
+        "shape": {
+          "label": "Shape",
+          "options": {
+            "rectangle": "Rectangle",
+            "triangle": "Triangle",
+            "circle": "Circle"
+          }
+        },
+        "unit": {
+          "label": "Length unit",
+          "options": {
+            "m": "Metres (m)",
+            "cm": "Centimetres (cm)",
+            "mm": "Millimetres (mm)",
+            "ft": "Feet (ft)"
+          }
+        },
+        "length": {
+          "label": "Length"
+        },
+        "width": {
+          "label": "Width"
+        },
+        "base": {
+          "label": "Base"
+        },
+        "height": {
+          "label": "Height"
+        },
+        "radius": {
+          "label": "Radius"
+        }
+      },
+      "outputs": {
+        "area": "Area",
+        "areaM2": "Area in m²"
+      },
+      "faq1q": "How do I calculate the area of a room?",
+      "faq1a": "If the room is rectangular, multiply the length by the width. For an irregular room, split it into simple shapes, find the area of each and add them together.",
+      "faq2q": "How many square centimetres are in a square metre?",
+      "faq2a": "10,000. Since 1 m = 100 cm and area is the product of two lengths: 100 × 100 = 10,000."
+    },
+    "volume-calculator": {
+      "title": "Online volume calculator — CalcHub",
+      "name": "Volume calculator",
+      "description": "Free volume calculator: work out the volume of a box, cylinder or sphere and see the result in litres right away.",
+      "intro": "Choose a shape and a unit, enter the dimensions and see the volume in cubic units and in litres.",
+      "keywords": "volume cubic meters litres liters box cylinder sphere об’єм",
+      "howItWorks": "The volume of a box is length × width × height, of a cylinder π × radius² × height, and of a sphere 4/3 × π × radius³. One cubic metre equals 1,000 litres.",
+      "example": "A pool of 5 × 3 × 1.5 m: 5 × 3 × 1.5 = 22.5 m³ = 22,500 L.",
+      "fields": {
+        "shape": {
+          "label": "Shape",
+          "options": {
+            "box": "Box",
+            "cylinder": "Cylinder",
+            "sphere": "Sphere"
+          }
+        },
+        "unit": {
+          "label": "Length unit",
+          "options": {
+            "m": "Metres (m)",
+            "cm": "Centimetres (cm)",
+            "mm": "Millimetres (mm)",
+            "ft": "Feet (ft)"
+          }
+        },
+        "length": {
+          "label": "Length"
+        },
+        "width": {
+          "label": "Width"
+        },
+        "height": {
+          "label": "Height"
+        },
+        "radius": {
+          "label": "Radius"
+        }
+      },
+      "outputs": {
+        "volume": "Volume",
+        "liters": "Volume in litres"
+      },
+      "faq1q": "How many litres are in a cubic metre?",
+      "faq1a": "1,000 litres. A cubic metre is a cube with 1 m sides, which is 100 × 100 × 100 cm = 1,000,000 cm³, and a litre is 1,000 cm³.",
+      "faq2q": "How do I calculate the volume of a cylinder?",
+      "faq2a": "Multiply the base area (π × radius²) by the height. For example, radius 0.5 m and height 2 m: 3.1416 × 0.25 × 2 ≈ 1.571 m³."
+    },
+    "length-converter": {
+      "title": "Online length converter — CalcHub",
+      "name": "Length converter",
+      "description": "Free length converter: convert kilometres, metres, centimetres, millimetres, miles, yards, feet and inches.",
+      "intro": "Enter a value and choose the units: the result appears instantly.",
+      "keywords": "length converter kilometers miles meters feet inches довжина längd",
+      "howItWorks": "The value is first converted to metres and then to the target unit, using exact factors: 1 mile = 1,609.344 m, 1 yard = 0.9144 m, 1 foot = 0.3048 m, 1 inch = 0.0254 m.",
+      "example": "5 km = 3.106856 mi.",
+      "fields": {
+        "value": {
+          "label": "Value"
+        },
+        "from": {
+          "label": "From unit",
+          "options": {
+            "km": "Kilometres (km)",
+            "m": "Metres (m)",
+            "cm": "Centimetres (cm)",
+            "mm": "Millimetres (mm)",
+            "mi": "Miles (mi)",
+            "yd": "Yards (yd)",
+            "ft": "Feet (ft)",
+            "in": "Inches (in)"
+          }
+        },
+        "to": {
+          "label": "To unit",
+          "options": {
+            "km": "Kilometres (km)",
+            "m": "Metres (m)",
+            "cm": "Centimetres (cm)",
+            "mm": "Millimetres (mm)",
+            "mi": "Miles (mi)",
+            "yd": "Yards (yd)",
+            "ft": "Feet (ft)",
+            "in": "Inches (in)"
+          }
+        }
+      },
+      "outputs": {
+        "result": "Result"
+      },
+      "faq1q": "How many kilometres are in a mile?",
+      "faq1a": "One international mile is 1.609344 km.",
+      "faq2q": "How many centimetres are in an inch?",
+      "faq2a": "One inch is exactly 2.54 cm."
+    },
+    "mass-converter": {
+      "title": "Online mass converter — CalcHub",
+      "name": "Mass converter",
+      "description": "Free mass converter: convert tonnes, kilograms, grams, milligrams, pounds and ounces.",
+      "intro": "Enter a value and choose the units: the result appears instantly.",
+      "keywords": "mass weight converter kilograms pounds ounces grams вага маса vikt",
+      "howItWorks": "The value is first converted to kilograms and then to the target unit, using exact factors: 1 pound = 0.45359237 kg, 1 ounce = 0.028349523125 kg.",
+      "example": "10 kg = 22.046226 lb.",
+      "fields": {
+        "value": {
+          "label": "Value"
+        },
+        "from": {
+          "label": "From unit",
+          "options": {
+            "t": "Tonnes (t)",
+            "kg": "Kilograms (kg)",
+            "g": "Grams (g)",
+            "mg": "Milligrams (mg)",
+            "lb": "Pounds (lb)",
+            "oz": "Ounces (oz)"
+          }
+        },
+        "to": {
+          "label": "To unit",
+          "options": {
+            "t": "Tonnes (t)",
+            "kg": "Kilograms (kg)",
+            "g": "Grams (g)",
+            "mg": "Milligrams (mg)",
+            "lb": "Pounds (lb)",
+            "oz": "Ounces (oz)"
+          }
+        }
+      },
+      "outputs": {
+        "result": "Result"
+      },
+      "faq1q": "How many grams are in a pound?",
+      "faq1a": "One pound is 453.59237 g (about 454 g).",
+      "faq2q": "How many ounces are in a kilogram?",
+      "faq2a": "A kilogram is about 35.274 ounces."
     }
+  },
+  "units": {
+    "m": "m",
+    "cm": "cm",
+    "mm": "mm",
+    "km": "km",
+    "mi": "mi",
+    "yd": "yd",
+    "ft": "ft",
+    "in": "in",
+    "kg": "kg",
+    "g": "g",
+    "mg": "mg",
+    "t": "t",
+    "lb": "lb",
+    "oz": "oz",
+    "m2": "m²",
+    "cm2": "cm²",
+    "mm2": "mm²",
+    "ft2": "ft²",
+    "m3": "m³",
+    "cm3": "cm³",
+    "mm3": "mm³",
+    "ft3": "ft³",
+    "L": "L"
   }
 }
