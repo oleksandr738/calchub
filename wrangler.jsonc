@@ -1,0 +1,12 @@
+{
+  // Назва має збігатися з назвою проєкту (Worker) у панелі Cloudflare
+  "name": "calchub",
+  "compatibility_date": "2026-11-03",
+  "assets": {
+    "directory": "./dist",
+    // Невідомі адреси -> наша сторінка 404.html зі статусом 404
+    "not_found_handling": "404-page",
+    // Папки з index.html віддаються зі слешем в кінці: /uk/finance/
+    "html_handling": "auto-trailing-slash"
+  }
+}
