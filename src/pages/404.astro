@@ -1,12 +1,13 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { languages, useTranslations, type Lang } from '../i18n';
+import { BRAND } from '../utils/brand';
 
 const codes = Object.keys(languages) as Lang[];
 const tDefault = useTranslations('uk');
 ---
 
-<MainLayout title={`404 — CalcHub`} description={tDefault('notFound.text')} lang="uk" noindex>
+<MainLayout title={`404 — ${BRAND}`} description={tDefault('notFound.text')} lang="uk" noindex>
   <div class="mx-auto max-w-3xl px-4 py-16">
     <p class="text-6xl font-bold text-brand-600" aria-hidden="true">404</p>
     <div class="mt-8 space-y-8">

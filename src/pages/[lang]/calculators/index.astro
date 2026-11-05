@@ -6,6 +6,7 @@ import { langCodes, useTranslations, type Lang } from '../../../i18n';
 import { categories } from '../../../utils/categories';
 import { calculators, calculatorUrl } from '../../../calculators/registry';
 import { breadcrumbLd } from '../../../utils/seo';
+import { BRAND } from '../../../utils/brand';
 
 export function getStaticPaths() {
   return langCodes.map((lang) => ({ params: { lang } }));
@@ -31,7 +32,7 @@ const groups = categories
 ---
 
 <MainLayout
-  title={`${t('ui.catalogTitle')} — CalcHub`}
+  title={`${t('ui.catalogTitle')} — ${BRAND}`}
   description={t('ui.catalogDescription')}
   lang={lang}
   jsonLd={jsonLd}

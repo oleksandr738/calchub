@@ -1,5 +1,5 @@
 {
-  // Назва має збігатися з назвою проєкту (Worker) у панелі Cloudflare
+  // Назва має збігатися з назвою проєкту (Worker) у панелі Cloudflare. Не змінюйте.
   "name": "calchub",
   "compatibility_date": "2026-11-03",
   "assets": {
@@ -8,5 +8,8 @@
     "not_found_handling": "404-page",
     // Папки з index.html віддаються зі слешем в кінці: /uk/finance/
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // Власний домен. Підключається автоматично під час публікації,
+  // але лише якщо домен tallora.com уже доданий до вашого акаунта Cloudflare.
+  "routes": [{ "pattern": "tallora.com", "custom_domain": true }]
 }

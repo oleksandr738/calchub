@@ -6,6 +6,7 @@ import { useTranslations, type Lang } from '../i18n';
 import { categories } from '../utils/categories';
 import { calculators, calculatorUrl } from '../calculators/registry';
 import { webSiteLd, absoluteUrl } from '../utils/seo';
+import { BRAND } from '../utils/brand';
 
 interface Props {
   lang: Lang;
@@ -15,7 +16,7 @@ const t = useTranslations(lang);
 const popular = calculators.filter((c) => c.popular);
 const jsonLd = [
   webSiteLd({
-    name: 'CalcHub',
+    name: BRAND,
     url: absoluteUrl(`/${lang}/`, Astro.site!),
     lang,
     description: t('site.description'),

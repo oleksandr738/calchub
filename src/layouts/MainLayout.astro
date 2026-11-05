@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { languages, switchLangPath, type Lang } from '../i18n';
 import { jsonLdString, ogLocales } from '../utils/seo';
+import { BRAND } from '../utils/brand';
 
 interface Props {
   title: string;
@@ -44,7 +45,7 @@ const ogImage = new URL('/og-image.png', Astro.site).href;
         <link rel="alternate" hreflang="x-default" href={alternates[0]!.href} />
 
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="CalcHub" />
+        <meta property="og:site_name" content={BRAND} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonical} />

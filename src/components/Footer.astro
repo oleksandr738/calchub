@@ -1,5 +1,6 @@
 ---
 import { useTranslations, type Lang } from '../i18n';
+import { BRAND } from '../utils/brand';
 
 interface Props {
   lang: Lang;
@@ -12,6 +13,6 @@ const year = new Date().getFullYear();
 <footer class="mt-16 border-t border-slate-200 bg-slate-50">
   <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-600">
     <p>{t('footer.disclaimer')}</p>
-    <p class="mt-3">© {year} CalcHub. {t('footer.rights')}</p>
+    <p class="mt-3">© {year} {BRAND}. {t('footer.rights')}</p>
   </div>
 </footer>

@@ -6,6 +6,7 @@ import { langCodes, useTranslations, type Lang } from '../../../i18n';
 import { categories, type CategorySlug } from '../../../utils/categories';
 import { calculatorsInCategory, calculatorUrl } from '../../../calculators/registry';
 import { breadcrumbLd } from '../../../utils/seo';
+import { BRAND } from '../../../utils/brand';
 
 export function getStaticPaths() {
   return langCodes.flatMap((lang) =>
@@ -30,7 +31,7 @@ const jsonLd = [
 ---
 
 <MainLayout
-  title={`${name} — CalcHub`}
+  title={`${name} — ${BRAND}`}
   description={t(`categories.${category}.description`)}
   lang={lang}
   jsonLd={jsonLd}

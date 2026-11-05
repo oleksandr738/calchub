@@ -3,7 +3,7 @@
     "description": "Gratis onlinekalkylatorer: ekonomi, bygg, bil och vardagsberäkningar."
   },
   "home": {
-    "title": "CalcHub — gratis onlinekalkylatorer",
+    "title": "Tallora — gratis onlinekalkylatorer",
     "heroTitle": "Gratis onlinekalkylatorer för vardagen",
     "heroText": "Ekonomi, bygg, bil och vardagsberäkningar: direkt i webbläsaren, utan registrering.",
     "categoriesTitle": "Kalkylatorkategorier"
@@ -48,7 +48,7 @@
     "noCalculators": "Kalkylatorer i den här kategorin kommer snart.",
     "catalog": "Katalog",
     "catalogTitle": "Alla kalkylatorer",
-    "catalogDescription": "Hela katalogen med gratis onlinekalkylatorer från CalcHub, per kategori.",
+    "catalogDescription": "Hela katalogen med gratis onlinekalkylatorer från Tallora, per kategori.",
     "browseAll": "Visa alla kalkylatorer",
     "search": {
       "label": "Sök kalkylatorer",
@@ -73,7 +73,7 @@
   },
   "calculators": {
     "percentage-calculator": {
-      "title": "Procenträknare online — CalcHub",
+      "title": "Procenträknare online — Tallora",
       "name": "Procenträknare",
       "description": "Gratis procenträknare: beräkna procent av ett tal, hur många procent ett tal är av ett annat, procentuell förändring samt höj eller sänk ett tal med ett antal procent.",
       "intro": "Välj typ av beräkning och ange två tal – resultatet visas direkt. Dina uppgifter skickas inte till någon server.",
@@ -133,7 +133,7 @@
       "keywords": "procent procentuell förändring öka minska відсоток percent"
     },
     "discount-calculator": {
-      "title": "Rabattkalkylator online — CalcHub",
+      "title": "Rabattkalkylator online — Tallora",
       "name": "Rabattkalkylator",
       "description": "Gratis rabattkalkylator: räkna ut priset efter rabatt och hur mycket du sparar utifrån ursprungspris och rabatt i procent.",
       "intro": "Ange ursprungspriset och rabatten i procent så ser du slutpriset och hur mycket du sparar.",
@@ -158,7 +158,7 @@
       "faq2a": "Dra det nya priset från det gamla, dela med det gamla priset och multiplicera med 100. Läget ”Procentuell förändring” i procenträknaren gör det åt dig."
     },
     "vat-calculator": {
-      "title": "Momsräknare online — CalcHub",
+      "title": "Momsräknare online — Tallora",
       "name": "Momsräknare",
       "description": "Gratis momsräknare: lägg till moms på ett belopp utan moms eller räkna ut momsen i ett belopp som redan inkluderar den.",
       "intro": "Välj vad som ska beräknas, ange beloppet och momssatsen så ser du momsen, beloppet utan moms och beloppet med moms.",
@@ -191,7 +191,7 @@
       "faq2a": "Räkna inte momssatsen på beloppet inklusive moms – det ger en för hög moms. Dela beloppet med (1 + momssats ÷ 100) för att få priset utan moms och dra sedan av det från beloppet. Till exempel 1200 ÷ 1,2 = 1000, så momsen är 200."
     },
     "area-calculator": {
-      "title": "Areakalkylator online — CalcHub",
+      "title": "Areakalkylator online — Tallora",
       "name": "Areakalkylator",
       "description": "Gratis areakalkylator: beräkna arean av en rektangel, triangel eller cirkel i meter, centimeter, millimeter eller fot.",
       "intro": "Välj form och enhet, ange måtten så beräknas arean direkt.",
@@ -242,7 +242,7 @@
       "faq2a": "10 000. Eftersom 1 m = 100 cm och area är produkten av två längder: 100 × 100 = 10 000."
     },
     "volume-calculator": {
-      "title": "Volymkalkylator online — CalcHub",
+      "title": "Volymkalkylator online — Tallora",
       "name": "Volymkalkylator",
       "description": "Gratis volymkalkylator: beräkna volymen av ett rätblock, en cylinder eller en sfär och se resultatet i liter direkt.",
       "intro": "Välj form och enhet, ange måtten så ser du volymen i kubikenheter och i liter.",
@@ -290,7 +290,7 @@
       "faq2a": "Multiplicera basytan (π × radie²) med höjden. Till exempel radie 0,5 m och höjd 2 m: 3,1416 × 0,25 × 2 ≈ 1,571 m³."
     },
     "length-converter": {
-      "title": "Längdomvandlare online — CalcHub",
+      "title": "Längdomvandlare online — Tallora",
       "name": "Längdomvandlare",
       "description": "Gratis längdomvandlare: omvandla kilometer, meter, centimeter, millimeter, engelska mil, yard, fot och tum.",
       "intro": "Ange ett värde och välj enheter – resultatet visas direkt.",
@@ -337,7 +337,7 @@
       "faq2a": "En tum är exakt 2,54 cm."
     },
     "mass-converter": {
-      "title": "Viktomvandlare online — CalcHub",
+      "title": "Viktomvandlare online — Tallora",
       "name": "Viktomvandlare",
       "description": "Gratis viktomvandlare: omvandla ton, kilogram, gram, milligram, pund och uns.",
       "intro": "Ange ett värde och välj enheter – resultatet visas direkt.",
@@ -380,7 +380,7 @@
       "faq2a": "Ett kilogram är cirka 35,274 uns."
     },
     "fuel-consumption-calculator": {
-      "title": "Bränsleförbrukningskalkylator online — CalcHub",
+      "title": "Bränsleförbrukningskalkylator online — Tallora",
       "name": "Bränsleförbrukningskalkylator",
       "description": "Gratis kalkylator för bränsleförbrukning: räkna ut förbrukningen i liter per 100 km och per mil utifrån körd sträcka och använt bränsle.",
       "intro": "Ange körd sträcka och använt bränsle så ser du förbrukningen per 100 km och per mil.",
@@ -406,7 +406,7 @@
       "faq2a": "Fyll tanken helt, nollställ trippmätaren, kör som vanligt och fyll sedan tanken helt igen. Använd mängden tankat bränsle och sträckan på trippmätaren i beräkningen."
     },
     "trip-cost-calculator": {
-      "title": "Resekostnad för bil online — CalcHub",
+      "title": "Resekostnad för bil online — Tallora",
       "name": "Resekostnad för bil",
       "description": "Gratis kalkylator för resekostnad med bil: räkna ut bränslebehov och kostnad utifrån sträcka, förbrukning och bränslepris.",
       "intro": "Ange sträcka, bilens förbrukning och bränslepriset så ser du hur många liter du behöver och vad det kostar.",
@@ -442,7 +442,7 @@
       "faq2a": "Nej, bara bränslet. Vägtullar, parkering och slitage på bilen får du lägga till själv."
     },
     "loan-calculator": {
-      "title": "Lånekalkylator online — CalcHub",
+      "title": "Lånekalkylator online — Tallora",
       "name": "Lånekalkylator",
       "description": "Gratis lånekalkylator: räkna ut månadsbetalning, total återbetalning och räntekostnad med annuitet eller rak amortering.",
       "intro": "Ange lånebelopp, årsränta och löptid så ser du månadsbetalningen, totalt återbetalt belopp och räntekostnaden.",
@@ -487,7 +487,7 @@
       "faq2a": "Långivaren kan lägga till avgifter eller försäkring, beräkna ränta på ett annat sätt och avrunda betalningarna. Kalkylatorn visar en förenklad uppskattning enligt formeln."
     },
     "concrete-calculator": {
-      "title": "Betongkalkylator online — CalcHub",
+      "title": "Betongkalkylator online — Tallora",
       "name": "Betongkalkylator",
       "description": "Gratis betongkalkylator: räkna ut betongvolymen för en platta, ett grund eller en avjämning utifrån längd, bredd och tjocklek, med reserv.",
       "intro": "Ange plattans mått och en reserv så ser du hur mycket betong du behöver i kubikmeter.",
@@ -518,7 +518,7 @@
       "faq2a": "En del betong går åt som spill vid gjutningen och underlaget är sällan helt plant. Därför läggs en reserv på några procent på den beräknade volymen."
     },
     "tile-calculator": {
-      "title": "Kakelkalkylator online — CalcHub",
+      "title": "Kakelkalkylator online — Tallora",
       "name": "Kakelkalkylator",
       "description": "Gratis kakelkalkylator: räkna ut hur många plattor du behöver till golv eller vägg utifrån ytans mått, plattans storlek och reserv för kapning.",
       "intro": "Ange ytans mått, storleken på en platta och en reserv så ser du hur många plattor du ska köpa.",
@@ -553,7 +553,7 @@
       "faq2a": "Vanligen 5–10 % för enkel läggning och upp till 15 % för diagonal eller komplicerad läggning. Det är en tumregel: exakt värde beror på rummets form."
     },
     "paint-calculator": {
-      "title": "Färgkalkylator online — CalcHub",
+      "title": "Färgkalkylator online — Tallora",
       "name": "Färgkalkylator",
       "description": "Gratis färgkalkylator: räkna ut hur många liter färg du behöver till väggar eller tak utifrån area, antal strykningar och täckning per kvadratmeter.",
       "intro": "Ange area, antal strykningar och färgens täckning så ser du hur mycket du behöver och hur många burkar du ska köpa.",
@@ -590,7 +590,7 @@
       "faq2a": "Nej. Ange den area du faktiskt ska måla: dra av fönster och dörrar från väggarean."
     },
     "age-calculator": {
-      "title": "Åldersräknare online — CalcHub",
+      "title": "Åldersräknare online — Tallora",
       "name": "Åldersräknare",
       "description": "Gratis åldersräknare: räkna ut din exakta ålder i år, månader och dagar, antal levda dagar och dagar till nästa födelsedag.",
       "intro": "Ange ett födelsedatum så ser du åldern i år, månader och dagar. Beräkningen görs som standard för idag, men du kan ändra datumet.",
@@ -618,7 +618,7 @@
       "faq2a": "Under skottår infaller födelsedagen den 29 februari, och övriga år räknar den här kalkylatorn 1 mars som födelsedag. Reglerna skiljer sig mellan länder."
     },
     "days-between-dates-calculator": {
-      "title": "Dagar mellan datum – kalkylator online — CalcHub",
+      "title": "Dagar mellan datum – kalkylator online — Tallora",
       "name": "Dagar mellan datum",
       "description": "Gratis kalkylator för antal dagar, veckor och arbetsdagar mellan två datum.",
       "intro": "Välj ett startdatum och ett slutdatum så ser du antal dagar, hela veckor och arbetsdagar.",
@@ -652,7 +652,7 @@
       "faq2a": "Nej. Alla dagar från måndag till fredag räknas som arbetsdagar. Allmänna helgdagar och röda dagar får du dra av själv."
     },
     "days-until-calculator": {
-      "title": "Dagar kvar till en händelse — CalcHub",
+      "title": "Dagar kvar till en händelse — Tallora",
       "name": "Dagar kvar till en händelse",
       "description": "Gratis kalkylator: ta reda på hur många dagar, veckor och arbetsdagar det är kvar till ett valt datum, eller har gått sedan det.",
       "intro": "Ange händelsens datum så ser du hur många dagar det är kvar. Nedräkningen utgår som standard från idag.",

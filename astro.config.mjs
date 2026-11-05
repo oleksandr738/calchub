@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://calchub.pages.dev',
+  site: 'https://tallora.com',
   trailingSlash: 'always',
   redirects: {
     '/': '/uk/',
