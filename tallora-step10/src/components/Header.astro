@@ -1,0 +1,33 @@
+---
+import { useTranslations, type Lang } from '../i18n';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import SearchBox from './SearchBox.astro';
+import { BRAND } from '../utils/brand';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<header class="sticky top-0 z-10 border-b border-slate-200 border-t-4 border-t-sun-400 bg-white/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3">
+    <a href={`/${lang}/`} class="flex items-center gap-2 text-xl font-bold text-brand-700">
+      <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-base font-extrabold text-sun-400" aria-hidden="true">T</span>
+      {BRAND}
+    </a>
+    <a
+      href={`/${lang}/calculators/`}
+      class="rounded-md px-2.5 py-1 text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+    >
+      {t('ui.catalog')}
+    </a>
+    <div class="order-last w-full sm:order-none sm:ml-auto sm:w-72 lg:w-96">
+      <SearchBox lang={lang} />
+    </div>
+    <div class="ml-auto sm:ml-0">
+      <LanguageSwitcher />
+    </div>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Шведський синій: основний колір (білий текст на 600 має контраст ≈ 5.8:1) */
+  --color-brand-50: #eaf4fb;
+  --color-brand-100: #cfe6f5;
+  --color-brand-500: #1b87c9;
+  --color-brand-600: #006aa7;
+  --color-brand-700: #00558a;
+
+  /* Шведський жовтий: акцент. Лише як фон із темним текстом або як смуга */
+  --color-sun-100: #fff4bf;
+  --color-sun-400: #fecc02;
+  --color-sun-500: #e6b800;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

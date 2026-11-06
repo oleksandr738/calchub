@@ -1,0 +1,80 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import CategoryCard from './CategoryCard.astro';
+import CalculatorCard from './CalculatorCard.astro';
+import { useTranslations, type Lang } from '../i18n';
+import { categories } from '../utils/categories';
+import { calculators, calculatorUrl } from '../calculators/registry';
+import { webSiteLd, absoluteUrl } from '../utils/seo';
+import { BRAND } from '../utils/brand';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const popular = calculators.filter((c) => c.popular);
+const jsonLd = [
+  webSiteLd({
+    name: BRAND,
+    url: absoluteUrl(`/${lang}/`, Astro.site!),
+    lang,
+    description: t('site.description'),
+  }),
+];
+---
+
+<MainLayout title={t('home.title')} description={t('site.description')} lang={lang} jsonLd={jsonLd}>
+  <section class="bg-brand-600 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-14 sm:py-20">
+      <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+        {t('home.heroTitle')}
+      </h1>
+      <p class="mt-5 max-w-2xl text-lg text-brand-50">{t('home.heroText')}</p>
+      <a
+        href={`/${lang}/calculators/`}
+        class="mt-8 inline-block rounded-lg bg-sun-400 px-6 py-3 font-semibold text-slate-900 hover:bg-sun-500"
+      >
+        {t('ui.browseAll')}
+      </a>
+    </div>
+    <div class="h-2 bg-sun-400"></div>
+  </section>
+
+  {popular.length > 0 && (
+    <section class="mx-auto max-w-6xl px-4 pt-12">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 class="text-2xl font-semibold">{t('ui.popular')}</h2>
+        <a href={`/${lang}/calculators/`} class="text-sm font-medium text-brand-700 hover:underline">
+          {t('ui.browseAll')}
+        </a>
+      </div>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {popular.map((c) => (
+          <CalculatorCard
+            href={calculatorUrl(lang, c)}
+            category={c.category}
+            icon={c.icon}
+            name={t(`calculators.${c.slug}.name`)}
+            description={t(`calculators.${c.slug}.description`)}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="mx-auto max-w-6xl px-4 py-12">
+    <h2 class="text-2xl font-semibold">{t('home.categoriesTitle')}</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {categories.map((c) => (
+        <CategoryCard
+          href={`/${lang}/${c.slug}/`}
+          slug={c.slug}
+          icon={c.icon}
+          name={t(`categories.${c.slug}.name`)}
+          description={t(`categories.${c.slug}.description`)}
+        />
+      ))}
+    </div>
+  </section>
+</MainLayout>

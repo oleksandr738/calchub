@@ -7,7 +7,7 @@ export const calculator: CalculatorDef = {
     { id: 'trip', type: 'select', options: ['oneWay', 'roundTrip'] },
     { id: 'distance', type: 'number', placeholder: '300', min: 0 },
     { id: 'consumption', type: 'number', placeholder: '7', min: 0 },
-    { id: 'price', type: 'number', placeholder: '55', min: 0 },
+    { id: 'price', type: 'number', placeholder: '20', min: 0 },
   ],
   outputs: ['cost', 'fuel', 'totalDistance'],
   compute({ trip, distance, consumption, price }) {

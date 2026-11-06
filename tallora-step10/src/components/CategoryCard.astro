@@ -1,0 +1,25 @@
+---
+import type { CategorySlug } from '../utils/categories';
+import { categoryStyles } from '../utils/categoryStyles';
+
+interface Props {
+  href: string;
+  slug: CategorySlug;
+  icon: string;
+  name: string;
+  description: string;
+}
+const { href, slug, icon, name, description } = Astro.props;
+const style = categoryStyles[slug];
+---
+
+<a
+  href={href}
+  class:list={['group block rounded-2xl border border-slate-200 bg-white p-5 transition', style.hover]}
+>
+  <span class:list={['grid h-12 w-12 place-items-center rounded-xl text-2xl', style.tile]} aria-hidden="true">
+    {icon}
+  </span>
+  <h3 class="mt-4 text-lg font-semibold text-slate-900 group-hover:text-brand-700">{name}</h3>
+  <p class="mt-1 text-sm text-slate-600">{description}</p>
+</a>

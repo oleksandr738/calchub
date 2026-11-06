@@ -1,0 +1,66 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import CalculatorCard from '../../../components/CalculatorCard.astro';
+import { langCodes, useTranslations, type Lang } from '../../../i18n';
+import { categories } from '../../../utils/categories';
+import { calculators, calculatorUrl } from '../../../calculators/registry';
+import { breadcrumbLd } from '../../../utils/seo';
+import { BRAND } from '../../../utils/brand';
+
+export function getStaticPaths() {
+  return langCodes.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+
+const jsonLd = [
+  breadcrumbLd(
+    [
+      { name: t('ui.home'), path: `/${lang}/` },
+      { name: t('ui.catalogTitle'), path: `/${lang}/calculators/` },
+    ],
+    Astro.site!,
+  ),
+];
+
+// Кожен калькулятор показуємо один раз — у своїй основній категорії
+const groups = categories
+  .map((cat) => ({ cat, items: calculators.filter((c) => c.category === cat.slug) }))
+  .filter((g) => g.items.length > 0);
+---
+
+<MainLayout
+  title={`${t('ui.catalogTitle')} — ${BRAND}`}
+  description={t('ui.catalogDescription')}
+  lang={lang}
+  jsonLd={jsonLd}
+>
+  <div class="mx-auto max-w-6xl px-4 py-8">
+    <Breadcrumbs items={[{ label: t('ui.home'), href: `/${lang}/` }, { label: t('ui.catalogTitle') }]} />
+    <h1 class="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">{t('ui.catalogTitle')}</h1>
+    <p class="mt-3 text-lg text-slate-600">{t('ui.catalogDescription')}</p>
+
+    {groups.map(({ cat, items }) => (
+      <section class="mt-10" aria-labelledby={`cat-${cat.slug}`}>
+        <h2 id={`cat-${cat.slug}`} class="text-2xl font-semibold">
+          <a href={`/${lang}/${cat.slug}/`} class="hover:text-brand-700">
+            <span aria-hidden="true">{cat.icon}</span> {t(`categories.${cat.slug}.name`)}
+          </a>
+        </h2>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((c) => (
+            <CalculatorCard
+              href={calculatorUrl(lang, c)}
+              category={c.category}
+              icon={c.icon}
+              name={t(`calculators.${c.slug}.name`)}
+              description={t(`calculators.${c.slug}.description`)}
+            />
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</MainLayout>

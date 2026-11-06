@@ -2,15 +2,16 @@ import uk from './uk.json';
 import en from './en.json';
 import sv from './sv.json';
 
+// Перша мова в списку показується першою в перемикачі
 export const languages = {
-  uk: 'Українська',
-  en: 'English',
   sv: 'Svenska',
+  en: 'English',
+  uk: 'Українська',
 } as const;
 
 export type Lang = keyof typeof languages;
 export const langCodes = Object.keys(languages) as Lang[];
-export const defaultLang: Lang = 'uk';
+export const defaultLang: Lang = 'sv';
 
 const dictionaries = { uk, en, sv };
 

@@ -6,7 +6,7 @@ export const calculator: CalculatorDef = {
   fields: [
     { id: 'mode', type: 'select', options: ['add', 'extract'] },
     { id: 'amount', type: 'number', placeholder: '1000', min: 0 },
-    { id: 'rate', type: 'number', placeholder: '20', min: 0 },
+    { id: 'rate', type: 'number', placeholder: '25', min: 0 },
   ],
   outputs: ['vat', 'net', 'gross'],
   compute({ mode, amount, rate }) {

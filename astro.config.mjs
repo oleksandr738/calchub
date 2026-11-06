@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://calchub.oleksandrdemcuk72.workers.dev',
   trailingSlash: 'always',
   redirects: {
-    '/': '/uk/',
+    '/': '/sv/',
   },
   vite: {
     plugins: [tailwindcss()],

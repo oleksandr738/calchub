@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { langCodes } from '../i18n';
+import { langCodes, defaultLang } from '../i18n';
 import { pageRoutes } from '../utils/routes';
 import { absoluteUrl } from '../utils/seo';
 
@@ -11,7 +11,7 @@ export const GET: APIRoute = ({ site }) => {
         ...langCodes.map(
           (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${absoluteUrl(route.path(l), base)}"/>`,
         ),
-        `    <xhtml:link rel="alternate" hreflang="x-default" href="${absoluteUrl(route.path(langCodes[0]!), base)}"/>`,
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${absoluteUrl(route.path(defaultLang), base)}"/>`,
       ].join('\n');
       return `  <url>\n    <loc>${absoluteUrl(route.path(lang), base)}</loc>\n${alternates}\n  </url>`;
     }),

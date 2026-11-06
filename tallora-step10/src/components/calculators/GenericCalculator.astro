@@ -1,0 +1,335 @@
+---
+import { useTranslations, type Lang } from '../../i18n';
+import { numberLocales } from '../../utils/formatNumber';
+import { calculators } from '../../calculators/registry';
+import type { FieldDef } from '../../calculators/types';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+}
+const { lang, slug } = Astro.props;
+const t = useTranslations(lang);
+const base = `calculators.${slug}`;
+
+const meta = calculators.find((c) => c.slug === slug);
+if (!meta?.load) throw new Error(`Калькулятор "${slug}" не має load() у registry.ts`);
+const { calculator: def } = await meta.load();
+
+// Початкові значення селекторів: від них залежить, які поля видно одразу
+const initial: Record<string, string> = {};
+for (const f of def.fields) {
+  if (f.type === 'select') initial[f.id] = f.default ?? f.options[0]!;
+}
+const isVisible = (f: FieldDef) =>
+  !f.showWhen || f.showWhen.values.includes(initial[f.showWhen.field]!);
+
+const unitKeys = [
+  'm', 'cm', 'mm', 'km', 'mi', 'yd', 'ft', 'in', 'kg', 'g', 'mg', 't', 'lb', 'oz',
+  'm2', 'cm2', 'mm2', 'ft2', 'm3', 'cm3', 'mm3', 'ft3', 'L', 'L100', 'L10', 'kmL',
+];
+const errorKeys = ['invalid', 'invalidDate', 'negative', 'divisionByZero', 'overflow', 'outOfRange', 'dateOrder'];
+
+// Тексти для скрипта в браузері
+const messages = {
+  hint: t('calc.hint'),
+  copy: t('calc.copy'),
+  copied: t('calc.copied'),
+  errors: Object.fromEntries(errorKeys.map((k) => [k, t(`calc.${k}`)])),
+  units: Object.fromEntries(unitKeys.map((k) => [k, t(`units.${k}`)])),
+  outputs: Object.fromEntries(def.outputs.map((id) => [id, t(`${base}.outputs.${id}`)])),
+  result: t('calc.result'),
+};
+
+const inputClass =
+  'mt-1 block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-lg text-slate-900 placeholder:text-slate-400 aria-[invalid=true]:border-red-600';
+---
+
+<section
+  class="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
+  data-generic-calculator
+  data-slug={slug}
+  data-locale={numberLocales[lang]}
+  data-messages={JSON.stringify(messages)}
+>
+  <div class="grid gap-4 sm:grid-cols-2">
+    {def.fields.map((f) => (
+      <div data-field={f.id} hidden={!isVisible(f)}>
+        <label for={`gc-${f.id}`} class="block text-sm font-medium text-slate-700">
+          {t(`${base}.fields.${f.id}.label`)}
+        </label>
+        {f.type === 'select' ? (
+          <select id={`gc-${f.id}`} data-input={f.id} class={inputClass}>
+            {f.options.map((o) => (
+              <option value={o} selected={o === initial[f.id]}>
+                {t(`${base}.fields.${f.id}.options.${o}`)}
+              </option>
+            ))}
+          </select>
+        ) : f.type === 'date' ? (
+          <input
+            id={`gc-${f.id}`}
+            data-input={f.id}
+            data-default={f.default}
+            type="date"
+            aria-describedby="gc-error"
+            class={inputClass}
+          />
+        ) : (
+          <input
+            id={`gc-${f.id}`}
+            data-input={f.id}
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            placeholder={f.placeholder}
+            aria-describedby="gc-error"
+            class={inputClass}
+          />
+        )}
+      </div>
+    ))}
+  </div>
+
+  <p id="gc-error" data-role="error" class="mt-3 hidden text-sm text-red-700"></p>
+
+  <div class="mt-5 rounded-xl border-l-4 border-sun-400 bg-brand-50 p-4" aria-live="polite">
+    <p data-role="primaryLabel" class="text-sm font-medium text-brand-700">{t('calc.result')}</p>
+    <p data-role="primary" class="mt-1 break-words text-3xl font-bold text-slate-900">—</p>
+    <dl data-role="others" class="mt-3 space-y-1 text-sm"></dl>
+    <p data-role="steps" class="mt-3 break-words text-sm text-slate-600">{t('calc.hint')}</p>
+  </div>
+
+  <div class="mt-4 flex flex-wrap gap-3">
+    <button
+      type="button"
+      data-role="reset"
+      class="rounded-lg border border-slate-300 px-4 py-2.5 font-medium text-slate-700 hover:bg-slate-50"
+    >
+      {t('calc.reset')}
+    </button>
+    <button
+      type="button"
+      data-role="copy"
+      disabled
+      class="rounded-lg bg-brand-600 px-4 py-2.5 font-medium text-white hover:bg-brand-700 disabled:cursor-not-allowed disabled:bg-slate-300"
+    >
+      {t('calc.copy')}
+    </button>
+  </div>
+</section>
+
+<section class="mt-12" aria-labelledby="gc-how">
+  <h2 id="gc-how" class="text-2xl font-semibold">{t('ui.howItWorks')}</h2>
+  <p class="mt-3 text-slate-600">{t(`${base}.howItWorks`)}</p>
+  {def.formula && (
+    <p class="mt-4 inline-block rounded-lg bg-slate-100 px-3 py-1.5 font-mono text-sm text-slate-800">
+      {def.formula}
+    </p>
+  )}
+  <p class="mt-4 text-slate-600">
+    <span class="font-medium text-slate-800">{t('ui.example')}:</span>
+    {t(`${base}.example`)}
+  </p>
+</section>
+
+<script>
+  import { calculators } from '../../calculators/registry';
+  import type { Values } from '../../calculators/types';
+  import { parseNumber, parseISODate } from '../../utils/validation';
+  import { formatNumber } from '../../utils/formatNumber';
+
+  const root = document.querySelector<HTMLElement>('[data-generic-calculator]');
+  if (root) void init(root);
+
+  async function init(root: HTMLElement) {
+    const meta = calculators.find((c) => c.slug === root.dataset.slug);
+    if (!meta?.load) return;
+    const { calculator: def } = await meta.load();
+
+    const locale = root.dataset.locale ?? 'en-GB';
+    const msg = JSON.parse(root.dataset.messages ?? '{}');
+    const role = (name: string) => root.querySelector<HTMLElement>(`[data-role="${name}"]`)!;
+    const wrapperOf = (id: string) => root.querySelector<HTMLElement>(`[data-field="${id}"]`)!;
+    const inputOf = (id: string) =>
+      root.querySelector<HTMLInputElement | HTMLSelectElement>(`[data-input="${id}"]`)!;
+
+    const errorBox = role('error');
+    const primaryLabel = role('primaryLabel');
+    const primaryBox = role('primary');
+    const othersBox = role('others');
+    const stepsBox = role('steps');
+    const resetBtn = role('reset') as HTMLButtonElement;
+    const copyBtn = role('copy') as HTMLButtonElement;
+
+    // Сьогоднішня дата за локальним часом користувача (YYYY-MM-DD)
+    const todayISO = () => {
+      const now = new Date();
+      const pad = (n: number) => String(n).padStart(2, '0');
+      return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+    };
+    for (const f of def.fields) {
+      if (f.type === 'date' && f.default === 'today') inputOf(f.id).value = todayISO();
+    }
+
+    let copyText = '';
+    let copyTimer: number | undefined;
+
+    const unitLabel = (key: string): string => msg.units[key] ?? key;
+
+    function markInvalid(ids: string[]) {
+      for (const f of def.fields) {
+        inputOf(f.id).setAttribute('aria-invalid', ids.includes(f.id) ? 'true' : 'false');
+      }
+    }
+
+    function showError(text: string, ids: string[]) {
+      errorBox.textContent = text;
+      errorBox.classList.toggle('hidden', text === '');
+      markInvalid(ids);
+    }
+
+    function clearResult(message: string) {
+      copyText = '';
+      primaryLabel.textContent = msg.result;
+      primaryBox.textContent = '—';
+      othersBox.replaceChildren();
+      stepsBox.textContent = message;
+      copyBtn.disabled = true;
+    }
+
+    function formatOutput(o: { value: number; unit?: string; decimals?: number; fixed?: boolean }) {
+      const digits = o.decimals ?? 6;
+      const n = formatNumber(o.value, locale, digits, o.fixed ? digits : 0);
+      if (!o.unit) return n;
+      return o.unit === '%' ? `${n}%` : `${n} ${unitLabel(o.unit)}`;
+    }
+
+    function update() {
+      // 1. Які поля зараз видно (залежить від вибраних селекторів)
+      const selected: Record<string, string> = {};
+      for (const f of def.fields) {
+        if (f.type === 'select') selected[f.id] = inputOf(f.id).value;
+      }
+      const visible = def.fields.filter((f) => {
+        const show = !f.showWhen || f.showWhen.values.includes(selected[f.showWhen.field] ?? '');
+        wrapperOf(f.id).hidden = !show;
+        return show;
+      });
+
+      // 2. Збираємо значення видимих полів
+      const values: Values = {};
+      const invalid: string[] = [];
+      const invalidDates: string[] = [];
+      const negative: string[] = [];
+      let empty = false;
+
+      for (const f of visible) {
+        const el = inputOf(f.id);
+        if (f.type === 'select') {
+          values[f.id] = el.value;
+          continue;
+        }
+        if (f.type === 'date') {
+          const parsed = parseISODate(el.value);
+          if (parsed.status === 'invalid') invalidDates.push(f.id);
+          else if (parsed.status === 'empty') empty = true;
+          else values[f.id] = parsed.value;
+          continue;
+        }
+        const parsed = parseNumber(el.value);
+        if (parsed.status === 'invalid') invalid.push(f.id);
+        else if (parsed.status === 'empty') empty = true;
+        else {
+          values[f.id] = parsed.value;
+          if (f.min !== undefined && parsed.value < f.min) negative.push(f.id);
+        }
+      }
+
+      if (invalidDates.length > 0) {
+        showError(msg.errors.invalidDate, invalidDates);
+        return clearResult('');
+      }
+      if (invalid.length > 0) {
+        showError(msg.errors.invalid, invalid);
+        return clearResult('');
+      }
+      if (negative.length > 0) {
+        showError(msg.errors.negative, negative);
+        return clearResult('');
+      }
+      if (empty) {
+        showError('', []);
+        return clearResult(msg.hint);
+      }
+
+      // 3. Розрахунок
+      const result = def.compute(values);
+      if (!result.ok) {
+        showError(msg.errors[result.error], result.field ? [result.field] : []);
+        return clearResult('');
+      }
+
+      // 4. Показ результату
+      showError('', []);
+      const primary = result.outputs.find((o) => o.primary) ?? result.outputs[0]!;
+      const primaryText = formatOutput(primary);
+      primaryLabel.textContent = msg.outputs[primary.id] ?? msg.result;
+      primaryBox.textContent = primaryText;
+
+      othersBox.replaceChildren();
+      for (const o of result.outputs) {
+        if (o === primary) continue;
+        const row = document.createElement('div');
+        row.className = 'flex justify-between gap-4';
+        const dt = document.createElement('dt');
+        dt.className = 'text-slate-600';
+        dt.textContent = msg.outputs[o.id] ?? o.id;
+        const dd = document.createElement('dd');
+        dd.className = 'font-medium text-slate-900';
+        dd.textContent = formatOutput(o);
+        row.append(dt, dd);
+        othersBox.append(row);
+      }
+
+      stepsBox.textContent = result.steps
+        ? result.steps({ fmt: (n) => formatNumber(n, locale), unit: unitLabel })
+        : '';
+      copyText = primaryText;
+      copyBtn.disabled = false;
+    }
+
+    for (const f of def.fields) {
+      const el = inputOf(f.id);
+      el.addEventListener(f.type === 'select' ? 'change' : 'input', update);
+    }
+
+    resetBtn.addEventListener('click', () => {
+      let first: HTMLElement | null = null;
+      for (const f of def.fields) {
+        if (f.type === 'number' || f.type === 'date') {
+          inputOf(f.id).value = f.type === 'date' && f.default === 'today' ? todayISO() : '';
+          if (!first && !wrapperOf(f.id).hidden) first = inputOf(f.id);
+        }
+      }
+      update();
+      first?.focus();
+    });
+
+    copyBtn.addEventListener('click', async () => {
+      if (!copyText) return;
+      try {
+        await navigator.clipboard.writeText(copyText);
+        copyBtn.textContent = msg.copied;
+        window.clearTimeout(copyTimer);
+        copyTimer = window.setTimeout(() => {
+          copyBtn.textContent = msg.copy;
+        }, 1500);
+      } catch {
+        // Буфер обміну недоступний: результат і так видно на екрані
+      }
+    });
+
+    update();
+  }
+</script>

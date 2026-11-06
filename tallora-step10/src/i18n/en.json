@@ -1,0 +1,715 @@
+{
+  "site": {
+    "description": "Free online calculators: finance, construction, automotive and everyday calculations."
+  },
+  "home": {
+    "title": "Tallora — free online calculators",
+    "heroTitle": "Free online calculators for everyday life",
+    "heroText": "Finance, construction, cars and everyday math: right in your browser, no sign-up needed.",
+    "categoriesTitle": "Calculator categories"
+  },
+  "categories": {
+    "finance": {
+      "name": "Finance",
+      "description": "Percentages, VAT, loans, savings"
+    },
+    "construction": {
+      "name": "Construction",
+      "description": "Area, volume, concrete, tiles, paint"
+    },
+    "automotive": {
+      "name": "Automotive",
+      "description": "Fuel consumption and trip cost"
+    },
+    "everyday": {
+      "name": "Everyday",
+      "description": "Age, days between dates, days until an event"
+    },
+    "conversion": {
+      "name": "Unit conversion",
+      "description": "Weight, length, volume, temperature, speed"
+    },
+    "math": {
+      "name": "Math",
+      "description": "Percentages and other math calculations"
+    }
+  },
+  "footer": {
+    "disclaimer": "Calculator results are estimates only. Verify them before making important decisions.",
+    "rights": "All rights reserved."
+  },
+  "ui": {
+    "home": "Home",
+    "popular": "Popular calculators",
+    "howItWorks": "How it works",
+    "example": "Example",
+    "faq": "Frequently asked questions",
+    "related": "Related calculators",
+    "noCalculators": "Calculators in this category are coming soon.",
+    "catalog": "Catalog",
+    "catalogTitle": "All calculators",
+    "catalogDescription": "The full catalog of free Tallora online calculators, by category.",
+    "browseAll": "Browse all calculators",
+    "search": {
+      "label": "Search calculators",
+      "placeholder": "Find a calculator…",
+      "noResults": "Nothing found"
+    }
+  },
+  "calc": {
+    "mode": "Calculation type",
+    "result": "Result",
+    "reset": "Reset",
+    "copy": "Copy result",
+    "copied": "Copied",
+    "hint": "Fill in all fields to see the result.",
+    "invalid": "Enter a number using digits. Use a dot or a comma as the decimal separator.",
+    "divisionByZero": "Division by zero is not possible. Change the values.",
+    "overflow": "The number is too large to calculate.",
+    "negative": "The value cannot be negative.",
+    "outOfRange": "The value is outside the allowed range.",
+    "invalidDate": "Enter a valid date.",
+    "dateOrder": "The first date cannot be later than the second."
+  },
+  "calculators": {
+    "percentage-calculator": {
+      "title": "Online percentage calculator — Tallora",
+      "name": "Percentage calculator",
+      "description": "Free percentage calculator: find a percentage of a number, what percent one number is of another, percentage change, and increase or decrease a number by a percentage.",
+      "intro": "Choose a calculation type and enter two numbers: the result appears instantly. Your data is not sent to any server.",
+      "modes": {
+        "percentOf": {
+          "name": "Percentage of a number",
+          "labelA": "Percentage (%)",
+          "labelB": "Number",
+          "placeholderA": "15",
+          "placeholderB": "200",
+          "explain": "To find a percentage of a number, multiply the number by the percentage and divide by 100.",
+          "example": "15% of 200 = 30"
+        },
+        "whatPercent": {
+          "name": "What percent one number is of another",
+          "labelA": "Part",
+          "labelB": "Whole",
+          "placeholderA": "30",
+          "placeholderB": "200",
+          "explain": "Divide the part by the whole and multiply by 100.",
+          "example": "30 out of 200 is 15%"
+        },
+        "change": {
+          "name": "Percentage change between two numbers",
+          "labelA": "Starting value",
+          "labelB": "New value",
+          "placeholderA": "200",
+          "placeholderB": "250",
+          "explain": "Subtract the starting value from the new value, divide by the absolute value of the starting value and multiply by 100. A positive result is an increase, a negative one is a decrease.",
+          "example": "From 200 to 250 is +25%"
+        },
+        "increase": {
+          "name": "Increase a number by a percentage",
+          "labelA": "Number",
+          "labelB": "Percentage (%)",
+          "placeholderA": "200",
+          "placeholderB": "10",
+          "explain": "Multiply the number by (1 + percentage ÷ 100).",
+          "example": "200 + 10% = 220"
+        },
+        "decrease": {
+          "name": "Decrease a number by a percentage",
+          "labelA": "Number",
+          "labelB": "Percentage (%)",
+          "placeholderA": "200",
+          "placeholderB": "10",
+          "explain": "Multiply the number by (1 − percentage ÷ 100).",
+          "example": "200 − 10% = 180"
+        }
+      },
+      "faq1q": "How do I calculate a percentage of a number?",
+      "faq1a": "Multiply the number by the percentage and divide by 100. For example, 15% of 200: 200 × 15 ÷ 100 = 30.",
+      "faq2q": "What is the difference between a 10% increase and a 10 percentage point increase?",
+      "faq2a": "A 10% increase changes a value relative to itself: 50 becomes 55. Percentage points are the difference between two percentages: going from 5% to 15% is 10 percentage points, but relative to the starting value it is a 200% increase.",
+      "faq3q": "Why doesn’t a number return to the original after decreasing and then increasing by the same percentage?",
+      "faq3a": "Because the second percentage is calculated from the new number. Decrease 100 by 20% and you get 80; increase 80 by 20% and you get 96, not 100.",
+      "keywords": "percentage percent change increase decrease відсоток procent"
+    },
+    "discount-calculator": {
+      "title": "Online discount calculator — Tallora",
+      "name": "Discount calculator",
+      "description": "Free discount calculator: find the price after discount and the amount you save from the original price and discount percentage.",
+      "intro": "Enter the original price and the discount percentage to see the final price and how much you save.",
+      "keywords": "discount sale offer price after discount знижка rabatt",
+      "howItWorks": "The discount amount is a percentage of the original price. Subtracting it from the price gives the final cost. You can also do it in one step: price × (1 − discount ÷ 100).",
+      "example": "Price 1200, discount 25%: 1200 × (1 − 25 ÷ 100) = 900. You save 300.",
+      "fields": {
+        "price": {
+          "label": "Original price"
+        },
+        "discount": {
+          "label": "Discount (%)"
+        }
+      },
+      "outputs": {
+        "finalPrice": "Price after discount",
+        "saved": "You save"
+      },
+      "faq1q": "How do I calculate a price after a discount?",
+      "faq1a": "Multiply the price by (1 − discount ÷ 100). For example, 1200 with a 25% discount: 1200 × 0.75 = 900.",
+      "faq2q": "How do I find the discount percentage from an old and a new price?",
+      "faq2a": "Subtract the new price from the old one, divide by the old price and multiply by 100. The “Percentage change” mode in the percentage calculator does this for you."
+    },
+    "vat-calculator": {
+      "title": "Online VAT calculator — Tallora",
+      "name": "VAT calculator",
+      "description": "Free VAT calculator: add VAT to a net amount or extract the VAT from an amount that already includes it.",
+      "intro": "Choose what to calculate, enter the amount and the VAT rate to see the VAT, the net amount and the gross amount.",
+      "keywords": "vat tax value added tax moms пдв sales tax",
+      "howItWorks": "To add VAT, multiply the net amount by the rate and divide by 100: that is the VAT. To extract VAT from a gross amount, divide it by (1 + rate ÷ 100) to get the net amount; the difference is the VAT.",
+      "example": "Net 1000 at 20%: VAT = 200, total 1200. In reverse: from 1200 including VAT, 1000 is the net amount.",
+      "fields": {
+        "mode": {
+          "label": "What to calculate",
+          "options": {
+            "add": "Add VAT to an amount",
+            "extract": "Extract VAT from an amount"
+          }
+        },
+        "amount": {
+          "label": "Amount"
+        },
+        "rate": {
+          "label": "VAT rate (%)"
+        }
+      },
+      "outputs": {
+        "vat": "VAT amount",
+        "net": "Net amount (excl. VAT)",
+        "gross": "Gross amount (incl. VAT)"
+      },
+      "faq1q": "How do I add VAT to a price?",
+      "faq1a": "Multiply the net price by (1 + rate ÷ 100). At a 20% rate, 1000 becomes 1200.",
+      "faq2q": "How do I extract VAT from an amount that already includes it?",
+      "faq2a": "Do not take the rate of the gross amount: that overstates the VAT. Divide the amount by (1 + rate ÷ 100) to get the net price, then subtract it from the amount. For example, 1200 ÷ 1.2 = 1000, so the VAT is 200."
+    },
+    "area-calculator": {
+      "title": "Online area calculator — Tallora",
+      "name": "Area calculator",
+      "description": "Free area calculator: work out the area of a rectangle, triangle or circle in metres, centimetres, millimetres or feet.",
+      "intro": "Choose a shape and a unit, enter the dimensions and the area is calculated instantly.",
+      "keywords": "area square meters square feet rectangle triangle circle площа",
+      "howItWorks": "The area depends on the shape: for a rectangle it is length × width, for a triangle base × height ÷ 2, and for a circle π × radius². The result is given in square units of the length unit you chose.",
+      "example": "A room of 4 × 3 m: 4 × 3 = 12 m².",
+      "fields": {
+        "shape": {
+          "label": "Shape",
+          "options": {
+            "rectangle": "Rectangle",
+            "triangle": "Triangle",
+            "circle": "Circle"
+          }
+        },
+        "unit": {
+          "label": "Length unit",
+          "options": {
+            "m": "Metres (m)",
+            "cm": "Centimetres (cm)",
+            "mm": "Millimetres (mm)",
+            "ft": "Feet (ft)"
+          }
+        },
+        "length": {
+          "label": "Length"
+        },
+        "width": {
+          "label": "Width"
+        },
+        "base": {
+          "label": "Base"
+        },
+        "height": {
+          "label": "Height"
+        },
+        "radius": {
+          "label": "Radius"
+        }
+      },
+      "outputs": {
+        "area": "Area",
+        "areaM2": "Area in m²"
+      },
+      "faq1q": "How do I calculate the area of a room?",
+      "faq1a": "If the room is rectangular, multiply the length by the width. For an irregular room, split it into simple shapes, find the area of each and add them together.",
+      "faq2q": "How many square centimetres are in a square metre?",
+      "faq2a": "10,000. Since 1 m = 100 cm and area is the product of two lengths: 100 × 100 = 10,000."
+    },
+    "volume-calculator": {
+      "title": "Online volume calculator — Tallora",
+      "name": "Volume calculator",
+      "description": "Free volume calculator: work out the volume of a box, cylinder or sphere and see the result in litres right away.",
+      "intro": "Choose a shape and a unit, enter the dimensions and see the volume in cubic units and in litres.",
+      "keywords": "volume cubic meters litres liters box cylinder sphere об’єм",
+      "howItWorks": "The volume of a box is length × width × height, of a cylinder π × radius² × height, and of a sphere 4/3 × π × radius³. One cubic metre equals 1,000 litres.",
+      "example": "A pool of 5 × 3 × 1.5 m: 5 × 3 × 1.5 = 22.5 m³ = 22,500 L.",
+      "fields": {
+        "shape": {
+          "label": "Shape",
+          "options": {
+            "box": "Box",
+            "cylinder": "Cylinder",
+            "sphere": "Sphere"
+          }
+        },
+        "unit": {
+          "label": "Length unit",
+          "options": {
+            "m": "Metres (m)",
+            "cm": "Centimetres (cm)",
+            "mm": "Millimetres (mm)",
+            "ft": "Feet (ft)"
+          }
+        },
+        "length": {
+          "label": "Length"
+        },
+        "width": {
+          "label": "Width"
+        },
+        "height": {
+          "label": "Height"
+        },
+        "radius": {
+          "label": "Radius"
+        }
+      },
+      "outputs": {
+        "volume": "Volume",
+        "liters": "Volume in litres"
+      },
+      "faq1q": "How many litres are in a cubic metre?",
+      "faq1a": "1,000 litres. A cubic metre is a cube with 1 m sides, which is 100 × 100 × 100 cm = 1,000,000 cm³, and a litre is 1,000 cm³.",
+      "faq2q": "How do I calculate the volume of a cylinder?",
+      "faq2a": "Multiply the base area (π × radius²) by the height. For example, radius 0.5 m and height 2 m: 3.1416 × 0.25 × 2 ≈ 1.571 m³."
+    },
+    "length-converter": {
+      "title": "Online length converter — Tallora",
+      "name": "Length converter",
+      "description": "Free length converter: convert kilometres, metres, centimetres, millimetres, miles, yards, feet and inches.",
+      "intro": "Enter a value and choose the units: the result appears instantly.",
+      "keywords": "length converter kilometers miles meters feet inches довжина längd",
+      "howItWorks": "The value is first converted to metres and then to the target unit, using exact factors: 1 mile = 1,609.344 m, 1 yard = 0.9144 m, 1 foot = 0.3048 m, 1 inch = 0.0254 m.",
+      "example": "5 km = 3.106856 mi.",
+      "fields": {
+        "value": {
+          "label": "Value"
+        },
+        "from": {
+          "label": "From unit",
+          "options": {
+            "km": "Kilometres (km)",
+            "m": "Metres (m)",
+            "cm": "Centimetres (cm)",
+            "mm": "Millimetres (mm)",
+            "mi": "Miles (mi)",
+            "yd": "Yards (yd)",
+            "ft": "Feet (ft)",
+            "in": "Inches (in)"
+          }
+        },
+        "to": {
+          "label": "To unit",
+          "options": {
+            "km": "Kilometres (km)",
+            "m": "Metres (m)",
+            "cm": "Centimetres (cm)",
+            "mm": "Millimetres (mm)",
+            "mi": "Miles (mi)",
+            "yd": "Yards (yd)",
+            "ft": "Feet (ft)",
+            "in": "Inches (in)"
+          }
+        }
+      },
+      "outputs": {
+        "result": "Result"
+      },
+      "faq1q": "How many kilometres are in a mile?",
+      "faq1a": "One international mile is 1.609344 km.",
+      "faq2q": "How many centimetres are in an inch?",
+      "faq2a": "One inch is exactly 2.54 cm."
+    },
+    "mass-converter": {
+      "title": "Online mass converter — Tallora",
+      "name": "Mass converter",
+      "description": "Free mass converter: convert tonnes, kilograms, grams, milligrams, pounds and ounces.",
+      "intro": "Enter a value and choose the units: the result appears instantly.",
+      "keywords": "mass weight converter kilograms pounds ounces grams вага маса vikt",
+      "howItWorks": "The value is first converted to kilograms and then to the target unit, using exact factors: 1 pound = 0.45359237 kg, 1 ounce = 0.028349523125 kg.",
+      "example": "10 kg = 22.046226 lb.",
+      "fields": {
+        "value": {
+          "label": "Value"
+        },
+        "from": {
+          "label": "From unit",
+          "options": {
+            "t": "Tonnes (t)",
+            "kg": "Kilograms (kg)",
+            "g": "Grams (g)",
+            "mg": "Milligrams (mg)",
+            "lb": "Pounds (lb)",
+            "oz": "Ounces (oz)"
+          }
+        },
+        "to": {
+          "label": "To unit",
+          "options": {
+            "t": "Tonnes (t)",
+            "kg": "Kilograms (kg)",
+            "g": "Grams (g)",
+            "mg": "Milligrams (mg)",
+            "lb": "Pounds (lb)",
+            "oz": "Ounces (oz)"
+          }
+        }
+      },
+      "outputs": {
+        "result": "Result"
+      },
+      "faq1q": "How many grams are in a pound?",
+      "faq1a": "One pound is 453.59237 g (about 454 g).",
+      "faq2q": "How many ounces are in a kilogram?",
+      "faq2a": "A kilogram is about 35.274 ounces."
+    },
+    "fuel-consumption-calculator": {
+      "title": "Online fuel consumption calculator — Tallora",
+      "name": "Fuel consumption calculator",
+      "description": "Free fuel consumption calculator: find your consumption in litres per 100 km from the distance driven and the fuel used.",
+      "intro": "Enter the distance driven and the fuel used to see the consumption per 100 km.",
+      "keywords": "fuel consumption petrol gasoline diesel l/100km mpg litres витрата пального bränsleförbrukning",
+      "howItWorks": "Consumption per 100 km equals the fuel used divided by the distance driven and multiplied by 100. The inverse is how many kilometres the car covers on one litre.",
+      "example": "Drove 450 km, used 31.5 L: 31.5 ÷ 450 × 100 = 7 L/100 km.",
+      "fields": {
+        "distance": {
+          "label": "Distance driven (km)"
+        },
+        "fuel": {
+          "label": "Fuel used (L)"
+        }
+      },
+      "outputs": {
+        "consumption": "Consumption per 100 km",
+        "consumptionMil": "Consumption per 10 km",
+        "kmPerLiter": "Distance per litre"
+      },
+      "faq1q": "How do I calculate fuel consumption per 100 km?",
+      "faq1a": "Divide the fuel used by the distance driven and multiply by 100. For example, 31.5 L over 450 km: 31.5 ÷ 450 × 100 = 7 L/100 km.",
+      "faq2q": "How can I measure fuel consumption accurately?",
+      "faq2a": "Fill the tank completely, reset the trip meter, drive as usual, then fill the tank completely again. Use the amount of fuel added and the distance on the trip meter for the calculation."
+    },
+    "trip-cost-calculator": {
+      "title": "Online trip cost calculator — Tallora",
+      "name": "Trip cost calculator",
+      "description": "Free car trip cost calculator: work out the fuel needed and the cost from distance, consumption and fuel price.",
+      "intro": "Enter the distance, your car’s consumption and the fuel price to see how many litres you need and what it will cost.",
+      "keywords": "trip cost fuel cost petrol gasoline price car journey resekostnad вартість поїздки",
+      "howItWorks": "Fuel needed = distance × consumption per 100 km ÷ 100. Trip cost = fuel needed × price per litre. For a round trip the distance is doubled.",
+      "example": "Distance 300 km, consumption 7 L/100 km, price 55 per litre: 300 × 7 ÷ 100 = 21 L, cost 21 × 55 = 1155.",
+      "fields": {
+        "trip": {
+          "label": "Trip type",
+          "options": {
+            "oneWay": "One way",
+            "roundTrip": "Round trip"
+          }
+        },
+        "distance": {
+          "label": "Distance (km, one way)"
+        },
+        "consumption": {
+          "label": "Car consumption (L/100 km)"
+        },
+        "price": {
+          "label": "Fuel price per litre"
+        }
+      },
+      "outputs": {
+        "cost": "Trip cost",
+        "fuel": "Fuel needed",
+        "totalDistance": "Total distance"
+      },
+      "faq1q": "How do I calculate the cost of a car trip?",
+      "faq1a": "Multiply the distance by the consumption per 100 km and divide by 100 to get litres of fuel. Then multiply the litres by the price per litre.",
+      "faq2q": "Does the calculator include other costs?",
+      "faq2a": "No, only fuel. Tolls, parking and wear on the car need to be added separately."
+    },
+    "loan-calculator": {
+      "title": "Online loan calculator — Tallora",
+      "name": "Loan calculator",
+      "description": "Free loan calculator: work out the monthly payment, total repayment and interest cost with annuity or equal-principal payments.",
+      "intro": "Enter the loan amount, annual interest rate and term to see the monthly payment, the total repaid and the interest cost.",
+      "keywords": "loan mortgage monthly payment annuity interest repayment lån кредит",
+      "howItWorks": "With an annuity loan the payment is the same every month: P × r ÷ (1 − (1 + r)^−n), where r is the monthly rate (annual rate ÷ 12 ÷ 100) and n is the number of months. With equal principal payments you repay the same part of the debt each month (P ÷ n) plus interest on the remaining balance, so payments fall over time. The result is an estimate: a lender’s real terms (fees, insurance) may differ.",
+      "example": "Loan of 100,000 over 12 months at 12% a year (annuity): payment ≈ 8,884.88, total ≈ 106,618.55, interest ≈ 6,618.55.",
+      "fields": {
+        "type": {
+          "label": "Repayment type",
+          "options": {
+            "annuity": "Annuity (equal payments)",
+            "differentiated": "Equal principal (falling payments)"
+          }
+        },
+        "amount": {
+          "label": "Loan amount"
+        },
+        "rate": {
+          "label": "Annual interest rate (%)"
+        },
+        "term": {
+          "label": "Term"
+        },
+        "termUnit": {
+          "label": "Term unit",
+          "options": {
+            "years": "Years",
+            "months": "Months"
+          }
+        }
+      },
+      "outputs": {
+        "payment": "Monthly payment",
+        "firstPayment": "First payment",
+        "lastPayment": "Last payment",
+        "total": "Total repaid",
+        "overpayment": "Interest cost"
+      },
+      "faq1q": "What is the difference between annuity and equal-principal payments?",
+      "faq1a": "Annuity payments are the same throughout the term, so interest makes up most of the early payments. Equal-principal payments start higher and fall each month, and the total interest is usually lower.",
+      "faq2q": "Why can the bank’s actual payment differ?",
+      "faq2a": "A lender may add fees or insurance, accrue interest differently and round payments. The calculator shows a simplified formula-based estimate."
+    },
+    "concrete-calculator": {
+      "title": "Online concrete calculator — Tallora",
+      "name": "Concrete calculator",
+      "description": "Free concrete calculator: work out the volume of concrete for a slab, foundation or screed from length, width and thickness, with a reserve.",
+      "intro": "Enter the slab dimensions and a reserve to see the concrete volume you need in cubic metres.",
+      "keywords": "concrete slab foundation screed cubic meters betong бетон",
+      "howItWorks": "The concrete volume is length × width × thickness (thickness converted from centimetres to metres). An allowance for waste and uneven ground is usually added, typically 5–10%.",
+      "example": "A 6 × 4 m slab 15 cm thick with a 5% reserve: 6 × 4 × 0.15 = 3.6 m³; with the reserve, 3.78 m³.",
+      "fields": {
+        "length": {
+          "label": "Length (m)"
+        },
+        "width": {
+          "label": "Width (m)"
+        },
+        "thickness": {
+          "label": "Thickness (cm)"
+        },
+        "reserve": {
+          "label": "Reserve (%)"
+        }
+      },
+      "outputs": {
+        "withReserve": "Concrete needed (with reserve)",
+        "volume": "Volume without reserve"
+      },
+      "faq1q": "How much concrete do I need for a slab or foundation?",
+      "faq1a": "Multiply the length by the width and by the thickness, all in metres. For a 6 × 4 m slab 15 cm thick: 6 × 4 × 0.15 = 3.6 m³.",
+      "faq2q": "Why add a reserve?",
+      "faq2a": "Some concrete is lost while pouring and the base is rarely perfectly level. A reserve of a few per cent is therefore added to the calculated volume."
+    },
+    "tile-calculator": {
+      "title": "Online tile calculator — Tallora",
+      "name": "Tile calculator",
+      "description": "Free tile calculator: work out how many tiles you need for a floor or wall from the surface size, tile size and a cutting reserve.",
+      "intro": "Enter the surface dimensions, the size of one tile and a reserve to see how many tiles to buy.",
+      "keywords": "tile calculator tiles floor wall number of tiles kakel плитка",
+      "howItWorks": "Number of tiles = surface area ÷ area of one tile, rounded up. The reserve (usually 5–15%) covers cutting, breakage and pattern matching. Grout joints are not taken into account.",
+      "example": "Surface 4 × 3 m (12 m²), 30 × 30 cm tiles, 10% reserve: 12 ÷ 0.09 = 133.3 → 134 tiles without reserve; with reserve, 147 tiles.",
+      "fields": {
+        "length": {
+          "label": "Surface length (m)"
+        },
+        "width": {
+          "label": "Surface width (m)"
+        },
+        "tileLength": {
+          "label": "Tile length (cm)"
+        },
+        "tileWidth": {
+          "label": "Tile width (cm)"
+        },
+        "reserve": {
+          "label": "Reserve (%)"
+        }
+      },
+      "outputs": {
+        "tiles": "Tiles with reserve",
+        "tilesExact": "Tiles without reserve",
+        "area": "Surface area"
+      },
+      "faq1q": "How many tiles do I need for a floor?",
+      "faq1a": "Divide the floor area by the area of one tile and round up. For example, 12 m² and 30 × 30 cm tiles (0.09 m²): 12 ÷ 0.09 ≈ 133.3, so 134 tiles without a reserve.",
+      "faq2q": "How large a reserve should I take?",
+      "faq2a": "Typically 5–10% for a simple layout and up to 15% for a diagonal or complex pattern. This is a rule of thumb: the exact figure depends on the room shape."
+    },
+    "paint-calculator": {
+      "title": "Online paint calculator — Tallora",
+      "name": "Paint calculator",
+      "description": "Free paint calculator: work out how many litres of paint you need for walls or a ceiling from the area, number of coats and coverage per square metre.",
+      "intro": "Enter the area, the number of coats and the paint coverage to see the volume you need and how many cans to buy.",
+      "keywords": "paint calculator walls ceiling litres cans färg фарба",
+      "howItWorks": "Paint volume = area × number of coats ÷ coverage (how many m² one litre covers, stated on the can). The number of cans is the volume divided by the can size, rounded up.",
+      "example": "Area 40 m², 2 coats, coverage 10 m²/L: 40 × 2 ÷ 10 = 8 L; that is 2 cans of 5 L.",
+      "fields": {
+        "area": {
+          "label": "Surface area (m²)"
+        },
+        "coats": {
+          "label": "Number of coats"
+        },
+        "coverage": {
+          "label": "Coverage (m² per 1 L)"
+        },
+        "can": {
+          "label": "Can size",
+          "options": {
+            "l1": "1 L",
+            "l2_5": "2.5 L",
+            "l5": "5 L",
+            "l10": "10 L"
+          }
+        }
+      },
+      "outputs": {
+        "liters": "Paint needed",
+        "cans": "Cans"
+      },
+      "faq1q": "Where can I find the paint coverage?",
+      "faq1a": "It is usually printed on the can as square metres per litre for one coat. Rough surfaces take more paint.",
+      "faq2q": "Does the calculator account for windows and doors?",
+      "faq2a": "No. Enter the area you actually need to paint: subtract windows and doors from the wall area."
+    },
+    "age-calculator": {
+      "title": "Online age calculator — Tallora",
+      "name": "Age calculator",
+      "description": "Free age calculator: find your exact age in years, months and days, the number of days lived and the days until your next birthday.",
+      "intro": "Enter a date of birth to see the age in years, months and days. The calculation is as of today by default, but you can change the date.",
+      "keywords": "age date of birth how old birthday days lived ålder födelsedag вік",
+      "howItWorks": "The birth year is subtracted from the year of the calculation date, then months and days are adjusted if the birthday has not yet come this year. For people born on 29 February, the birthday is counted as 1 March in non-leap years.",
+      "example": "Born 15 May 1990, calculated on 10 March 2024: 33 years, 9 months and 24 days.",
+      "fields": {
+        "birth": {
+          "label": "Date of birth"
+        },
+        "asOf": {
+          "label": "Calculate as of"
+        }
+      },
+      "outputs": {
+        "years": "Full years",
+        "months": "Months",
+        "days": "Days",
+        "totalDays": "Total days lived",
+        "daysToBirthday": "Days until next birthday"
+      },
+      "faq1q": "How do I calculate an exact age?",
+      "faq1a": "Subtract the date of birth from the current date by years, months and days. If the day or month of the current date is smaller, borrow one from the next larger unit, just like in column subtraction.",
+      "faq2q": "How is age counted for a 29 February birthday?",
+      "faq2a": "In leap years the birthday falls on 29 February, and in other years this calculator treats 1 March as the birthday. Rules differ between countries."
+    },
+    "days-between-dates-calculator": {
+      "title": "Online days between dates calculator — Tallora",
+      "name": "Days between dates calculator",
+      "description": "Free calculator for the number of days, weeks and working days between two dates.",
+      "intro": "Choose a start and an end date to see the number of days, full weeks and working days.",
+      "keywords": "days between dates date difference number of days working days weeks dagar mellan datum arbetsdagar",
+      "howItWorks": "The calculator finds the difference between two dates in days. By default the end date is not included, but you can include it if needed. Working days are Monday to Friday; public holidays are not taken into account. If the start date is later than the end date, the dates are swapped.",
+      "example": "From 1 January to 1 February 2024: 31 days, which is 4 full weeks and 3 days, 23 of them working days.",
+      "fields": {
+        "start": {
+          "label": "Start date"
+        },
+        "end": {
+          "label": "End date"
+        },
+        "includeEnd": {
+          "label": "End date in the count",
+          "options": {
+            "no": "Do not include",
+            "yes": "Include"
+          }
+        }
+      },
+      "outputs": {
+        "days": "Days between the dates",
+        "weeks": "Full weeks",
+        "rest": "Remaining days",
+        "workdays": "Working days"
+      },
+      "faq1q": "Is the end date counted?",
+      "faq1a": "Not by default: from the 1st to the 2nd is one day. If you need to include both ends (for example, the number of days of a holiday), choose “Include”.",
+      "faq2q": "Does the calculator account for public holidays?",
+      "faq2a": "No. All days from Monday to Friday count as working days. Public and religious holidays have to be subtracted manually."
+    },
+    "days-until-calculator": {
+      "title": "Days until an event calculator — Tallora",
+      "name": "Days until an event",
+      "description": "Free calculator: find out how many days, weeks and working days are left until a chosen date, or have passed since it.",
+      "intro": "Enter the date of the event to see how many days are left. The countdown starts from today by default.",
+      "keywords": "days until countdown event date holiday new year dagar kvar nedräkning скільки днів до",
+      "howItWorks": "The calculator subtracts the start date (today by default) from the event date. If the event has already passed, it shows how many days ago it was. Working days are Monday to Friday, without public holidays; the later of the two dates is not included in the count.",
+      "example": "From 1 to 25 December 2026: 24 days, 3 full weeks, 18 working days.",
+      "fields": {
+        "event": {
+          "label": "Event date"
+        },
+        "from": {
+          "label": "Count from"
+        }
+      },
+      "outputs": {
+        "days": "Days until the event",
+        "daysAgo": "Days since the event",
+        "weeks": "Full weeks",
+        "workdays": "Working days"
+      },
+      "faq1q": "What if the event has already passed?",
+      "faq1a": "The calculator shows how many days have passed from the event to the chosen start date.",
+      "faq2q": "Will the result change tomorrow?",
+      "faq2a": "Yes, if the countdown starts from today: the start date is filled in automatically when you open the page."
+    }
+  },
+  "units": {
+    "m": "m",
+    "cm": "cm",
+    "mm": "mm",
+    "km": "km",
+    "mi": "mi",
+    "yd": "yd",
+    "ft": "ft",
+    "in": "in",
+    "kg": "kg",
+    "g": "g",
+    "mg": "mg",
+    "t": "t",
+    "lb": "lb",
+    "oz": "oz",
+    "m2": "m²",
+    "cm2": "cm²",
+    "mm2": "mm²",
+    "ft2": "ft²",
+    "m3": "m³",
+    "cm3": "cm³",
+    "mm3": "mm³",
+    "ft3": "ft³",
+    "L": "L",
+    "L100": "L/100 km",
+    "L10": "L/10 km",
+    "kmL": "km/L"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The address may be mistyped or the page may have moved. Go to the home page or use the search.",
+    "home": "Go to the home page"
+  }
+}

@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const DIST = path.resolve('dist');
+const DEFAULT_LANG = 'sv'; // основна мова сайту (див. defaultLang у src/i18n/index.ts)
 if (!fs.existsSync(DIST)) {
   console.error('Папки dist немає. Спочатку виконайте: npm run build');
   process.exit(1);
@@ -90,6 +91,13 @@ for (const file of htmlFiles) {
     }
   }
 
+  // --- x-default має вести на основну мову тієї самої сторінки ---
+  const xDefault = /<link rel="alternate" hreflang="x-default" href="([^"]+)"/.exec(html)?.[1];
+  if (canonical && xDefault) {
+    const expected = canonical.replace(/^(https?:\/\/[^/]+)\/(uk|en|sv)\//, `$1/${DEFAULT_LANG}/`);
+    if (xDefault !== expected) err(`${name}: x-default має бути ${expected}, а є ${xDefault}`);
+  }
+
   // --- унікальність ---
   if (title) titles.set(title, [...(titles.get(title) ?? []), name]);
   if (desc) descriptions.set(desc, [...(descriptions.get(desc) ?? []), name]);
@@ -120,6 +128,17 @@ if (!fs.existsSync(sitemapPath)) {
 const robotsPath = path.join(DIST, 'robots.txt');
 if (!fs.existsSync(robotsPath)) err('Немає robots.txt');
 else if (!/^Sitemap: https?:\/\/\S+\/sitemap\.xml$/m.test(fs.readFileSync(robotsPath, 'utf8'))) err('robots.txt: немає рядка Sitemap');
+
+// --- головна адреса веде на основну мову ---
+const redirectsPath = path.join(DIST, '_redirects');
+if (fs.existsSync(redirectsPath)) {
+  const first = fs.readFileSync(redirectsPath, 'utf8').split('\n').find((l) => l.trim() && !l.startsWith('#'));
+  if (!first || !new RegExp(`^/\\s+/${DEFAULT_LANG}/\\s`).test(first)) err(`_redirects: "/" має вести на /${DEFAULT_LANG}/, а перший рядок: «${first ?? ''}»`);
+}
+const rootPage = path.join(DIST, 'index.html');
+if (fs.existsSync(rootPage) && !fs.readFileSync(rootPage, 'utf8').includes(`/${DEFAULT_LANG}/`)) {
+  err(`index.html (головна адреса) не веде на /${DEFAULT_LANG}/`);
+}
 
 for (const f of ['404.html', 'og-image.png', 'favicon.svg', '_headers', '_redirects']) {
   if (!fs.existsSync(path.join(DIST, f))) err(`Немає файлу ${f}`);

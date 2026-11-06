@@ -163,8 +163,8 @@
       "description": "Gratis momsräknare: lägg till moms på ett belopp utan moms eller räkna ut momsen i ett belopp som redan inkluderar den.",
       "intro": "Välj vad som ska beräknas, ange beloppet och momssatsen så ser du momsen, beloppet utan moms och beloppet med moms.",
       "keywords": "moms mervärdesskatt momssats vat пдв",
-      "howItWorks": "För att lägga till moms multiplicerar du beloppet utan moms med momssatsen och delar med 100 – det är momsen. För att få fram momsen ur ett belopp inklusive moms delar du det med (1 + momssats ÷ 100) och får beloppet utan moms. Skillnaden är momsen.",
-      "example": "Belopp utan moms 1000 med 20 %: moms = 200, totalt 1200. Åt andra hållet: av 1200 inklusive moms är 1000 belopp utan moms.",
+      "howItWorks": "För att lägga till moms multiplicerar du beloppet utan moms med momssatsen och delar med 100 – det är momsen. För att få fram momsen ur ett belopp inklusive moms delar du det med (1 + momssats ÷ 100) och får beloppet utan moms. Skillnaden är momsen. I Sverige är den vanligaste momssatsen 25 %, men vissa varor och tjänster har 12 % eller 6 %.",
+      "example": "Belopp utan moms 1000 med 25 %: moms = 250, totalt 1250. Åt andra hållet: av 1250 inklusive moms är 1000 belopp utan moms.",
       "fields": {
         "mode": {
           "label": "Vad ska beräknas",
@@ -186,9 +186,9 @@
         "gross": "Belopp med moms"
       },
       "faq1q": "Hur lägger man till moms på ett pris?",
-      "faq1a": "Multiplicera priset utan moms med (1 + momssats ÷ 100). Med 20 % moms blir 1000 till 1200.",
+      "faq1a": "Multiplicera priset utan moms med (1 + momssats ÷ 100). Med 25 % moms blir 1000 till 1250.",
       "faq2q": "Hur räknar man ut momsen i ett belopp som redan inkluderar moms?",
-      "faq2a": "Räkna inte momssatsen på beloppet inklusive moms – det ger en för hög moms. Dela beloppet med (1 + momssats ÷ 100) för att få priset utan moms och dra sedan av det från beloppet. Till exempel 1200 ÷ 1,2 = 1000, så momsen är 200."
+      "faq2a": "Räkna inte momssatsen på beloppet inklusive moms – det ger en för hög moms. Dela beloppet med (1 + momssats ÷ 100) för att få priset utan moms och dra sedan av det från beloppet. Till exempel 1250 ÷ 1,25 = 1000, så momsen är 250."
     },
     "area-calculator": {
       "title": "Areakalkylator online — Tallora",
@@ -412,7 +412,7 @@
       "intro": "Ange sträcka, bilens förbrukning och bränslepriset så ser du hur många liter du behöver och vad det kostar.",
       "keywords": "resekostnad bränslekostnad bil pris per liter trip cost вартість поїздки",
       "howItWorks": "Bränslebehov = sträcka × förbrukning per 100 km ÷ 100. Resekostnad = bränslebehov × literpris. Vid tur och retur dubbleras sträckan.",
-      "example": "Sträcka 300 km, förbrukning 7 l/100 km, pris 55 per liter: 300 × 7 ÷ 100 = 21 l, kostnad 21 × 55 = 1155.",
+      "example": "Sträcka 300 km, förbrukning 7 l/100 km, pris 20 kr per liter: 300 × 7 ÷ 100 = 21 l, kostnad 21 × 20 = 420 kr.",
       "fields": {
         "trip": {
           "label": "Typ av resa",

@@ -1,0 +1,715 @@
+{
+  "site": {
+    "description": "Gratis onlinekalkylatorer: ekonomi, bygg, bil och vardagsberäkningar."
+  },
+  "home": {
+    "title": "Tallora — gratis onlinekalkylatorer",
+    "heroTitle": "Gratis onlinekalkylatorer för vardagen",
+    "heroText": "Ekonomi, bygg, bil och vardagsberäkningar: direkt i webbläsaren, utan registrering.",
+    "categoriesTitle": "Kalkylatorkategorier"
+  },
+  "categories": {
+    "finance": {
+      "name": "Ekonomi",
+      "description": "Procent, moms, lån, sparande"
+    },
+    "construction": {
+      "name": "Bygg",
+      "description": "Yta, volym, betong, kakel, färg"
+    },
+    "automotive": {
+      "name": "Bil",
+      "description": "Bränsleförbrukning och resekostnad"
+    },
+    "everyday": {
+      "name": "Vardag",
+      "description": "Ålder, dagar mellan datum, dagar till en händelse"
+    },
+    "conversion": {
+      "name": "Enhetsomvandling",
+      "description": "Vikt, längd, volym, temperatur, hastighet"
+    },
+    "math": {
+      "name": "Matematik",
+      "description": "Procent och andra matematiska beräkningar"
+    }
+  },
+  "footer": {
+    "disclaimer": "Resultaten är vägledande uppskattningar. Kontrollera dem innan du fattar viktiga beslut.",
+    "rights": "Alla rättigheter förbehållna."
+  },
+  "ui": {
+    "home": "Startsida",
+    "popular": "Populära kalkylatorer",
+    "howItWorks": "Så fungerar det",
+    "example": "Exempel",
+    "faq": "Vanliga frågor",
+    "related": "Liknande kalkylatorer",
+    "noCalculators": "Kalkylatorer i den här kategorin kommer snart.",
+    "catalog": "Katalog",
+    "catalogTitle": "Alla kalkylatorer",
+    "catalogDescription": "Hela katalogen med gratis onlinekalkylatorer från Tallora, per kategori.",
+    "browseAll": "Visa alla kalkylatorer",
+    "search": {
+      "label": "Sök kalkylatorer",
+      "placeholder": "Hitta en kalkylator…",
+      "noResults": "Inget hittades"
+    }
+  },
+  "calc": {
+    "mode": "Typ av beräkning",
+    "result": "Resultat",
+    "reset": "Återställ",
+    "copy": "Kopiera resultatet",
+    "copied": "Kopierat",
+    "hint": "Fyll i alla fält för att se resultatet.",
+    "invalid": "Ange ett tal med siffror. Använd punkt eller komma som decimaltecken.",
+    "divisionByZero": "Division med noll är inte möjlig. Ändra värdena.",
+    "overflow": "Talet är för stort för att beräknas.",
+    "negative": "Värdet kan inte vara negativt.",
+    "outOfRange": "Värdet ligger utanför det tillåtna intervallet.",
+    "invalidDate": "Ange ett giltigt datum.",
+    "dateOrder": "Det första datumet kan inte ligga efter det andra."
+  },
+  "calculators": {
+    "percentage-calculator": {
+      "title": "Procenträknare online — Tallora",
+      "name": "Procenträknare",
+      "description": "Gratis procenträknare: beräkna procent av ett tal, hur många procent ett tal är av ett annat, procentuell förändring samt höj eller sänk ett tal med ett antal procent.",
+      "intro": "Välj typ av beräkning och ange två tal – resultatet visas direkt. Dina uppgifter skickas inte till någon server.",
+      "modes": {
+        "percentOf": {
+          "name": "Procent av ett tal",
+          "labelA": "Procent (%)",
+          "labelB": "Tal",
+          "placeholderA": "15",
+          "placeholderB": "200",
+          "explain": "Multiplicera talet med procenttalet och dela med 100.",
+          "example": "15 % av 200 = 30"
+        },
+        "whatPercent": {
+          "name": "Hur många procent ett tal är av ett annat",
+          "labelA": "Del",
+          "labelB": "Helhet",
+          "placeholderA": "30",
+          "placeholderB": "200",
+          "explain": "Dela delen med helheten och multiplicera med 100.",
+          "example": "30 av 200 är 15 %"
+        },
+        "change": {
+          "name": "Procentuell förändring mellan två tal",
+          "labelA": "Startvärde",
+          "labelB": "Nytt värde",
+          "placeholderA": "200",
+          "placeholderB": "250",
+          "explain": "Subtrahera startvärdet från det nya värdet, dela med startvärdets absolutbelopp och multiplicera med 100. Ett positivt resultat är en ökning, ett negativt en minskning.",
+          "example": "Från 200 till 250 är +25 %"
+        },
+        "increase": {
+          "name": "Öka ett tal med ett antal procent",
+          "labelA": "Tal",
+          "labelB": "Procent (%)",
+          "placeholderA": "200",
+          "placeholderB": "10",
+          "explain": "Multiplicera talet med (1 + procent ÷ 100).",
+          "example": "200 + 10 % = 220"
+        },
+        "decrease": {
+          "name": "Minska ett tal med ett antal procent",
+          "labelA": "Tal",
+          "labelB": "Procent (%)",
+          "placeholderA": "200",
+          "placeholderB": "10",
+          "explain": "Multiplicera talet med (1 − procent ÷ 100).",
+          "example": "200 − 10 % = 180"
+        }
+      },
+      "faq1q": "Hur räknar man ut procent av ett tal?",
+      "faq1a": "Multiplicera talet med procenttalet och dela med 100. Till exempel 15 % av 200: 200 × 15 ÷ 100 = 30.",
+      "faq2q": "Vad är skillnaden mellan en ökning med 10 % och 10 procentenheter?",
+      "faq2a": "En ökning med 10 % ändrar ett värde i förhållande till sig självt: 50 blir 55. Procentenheter är skillnaden mellan två procentsatser: från 5 % till 15 % är 10 procentenheter, men i förhållande till startvärdet är ökningen 200 %.",
+      "faq3q": "Varför blir talet inte detsamma efter en minskning och en ökning med lika många procent?",
+      "faq3a": "För att den andra procentsatsen räknas på det nya talet. Minskar du 100 med 20 % får du 80, och ökar du 80 med 20 % får du 96, inte 100.",
+      "keywords": "procent procentuell förändring öka minska відсоток percent"
+    },
+    "discount-calculator": {
+      "title": "Rabattkalkylator online — Tallora",
+      "name": "Rabattkalkylator",
+      "description": "Gratis rabattkalkylator: räkna ut priset efter rabatt och hur mycket du sparar utifrån ursprungspris och rabatt i procent.",
+      "intro": "Ange ursprungspriset och rabatten i procent så ser du slutpriset och hur mycket du sparar.",
+      "keywords": "rabatt rea erbjudande pris efter rabatt discount знижка",
+      "howItWorks": "Rabattbeloppet är en procentandel av ursprungspriset. Drar du av det från priset får du slutpriset. Du kan också räkna i ett steg: pris × (1 − rabatt ÷ 100).",
+      "example": "Pris 1200, rabatt 25 %: 1200 × (1 − 25 ÷ 100) = 900. Du sparar 300.",
+      "fields": {
+        "price": {
+          "label": "Ursprungligt pris"
+        },
+        "discount": {
+          "label": "Rabatt (%)"
+        }
+      },
+      "outputs": {
+        "finalPrice": "Pris efter rabatt",
+        "saved": "Du sparar"
+      },
+      "faq1q": "Hur räknar man ut priset efter rabatt?",
+      "faq1a": "Multiplicera priset med (1 − rabatt ÷ 100). Till exempel 1200 med 25 % rabatt: 1200 × 0,75 = 900.",
+      "faq2q": "Hur tar man reda på rabatten i procent från ett gammalt och ett nytt pris?",
+      "faq2a": "Dra det nya priset från det gamla, dela med det gamla priset och multiplicera med 100. Läget ”Procentuell förändring” i procenträknaren gör det åt dig."
+    },
+    "vat-calculator": {
+      "title": "Momsräknare online — Tallora",
+      "name": "Momsräknare",
+      "description": "Gratis momsräknare: lägg till moms på ett belopp utan moms eller räkna ut momsen i ett belopp som redan inkluderar den.",
+      "intro": "Välj vad som ska beräknas, ange beloppet och momssatsen så ser du momsen, beloppet utan moms och beloppet med moms.",
+      "keywords": "moms mervärdesskatt momssats vat пдв",
+      "howItWorks": "För att lägga till moms multiplicerar du beloppet utan moms med momssatsen och delar med 100 – det är momsen. För att få fram momsen ur ett belopp inklusive moms delar du det med (1 + momssats ÷ 100) och får beloppet utan moms. Skillnaden är momsen. I Sverige är den vanligaste momssatsen 25 %, men vissa varor och tjänster har 12 % eller 6 %.",
+      "example": "Belopp utan moms 1000 med 25 %: moms = 250, totalt 1250. Åt andra hållet: av 1250 inklusive moms är 1000 belopp utan moms.",
+      "fields": {
+        "mode": {
+          "label": "Vad ska beräknas",
+          "options": {
+            "add": "Lägg till moms på ett belopp",
+            "extract": "Räkna ut moms ur ett belopp"
+          }
+        },
+        "amount": {
+          "label": "Belopp"
+        },
+        "rate": {
+          "label": "Momssats (%)"
+        }
+      },
+      "outputs": {
+        "vat": "Momsbelopp",
+        "net": "Belopp utan moms",
+        "gross": "Belopp med moms"
+      },
+      "faq1q": "Hur lägger man till moms på ett pris?",
+      "faq1a": "Multiplicera priset utan moms med (1 + momssats ÷ 100). Med 25 % moms blir 1000 till 1250.",
+      "faq2q": "Hur räknar man ut momsen i ett belopp som redan inkluderar moms?",
+      "faq2a": "Räkna inte momssatsen på beloppet inklusive moms – det ger en för hög moms. Dela beloppet med (1 + momssats ÷ 100) för att få priset utan moms och dra sedan av det från beloppet. Till exempel 1250 ÷ 1,25 = 1000, så momsen är 250."
+    },
+    "area-calculator": {
+      "title": "Areakalkylator online — Tallora",
+      "name": "Areakalkylator",
+      "description": "Gratis areakalkylator: beräkna arean av en rektangel, triangel eller cirkel i meter, centimeter, millimeter eller fot.",
+      "intro": "Välj form och enhet, ange måtten så beräknas arean direkt.",
+      "keywords": "area yta kvadratmeter rektangel triangel cirkel площа",
+      "howItWorks": "Arean beror på formen: för en rektangel är den längd × bredd, för en triangel bas × höjd ÷ 2 och för en cirkel π × radie². Resultatet anges i kvadratenheter av den längdenhet du valt.",
+      "example": "Ett rum på 4 × 3 m: 4 × 3 = 12 m².",
+      "fields": {
+        "shape": {
+          "label": "Form",
+          "options": {
+            "rectangle": "Rektangel",
+            "triangle": "Triangel",
+            "circle": "Cirkel"
+          }
+        },
+        "unit": {
+          "label": "Längdenhet",
+          "options": {
+            "m": "Meter (m)",
+            "cm": "Centimeter (cm)",
+            "mm": "Millimeter (mm)",
+            "ft": "Fot (ft)"
+          }
+        },
+        "length": {
+          "label": "Längd"
+        },
+        "width": {
+          "label": "Bredd"
+        },
+        "base": {
+          "label": "Bas"
+        },
+        "height": {
+          "label": "Höjd"
+        },
+        "radius": {
+          "label": "Radie"
+        }
+      },
+      "outputs": {
+        "area": "Area",
+        "areaM2": "Area i m²"
+      },
+      "faq1q": "Hur räknar man ut arean av ett rum?",
+      "faq1a": "Om rummet är rektangulärt multiplicerar du längden med bredden. För ett rum med oregelbunden form delar du upp det i enkla former, räknar ut arean för varje del och adderar dem.",
+      "faq2q": "Hur många kvadratcentimeter går det på en kvadratmeter?",
+      "faq2a": "10 000. Eftersom 1 m = 100 cm och area är produkten av två längder: 100 × 100 = 10 000."
+    },
+    "volume-calculator": {
+      "title": "Volymkalkylator online — Tallora",
+      "name": "Volymkalkylator",
+      "description": "Gratis volymkalkylator: beräkna volymen av ett rätblock, en cylinder eller en sfär och se resultatet i liter direkt.",
+      "intro": "Välj form och enhet, ange måtten så ser du volymen i kubikenheter och i liter.",
+      "keywords": "volym kubikmeter liter rätblock cylinder sfär об’єм",
+      "howItWorks": "Volymen av ett rätblock är längd × bredd × höjd, av en cylinder π × radie² × höjd och av en sfär 4/3 × π × radie³. En kubikmeter motsvarar 1 000 liter.",
+      "example": "En pool på 5 × 3 × 1,5 m: 5 × 3 × 1,5 = 22,5 m³ = 22 500 l.",
+      "fields": {
+        "shape": {
+          "label": "Form",
+          "options": {
+            "box": "Rätblock",
+            "cylinder": "Cylinder",
+            "sphere": "Sfär"
+          }
+        },
+        "unit": {
+          "label": "Längdenhet",
+          "options": {
+            "m": "Meter (m)",
+            "cm": "Centimeter (cm)",
+            "mm": "Millimeter (mm)",
+            "ft": "Fot (ft)"
+          }
+        },
+        "length": {
+          "label": "Längd"
+        },
+        "width": {
+          "label": "Bredd"
+        },
+        "height": {
+          "label": "Höjd"
+        },
+        "radius": {
+          "label": "Radie"
+        }
+      },
+      "outputs": {
+        "volume": "Volym",
+        "liters": "Volym i liter"
+      },
+      "faq1q": "Hur många liter går det på en kubikmeter?",
+      "faq1a": "1 000 liter. En kubikmeter är en kub med sidan 1 m, alltså 100 × 100 × 100 cm = 1 000 000 cm³, och en liter är 1 000 cm³.",
+      "faq2q": "Hur räknar man ut volymen av en cylinder?",
+      "faq2a": "Multiplicera basytan (π × radie²) med höjden. Till exempel radie 0,5 m och höjd 2 m: 3,1416 × 0,25 × 2 ≈ 1,571 m³."
+    },
+    "length-converter": {
+      "title": "Längdomvandlare online — Tallora",
+      "name": "Längdomvandlare",
+      "description": "Gratis längdomvandlare: omvandla kilometer, meter, centimeter, millimeter, engelska mil, yard, fot och tum.",
+      "intro": "Ange ett värde och välj enheter – resultatet visas direkt.",
+      "keywords": "längd omvandlare kilometer mil meter fot tum довжина length",
+      "howItWorks": "Värdet omvandlas först till meter och sedan till önskad enhet med exakta faktorer: 1 engelsk mil = 1 609,344 m, 1 yard = 0,9144 m, 1 fot = 0,3048 m, 1 tum = 0,0254 m.",
+      "example": "5 km = 3,106856 mi.",
+      "fields": {
+        "value": {
+          "label": "Värde"
+        },
+        "from": {
+          "label": "Från enhet",
+          "options": {
+            "km": "Kilometer (km)",
+            "m": "Meter (m)",
+            "cm": "Centimeter (cm)",
+            "mm": "Millimeter (mm)",
+            "mi": "Engelska mil (mi)",
+            "yd": "Yard (yd)",
+            "ft": "Fot (ft)",
+            "in": "Tum (tum)"
+          }
+        },
+        "to": {
+          "label": "Till enhet",
+          "options": {
+            "km": "Kilometer (km)",
+            "m": "Meter (m)",
+            "cm": "Centimeter (cm)",
+            "mm": "Millimeter (mm)",
+            "mi": "Engelska mil (mi)",
+            "yd": "Yard (yd)",
+            "ft": "Fot (ft)",
+            "in": "Tum (tum)"
+          }
+        }
+      },
+      "outputs": {
+        "result": "Resultat"
+      },
+      "faq1q": "Hur många kilometer är en engelsk mil?",
+      "faq1a": "En internationell engelsk mil är 1,609344 km.",
+      "faq2q": "Hur många centimeter är en tum?",
+      "faq2a": "En tum är exakt 2,54 cm."
+    },
+    "mass-converter": {
+      "title": "Viktomvandlare online — Tallora",
+      "name": "Viktomvandlare",
+      "description": "Gratis viktomvandlare: omvandla ton, kilogram, gram, milligram, pund och uns.",
+      "intro": "Ange ett värde och välj enheter – resultatet visas direkt.",
+      "keywords": "vikt massa omvandlare kilogram pund uns gram вага маса mass",
+      "howItWorks": "Värdet omvandlas först till kilogram och sedan till önskad enhet med exakta faktorer: 1 pund = 0,45359237 kg, 1 uns = 0,028349523125 kg.",
+      "example": "10 kg = 22,046226 lb.",
+      "fields": {
+        "value": {
+          "label": "Värde"
+        },
+        "from": {
+          "label": "Från enhet",
+          "options": {
+            "t": "Ton (t)",
+            "kg": "Kilogram (kg)",
+            "g": "Gram (g)",
+            "mg": "Milligram (mg)",
+            "lb": "Pund (lb)",
+            "oz": "Uns (oz)"
+          }
+        },
+        "to": {
+          "label": "Till enhet",
+          "options": {
+            "t": "Ton (t)",
+            "kg": "Kilogram (kg)",
+            "g": "Gram (g)",
+            "mg": "Milligram (mg)",
+            "lb": "Pund (lb)",
+            "oz": "Uns (oz)"
+          }
+        }
+      },
+      "outputs": {
+        "result": "Resultat"
+      },
+      "faq1q": "Hur många gram går det på ett pund?",
+      "faq1a": "Ett pund är 453,59237 g (cirka 454 g).",
+      "faq2q": "Hur många uns går det på ett kilogram?",
+      "faq2a": "Ett kilogram är cirka 35,274 uns."
+    },
+    "fuel-consumption-calculator": {
+      "title": "Bränsleförbrukningskalkylator online — Tallora",
+      "name": "Bränsleförbrukningskalkylator",
+      "description": "Gratis kalkylator för bränsleförbrukning: räkna ut förbrukningen i liter per 100 km och per mil utifrån körd sträcka och använt bränsle.",
+      "intro": "Ange körd sträcka och använt bränsle så ser du förbrukningen per 100 km och per mil.",
+      "keywords": "bränsleförbrukning bensin diesel liter per mil l/100 km fuel consumption витрата пального",
+      "howItWorks": "Förbrukningen per 100 km är använt bränsle delat med körd sträcka och multiplicerat med 100. En svensk mil är 10 km, så förbrukningen per mil är en tiondel av värdet per 100 km.",
+      "example": "Körde 450 km och använde 31,5 l: 31,5 ÷ 450 × 100 = 7 l/100 km, alltså 0,7 l/mil.",
+      "fields": {
+        "distance": {
+          "label": "Körd sträcka (km)"
+        },
+        "fuel": {
+          "label": "Använt bränsle (l)"
+        }
+      },
+      "outputs": {
+        "consumption": "Förbrukning per 100 km",
+        "consumptionMil": "Förbrukning per mil (10 km)",
+        "kmPerLiter": "Sträcka per liter"
+      },
+      "faq1q": "Hur räknar man ut bränsleförbrukningen per 100 km?",
+      "faq1a": "Dela använt bränsle med körd sträcka och multiplicera med 100. Till exempel 31,5 l på 450 km: 31,5 ÷ 450 × 100 = 7 l/100 km.",
+      "faq2q": "Hur mäter man bränsleförbrukningen så exakt som möjligt?",
+      "faq2a": "Fyll tanken helt, nollställ trippmätaren, kör som vanligt och fyll sedan tanken helt igen. Använd mängden tankat bränsle och sträckan på trippmätaren i beräkningen."
+    },
+    "trip-cost-calculator": {
+      "title": "Resekostnad för bil online — Tallora",
+      "name": "Resekostnad för bil",
+      "description": "Gratis kalkylator för resekostnad med bil: räkna ut bränslebehov och kostnad utifrån sträcka, förbrukning och bränslepris.",
+      "intro": "Ange sträcka, bilens förbrukning och bränslepriset så ser du hur många liter du behöver och vad det kostar.",
+      "keywords": "resekostnad bränslekostnad bil pris per liter trip cost вартість поїздки",
+      "howItWorks": "Bränslebehov = sträcka × förbrukning per 100 km ÷ 100. Resekostnad = bränslebehov × literpris. Vid tur och retur dubbleras sträckan.",
+      "example": "Sträcka 300 km, förbrukning 7 l/100 km, pris 20 kr per liter: 300 × 7 ÷ 100 = 21 l, kostnad 21 × 20 = 420 kr.",
+      "fields": {
+        "trip": {
+          "label": "Typ av resa",
+          "options": {
+            "oneWay": "Enkel resa",
+            "roundTrip": "Tur och retur"
+          }
+        },
+        "distance": {
+          "label": "Sträcka (km, enkel resa)"
+        },
+        "consumption": {
+          "label": "Bilens förbrukning (l/100 km)"
+        },
+        "price": {
+          "label": "Bränslepris per liter"
+        }
+      },
+      "outputs": {
+        "cost": "Resekostnad",
+        "fuel": "Bränsle som behövs",
+        "totalDistance": "Total sträcka"
+      },
+      "faq1q": "Hur räknar man ut kostnaden för en bilresa?",
+      "faq1a": "Multiplicera sträckan med förbrukningen per 100 km och dela med 100 – det är antalet liter. Multiplicera sedan litrarna med literpriset.",
+      "faq2q": "Ingår andra kostnader i beräkningen?",
+      "faq2a": "Nej, bara bränslet. Vägtullar, parkering och slitage på bilen får du lägga till själv."
+    },
+    "loan-calculator": {
+      "title": "Lånekalkylator online — Tallora",
+      "name": "Lånekalkylator",
+      "description": "Gratis lånekalkylator: räkna ut månadsbetalning, total återbetalning och räntekostnad med annuitet eller rak amortering.",
+      "intro": "Ange lånebelopp, årsränta och löptid så ser du månadsbetalningen, totalt återbetalt belopp och räntekostnaden.",
+      "keywords": "lån bolån månadsbetalning annuitet ränta amortering loan кредит",
+      "howItWorks": "Vid annuitetslån är betalningen lika stor varje månad: P × r ÷ (1 − (1 + r)^−n), där r är månadsräntan (årsränta ÷ 12 ÷ 100) och n antalet månader. Vid rak amortering betalar du av lika mycket på skulden varje månad (P ÷ n) plus ränta på den återstående skulden, så betalningarna minskar över tid. Resultatet är en uppskattning: långivarens faktiska villkor (avgifter, försäkring) kan skilja sig.",
+      "example": "Lån på 100 000 över 12 månader med 12 % årsränta (annuitet): betalning ≈ 8 884,88, totalt ≈ 106 618,55, ränta ≈ 6 618,55.",
+      "fields": {
+        "type": {
+          "label": "Typ av återbetalning",
+          "options": {
+            "annuity": "Annuitet (lika betalningar)",
+            "differentiated": "Rak amortering (minskande betalningar)"
+          }
+        },
+        "amount": {
+          "label": "Lånebelopp"
+        },
+        "rate": {
+          "label": "Årsränta (%)"
+        },
+        "term": {
+          "label": "Löptid"
+        },
+        "termUnit": {
+          "label": "Enhet för löptid",
+          "options": {
+            "years": "År",
+            "months": "Månader"
+          }
+        }
+      },
+      "outputs": {
+        "payment": "Månadsbetalning",
+        "firstPayment": "Första betalningen",
+        "lastPayment": "Sista betalningen",
+        "total": "Totalt återbetalt",
+        "overpayment": "Räntekostnad"
+      },
+      "faq1q": "Vad är skillnaden mellan annuitet och rak amortering?",
+      "faq1a": "Vid annuitet är betalningarna lika stora under hela löptiden, så räntan utgör större delen av de första betalningarna. Vid rak amortering börjar betalningarna högre och minskar varje månad, och den totala räntekostnaden blir oftast lägre.",
+      "faq2q": "Varför kan bankens faktiska betalning skilja sig?",
+      "faq2a": "Långivaren kan lägga till avgifter eller försäkring, beräkna ränta på ett annat sätt och avrunda betalningarna. Kalkylatorn visar en förenklad uppskattning enligt formeln."
+    },
+    "concrete-calculator": {
+      "title": "Betongkalkylator online — Tallora",
+      "name": "Betongkalkylator",
+      "description": "Gratis betongkalkylator: räkna ut betongvolymen för en platta, ett grund eller en avjämning utifrån längd, bredd och tjocklek, med reserv.",
+      "intro": "Ange plattans mått och en reserv så ser du hur mycket betong du behöver i kubikmeter.",
+      "keywords": "betong platta grund gjutning kubikmeter concrete бетон",
+      "howItWorks": "Betongvolymen är längd × bredd × tjocklek (tjockleken omvandlas från centimeter till meter). Ett tillägg för spill och ojämnt underlag brukar läggas på, vanligen 5–10 %.",
+      "example": "En platta på 6 × 4 m och 15 cm tjocklek med 5 % reserv: 6 × 4 × 0,15 = 3,6 m³; med reserv 3,78 m³.",
+      "fields": {
+        "length": {
+          "label": "Längd (m)"
+        },
+        "width": {
+          "label": "Bredd (m)"
+        },
+        "thickness": {
+          "label": "Tjocklek (cm)"
+        },
+        "reserve": {
+          "label": "Reserv (%)"
+        }
+      },
+      "outputs": {
+        "withReserve": "Betong som behövs (med reserv)",
+        "volume": "Volym utan reserv"
+      },
+      "faq1q": "Hur mycket betong behöver jag till en platta eller ett grund?",
+      "faq1a": "Multiplicera längd, bredd och tjocklek, alla i meter. För en platta på 6 × 4 m och 15 cm tjocklek: 6 × 4 × 0,15 = 3,6 m³.",
+      "faq2q": "Varför lägga på en reserv?",
+      "faq2a": "En del betong går åt som spill vid gjutningen och underlaget är sällan helt plant. Därför läggs en reserv på några procent på den beräknade volymen."
+    },
+    "tile-calculator": {
+      "title": "Kakelkalkylator online — Tallora",
+      "name": "Kakelkalkylator",
+      "description": "Gratis kakelkalkylator: räkna ut hur många plattor du behöver till golv eller vägg utifrån ytans mått, plattans storlek och reserv för kapning.",
+      "intro": "Ange ytans mått, storleken på en platta och en reserv så ser du hur många plattor du ska köpa.",
+      "keywords": "kakel klinker golv vägg antal plattor tile плитка",
+      "howItWorks": "Antal plattor = ytans area ÷ en plattas area, avrundat uppåt. Reserven (vanligen 5–15 %) täcker kapning, svinn och mönsterpassning. Fogar räknas inte med.",
+      "example": "Yta 4 × 3 m (12 m²), plattor 30 × 30 cm, 10 % reserv: 12 ÷ 0,09 = 133,3 → 134 plattor utan reserv; med reserv 147 plattor.",
+      "fields": {
+        "length": {
+          "label": "Ytans längd (m)"
+        },
+        "width": {
+          "label": "Ytans bredd (m)"
+        },
+        "tileLength": {
+          "label": "Plattans längd (cm)"
+        },
+        "tileWidth": {
+          "label": "Plattans bredd (cm)"
+        },
+        "reserve": {
+          "label": "Reserv (%)"
+        }
+      },
+      "outputs": {
+        "tiles": "Plattor med reserv",
+        "tilesExact": "Plattor utan reserv",
+        "area": "Ytans area"
+      },
+      "faq1q": "Hur många plattor behöver jag till ett golv?",
+      "faq1a": "Dela golvets area med en plattas area och avrunda uppåt. Till exempel 12 m² och plattor på 30 × 30 cm (0,09 m²): 12 ÷ 0,09 ≈ 133,3, alltså 134 plattor utan reserv.",
+      "faq2q": "Hur stor reserv bör jag räkna med?",
+      "faq2a": "Vanligen 5–10 % för enkel läggning och upp till 15 % för diagonal eller komplicerad läggning. Det är en tumregel: exakt värde beror på rummets form."
+    },
+    "paint-calculator": {
+      "title": "Färgkalkylator online — Tallora",
+      "name": "Färgkalkylator",
+      "description": "Gratis färgkalkylator: räkna ut hur många liter färg du behöver till väggar eller tak utifrån area, antal strykningar och täckning per kvadratmeter.",
+      "intro": "Ange area, antal strykningar och färgens täckning så ser du hur mycket du behöver och hur många burkar du ska köpa.",
+      "keywords": "färg måla väggar tak liter burkar paint фарба",
+      "howItWorks": "Färgmängd = area × antal strykningar ÷ täckning (hur många m² en liter räcker till, anges på burken). Antal burkar är mängden delad med burkstorleken, avrundat uppåt.",
+      "example": "Area 40 m², 2 strykningar, täckning 10 m²/l: 40 × 2 ÷ 10 = 8 l; det blir 2 burkar på 5 l.",
+      "fields": {
+        "area": {
+          "label": "Ytans area (m²)"
+        },
+        "coats": {
+          "label": "Antal strykningar"
+        },
+        "coverage": {
+          "label": "Täckning (m² per 1 l)"
+        },
+        "can": {
+          "label": "Burkstorlek",
+          "options": {
+            "l1": "1 l",
+            "l2_5": "2,5 l",
+            "l5": "5 l",
+            "l10": "10 l"
+          }
+        }
+      },
+      "outputs": {
+        "liters": "Färg som behövs",
+        "cans": "Burkar"
+      },
+      "faq1q": "Var hittar jag färgens täckning?",
+      "faq1a": "Den står oftast på burken som kvadratmeter per liter för en strykning. Grova ytor kräver mer färg.",
+      "faq2q": "Räknar kalkylatorn bort fönster och dörrar?",
+      "faq2a": "Nej. Ange den area du faktiskt ska måla: dra av fönster och dörrar från väggarean."
+    },
+    "age-calculator": {
+      "title": "Åldersräknare online — Tallora",
+      "name": "Åldersräknare",
+      "description": "Gratis åldersräknare: räkna ut din exakta ålder i år, månader och dagar, antal levda dagar och dagar till nästa födelsedag.",
+      "intro": "Ange ett födelsedatum så ser du åldern i år, månader och dagar. Beräkningen görs som standard för idag, men du kan ändra datumet.",
+      "keywords": "ålder födelsedatum hur gammal födelsedag levda dagar age вік",
+      "howItWorks": "Födelseåret dras av från beräkningsdatumets år, därefter justeras månader och dagar om födelsedagen inte har inträffat i år. För den som är född den 29 februari räknas födelsedagen som 1 mars under år som inte är skottår.",
+      "example": "Född 15 maj 1990, beräknat den 10 mars 2024: 33 år, 9 månader och 24 dagar.",
+      "fields": {
+        "birth": {
+          "label": "Födelsedatum"
+        },
+        "asOf": {
+          "label": "Beräkna per datum"
+        }
+      },
+      "outputs": {
+        "years": "Hela år",
+        "months": "Månader",
+        "days": "Dagar",
+        "totalDays": "Totalt antal levda dagar",
+        "daysToBirthday": "Dagar till nästa födelsedag"
+      },
+      "faq1q": "Hur räknar man ut en exakt ålder?",
+      "faq1a": "Dra av födelsedatumet från dagens datum per år, månad och dag. Är dagen eller månaden i dagens datum mindre ”lånar” du en enhet från nästa större enhet, precis som vid subtraktion under varandra.",
+      "faq2q": "Hur räknas åldern för någon född den 29 februari?",
+      "faq2a": "Under skottår infaller födelsedagen den 29 februari, och övriga år räknar den här kalkylatorn 1 mars som födelsedag. Reglerna skiljer sig mellan länder."
+    },
+    "days-between-dates-calculator": {
+      "title": "Dagar mellan datum – kalkylator online — Tallora",
+      "name": "Dagar mellan datum",
+      "description": "Gratis kalkylator för antal dagar, veckor och arbetsdagar mellan två datum.",
+      "intro": "Välj ett startdatum och ett slutdatum så ser du antal dagar, hela veckor och arbetsdagar.",
+      "keywords": "dagar mellan datum datumskillnad antal dagar arbetsdagar veckor days between dates дні між датами",
+      "howItWorks": "Kalkylatorn räknar skillnaden mellan två datum i dagar. Som standard räknas inte slutdatumet med, men du kan välja att inkludera det. Arbetsdagar är måndag till fredag; helgdagar tas inte med. Om startdatumet ligger efter slutdatumet byter datumen plats.",
+      "example": "Från 1 januari till 1 februari 2024: 31 dagar, alltså 4 hela veckor och 3 dagar, varav 23 arbetsdagar.",
+      "fields": {
+        "start": {
+          "label": "Startdatum"
+        },
+        "end": {
+          "label": "Slutdatum"
+        },
+        "includeEnd": {
+          "label": "Slutdatum i beräkningen",
+          "options": {
+            "no": "Räkna inte med",
+            "yes": "Räkna med"
+          }
+        }
+      },
+      "outputs": {
+        "days": "Dagar mellan datumen",
+        "weeks": "Hela veckor",
+        "rest": "Återstående dagar",
+        "workdays": "Arbetsdagar"
+      },
+      "faq1q": "Räknas slutdatumet med?",
+      "faq1a": "Inte som standard: från den 1:a till den 2:a är en dag. Behöver du ta med båda ändarna (till exempel antal semesterdagar) väljer du ”Räkna med”.",
+      "faq2q": "Tar kalkylatorn hänsyn till helgdagar?",
+      "faq2a": "Nej. Alla dagar från måndag till fredag räknas som arbetsdagar. Allmänna helgdagar och röda dagar får du dra av själv."
+    },
+    "days-until-calculator": {
+      "title": "Dagar kvar till en händelse — Tallora",
+      "name": "Dagar kvar till en händelse",
+      "description": "Gratis kalkylator: ta reda på hur många dagar, veckor och arbetsdagar det är kvar till ett valt datum, eller har gått sedan det.",
+      "intro": "Ange händelsens datum så ser du hur många dagar det är kvar. Nedräkningen utgår som standard från idag.",
+      "keywords": "dagar kvar nedräkning händelse datum semester nyår days until скільки днів до",
+      "howItWorks": "Kalkylatorn drar av startdatumet (som standard idag) från händelsens datum. Har händelsen redan inträffat visas hur många dagar sedan det var. Arbetsdagar är måndag till fredag utan helgdagar; det senare av de två datumen räknas inte med.",
+      "example": "Från 1 till 25 december 2026: 24 dagar, 3 hela veckor, 18 arbetsdagar.",
+      "fields": {
+        "event": {
+          "label": "Händelsens datum"
+        },
+        "from": {
+          "label": "Räkna från"
+        }
+      },
+      "outputs": {
+        "days": "Dagar kvar till händelsen",
+        "daysAgo": "Dagar sedan händelsen",
+        "weeks": "Hela veckor",
+        "workdays": "Arbetsdagar"
+      },
+      "faq1q": "Vad händer om händelsen redan har inträffat?",
+      "faq1a": "Kalkylatorn visar hur många dagar som gått från händelsen till det valda startdatumet.",
+      "faq2q": "Ändras resultatet i morgon?",
+      "faq2a": "Ja, om nedräkningen utgår från idag: startdatumet fylls i automatiskt när du öppnar sidan."
+    }
+  },
+  "units": {
+    "m": "m",
+    "cm": "cm",
+    "mm": "mm",
+    "km": "km",
+    "mi": "mi",
+    "yd": "yd",
+    "ft": "ft",
+    "in": "tum",
+    "kg": "kg",
+    "g": "g",
+    "mg": "mg",
+    "t": "t",
+    "lb": "lb",
+    "oz": "oz",
+    "m2": "m²",
+    "cm2": "cm²",
+    "mm2": "mm²",
+    "ft2": "ft²",
+    "m3": "m³",
+    "cm3": "cm³",
+    "mm3": "mm³",
+    "ft3": "ft³",
+    "L": "l",
+    "L100": "l/100 km",
+    "L10": "l/mil",
+    "kmL": "km/l"
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "text": "Adressen kan vara felskriven eller sidan kan ha flyttats. Gå till startsidan eller använd sökningen.",
+    "home": "Till startsidan"
+  }
+}

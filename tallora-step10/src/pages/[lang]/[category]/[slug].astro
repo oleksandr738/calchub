@@ -1,0 +1,28 @@
+---
+import CalculatorLayout from '../../../components/CalculatorLayout.astro';
+import PercentageCalculator from '../../../components/calculators/PercentageCalculator.astro';
+import GenericCalculator from '../../../components/calculators/GenericCalculator.astro';
+import { langCodes, type Lang } from '../../../i18n';
+import { calculators } from '../../../calculators/registry';
+
+export function getStaticPaths() {
+  return langCodes.flatMap((lang) =>
+    calculators.map((c) => ({
+      params: { lang, category: c.category, slug: c.slug },
+    })),
+  );
+}
+
+const lang = Astro.params.lang as Lang;
+const calc = calculators.find((c) => c.slug === Astro.params.slug)!;
+---
+
+<CalculatorLayout lang={lang} calc={calc}>
+  {
+    calc.slug === 'percentage-calculator' ? (
+      <PercentageCalculator lang={lang} />
+    ) : (
+      <GenericCalculator lang={lang} slug={calc.slug} />
+    )
+  }
+</CalculatorLayout>

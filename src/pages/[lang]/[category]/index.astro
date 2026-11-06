@@ -46,6 +46,7 @@ const jsonLd = [
         {items.map((c) => (
           <CalculatorCard
             href={calculatorUrl(lang, c)}
+            category={c.category}
             icon={c.icon}
             name={t(`calculators.${c.slug}.name`)}
             description={t(`calculators.${c.slug}.description`)}
